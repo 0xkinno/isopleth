@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:23.921Z",
+  "key": "MARAUSDT",
+  "hash": "22a8c2d0096325dbaa7ad18702a7284be62da1a036075db700bd112c34f071d7",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161183535,
+    "data": null
+  }
+}

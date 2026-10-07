@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:27.158Z",
+  "key": "TEAMUSDT",
+  "hash": "4f7fc7b6dd5d6f9d0b29b45b0559f7e0f3eac5990be22460779be508310f12a4",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161186770,
+    "data": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:44:48.506Z",
+  "key": "COINUSDT",
+  "hash": "629e89ce3a69f5c4114f93330be43feb2c7e2d389cae9555bee07c5df4187e18",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161088121,
+    "data": null
+  }
+}

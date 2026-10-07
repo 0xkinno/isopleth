@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:35.214Z",
+  "key": "BXUSDT",
+  "hash": "1ed36d2d6e2ce7a95542992a1997ae19bb8eceac282410e2bc4d0a20a8a7cf8e",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161134825,
+    "data": null
+  }
+}

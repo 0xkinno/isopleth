@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:15.778Z",
+  "key": "PYPLUSDT",
+  "hash": "84f5df07c2dc7c0f912efe52fae51391993cd4369084384a728bf5d562e0b4ee",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161175383,
+    "data": null
+  }
+}

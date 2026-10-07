@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:08.569Z",
+  "key": "FLYUSDT",
+  "hash": "af59c7a7b3c0e55e8c1e6ab1c31b063421ada0685ac9aa8538ce77941522eec5",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161108171,
+    "data": null
+  }
+}

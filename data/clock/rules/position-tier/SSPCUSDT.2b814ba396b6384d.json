@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:13.953Z",
+  "key": "SSPCUSDT",
+  "hash": "2b814ba396b6384dfb059f799e6e01e1c40a849a5049719e5037ae42302aa79a",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161173526,
+    "data": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:01.731Z",
+  "key": "TSMUSDT",
+  "hash": "f63418ab378c09f0f0dcbf7d5c40b09f4e5a6539fa398e7a24cb5a7fe7c4bc74",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161101341,
+    "data": null
+  }
+}

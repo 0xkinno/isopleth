@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:09.582Z",
+  "key": "LITEUSDT",
+  "hash": "de409aab16e7954d1683fe859bfe5b663b8ae1ef3711d618e8cd3b2460a9e784",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161109154,
+    "data": null
+  }
+}

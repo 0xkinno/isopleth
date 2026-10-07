@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:25.500Z",
+  "key": "RGTIUSDT",
+  "hash": "c1b2f87e53159129303001e3f9525be20a1b57106558839e05d0c12413344782",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161125094,
+    "data": null
+  }
+}

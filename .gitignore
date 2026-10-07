@@ -1,0 +1,28 @@
+# deps / build
+node_modules/
+dist/
+.turbo/
+*.tsbuildinfo
+
+# env
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# competitor reference clones and private notes - never part of the build
+reference/
+research/
+
+# local recorder error scratch (kept out of evidence trail)
+data/clock/raw/e1-errors.jsonl
+
+# test artifacts
+test-results/
+playwright-report/
+docs/screens/*.png

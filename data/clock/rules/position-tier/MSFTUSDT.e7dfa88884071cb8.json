@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:44:54.585Z",
+  "key": "MSFTUSDT",
+  "hash": "e7dfa88884071cb8cf72e40f2e30fcacea80b6200e7713fae90e1c4b45975bd6",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161094189,
+    "data": null
+  }
+}

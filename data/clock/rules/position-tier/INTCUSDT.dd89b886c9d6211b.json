@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:44:50.903Z",
+  "key": "INTCUSDT",
+  "hash": "dd89b886c9d6211b21adec049cb033d24d95ca8fcf2078c74db9a14f88dcf45b",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161090494,
+    "data": null
+  }
+}

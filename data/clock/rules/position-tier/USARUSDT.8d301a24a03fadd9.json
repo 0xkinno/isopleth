@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:17.536Z",
+  "key": "USARUSDT",
+  "hash": "8d301a24a03fadd9305f3f61c133051975d31663496cff381649b669f372aa53",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161117141,
+    "data": null
+  }
+}

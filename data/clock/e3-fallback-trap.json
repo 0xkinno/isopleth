@@ -1,0 +1,61 @@
+{
+  "probedAt": "2026-10-05T00:46:46.409Z",
+  "symbol": "RTSLAUSDT",
+  "claim": "F8: rToken candle type is silently coerced to market for index/mark/premium requests",
+  "confirmed": true,
+  "marketSample": [
+    [
+      "1791072000000",
+      "370.84",
+      "370.84",
+      "370.84",
+      "370.84",
+      "0.2895",
+      "107.35818"
+    ]
+  ],
+  "results": {
+    "index": {
+      "identicalToMarket": true,
+      "sample": [
+        [
+          "1791072000000",
+          "370.84",
+          "370.84",
+          "370.84",
+          "370.84",
+          "0.2895",
+          "107.35818"
+        ]
+      ]
+    },
+    "mark": {
+      "identicalToMarket": true,
+      "sample": [
+        [
+          "1791072000000",
+          "370.84",
+          "370.84",
+          "370.84",
+          "370.84",
+          "0.2895",
+          "107.35818"
+        ]
+      ]
+    },
+    "premium": {
+      "identicalToMarket": true,
+      "sample": [
+        [
+          "1791072000000",
+          "370.84",
+          "370.84",
+          "370.84",
+          "370.84",
+          "0.2895",
+          "107.35818"
+        ]
+      ]
+    }
+  }
+}

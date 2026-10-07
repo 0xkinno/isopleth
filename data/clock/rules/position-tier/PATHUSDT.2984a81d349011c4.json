@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:30.922Z",
+  "key": "PATHUSDT",
+  "hash": "2984a81d349011c4a5407ffedead83df4dc6aeba1107ef5ecb9b862f1bc558e5",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161190513,
+    "data": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:46.072Z",
+  "key": "XLKUSDT",
+  "hash": "9b485687298c7d66503dbac57958f928779c563f801404e209454b891810dac7",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161145669,
+    "data": null
+  }
+}

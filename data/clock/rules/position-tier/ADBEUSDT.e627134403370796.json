@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:34.285Z",
+  "key": "ADBEUSDT",
+  "hash": "e627134403370796a03bc19d0d750b7beae900a8fb2abe9630f524c43812d50b",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161133898,
+    "data": null
+  }
+}

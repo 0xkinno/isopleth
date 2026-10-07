@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:02.720Z",
+  "key": "FWDIUSDT",
+  "hash": "e5b4f81f5db8b1228acb78af8a22cae16ca6094a839edc4a6c975c37fabc6e99",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161162315,
+    "data": null
+  }
+}

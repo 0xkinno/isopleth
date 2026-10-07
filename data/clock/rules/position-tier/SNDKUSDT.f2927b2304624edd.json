@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:09.058Z",
+  "key": "SNDKUSDT",
+  "hash": "f2927b2304624edd28d38ab86e5e7594f02bfc97197b6ef70f10c220c13c2793",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161108639,
+    "data": null
+  }
+}

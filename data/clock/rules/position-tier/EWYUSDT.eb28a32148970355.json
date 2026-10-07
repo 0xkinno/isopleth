@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:04.026Z",
+  "key": "EWYUSDT",
+  "hash": "eb28a32148970355f1621dadfe3943d3e29177c4e30c7bd367aa2cad28003064",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161103640,
+    "data": null
+  }
+}

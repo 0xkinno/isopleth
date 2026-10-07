@@ -1,0 +1,1207 @@
+[
+  {
+    "perp": "TSLAUSDT",
+    "spot": "RTSLAUSDT",
+    "underlying": "TSLA"
+  },
+  {
+    "perp": "CRCLUSDT",
+    "spot": "RCRCLUSDT",
+    "underlying": "CRCL"
+  },
+  {
+    "perp": "NVDAUSDT",
+    "spot": "RNVDAUSDT",
+    "underlying": "NVDA"
+  },
+  {
+    "perp": "GOOGLUSDT",
+    "spot": "RGOOGLUSDT",
+    "underlying": "GOOGL"
+  },
+  {
+    "perp": "AAPLUSDT",
+    "spot": "RAAPLUSDT",
+    "underlying": "AAPL"
+  },
+  {
+    "perp": "AMZNUSDT",
+    "spot": "RAMZNUSDT",
+    "underlying": "AMZN"
+  },
+  {
+    "perp": "METAUSDT",
+    "spot": "RMETAUSDT",
+    "underlying": "META"
+  },
+  {
+    "perp": "MCDUSDT",
+    "spot": "RMCDUSDT",
+    "underlying": "MCD"
+  },
+  {
+    "perp": "MSTRUSDT",
+    "spot": "RMSTRUSDT",
+    "underlying": "MSTR"
+  },
+  {
+    "perp": "COINUSDT",
+    "spot": "RCOINUSDT",
+    "underlying": "COIN"
+  },
+  {
+    "perp": "HOODUSDT",
+    "spot": "RHOODUSDT",
+    "underlying": "HOOD"
+  },
+  {
+    "perp": "ARMUSDT",
+    "spot": "RARMUSDT",
+    "underlying": "ARM"
+  },
+  {
+    "perp": "ASMLUSDT",
+    "spot": "RASMLUSDT",
+    "underlying": "ASML"
+  },
+  {
+    "perp": "BABAUSDT",
+    "spot": "RBABAUSDT",
+    "underlying": "BABA"
+  },
+  {
+    "perp": "INTCUSDT",
+    "spot": "RINTCUSDT",
+    "underlying": "INTC"
+  },
+  {
+    "perp": "IBMUSDT",
+    "spot": "RIBMUSDT",
+    "underlying": "IBM"
+  },
+  {
+    "perp": "APPUSDT",
+    "spot": "RAPPUSDT",
+    "underlying": "APP"
+  },
+  {
+    "perp": "GEUSDT",
+    "spot": "RGEUSDT",
+    "underlying": "GE"
+  },
+  {
+    "perp": "ORCLUSDT",
+    "spot": "RORCLUSDT",
+    "underlying": "ORCL"
+  },
+  {
+    "perp": "PLTRUSDT",
+    "spot": "RPLTRUSDT",
+    "underlying": "PLTR"
+  },
+  {
+    "perp": "GMEUSDT",
+    "spot": "RGMEUSDT",
+    "underlying": "GME"
+  },
+  {
+    "perp": "MRVLUSDT",
+    "spot": "RMRVLUSDT",
+    "underlying": "MRVL"
+  },
+  {
+    "perp": "MSFTUSDT",
+    "spot": "RMSFTUSDT",
+    "underlying": "MSFT"
+  },
+  {
+    "perp": "NFLXUSDT",
+    "spot": "RNFLXUSDT",
+    "underlying": "NFLX"
+  },
+  {
+    "perp": "FUTUUSDT",
+    "spot": "RFUTUUSDT",
+    "underlying": "FUTU"
+  },
+  {
+    "perp": "JDUSDT",
+    "spot": "RJDUSDT",
+    "underlying": "JD"
+  },
+  {
+    "perp": "RDDTUSDT",
+    "spot": "RRDDTUSDT",
+    "underlying": "RDDT"
+  },
+  {
+    "perp": "QQQUSDT",
+    "spot": "RQQQUSDT",
+    "underlying": "QQQ"
+  },
+  {
+    "perp": "CSCOUSDT",
+    "spot": "RCSCOUSDT",
+    "underlying": "CSCO"
+  },
+  {
+    "perp": "PEPUSDT",
+    "spot": "RPEPUSDT",
+    "underlying": "PEP"
+  },
+  {
+    "perp": "UNHUSDT",
+    "spot": "RUNHUSDT",
+    "underlying": "UNH"
+  },
+  {
+    "perp": "LLYUSDT",
+    "spot": "RLLYUSDT",
+    "underlying": "LLY"
+  },
+  {
+    "perp": "AVGOUSDT",
+    "spot": "RAVGOUSDT",
+    "underlying": "AVGO"
+  },
+  {
+    "perp": "MUUSDT",
+    "spot": "RMUUSDT",
+    "underlying": "MU"
+  },
+  {
+    "perp": "SPYUSDT",
+    "spot": "RSPYUSDT",
+    "underlying": "SPY"
+  },
+  {
+    "perp": "COSTUSDT",
+    "spot": "RCOSTUSDT",
+    "underlying": "COST"
+  },
+  {
+    "perp": "WMTUSDT",
+    "spot": "RWMTUSDT",
+    "underlying": "WMT"
+  },
+  {
+    "perp": "TSMUSDT",
+    "spot": "RTSMUSDT",
+    "underlying": "TSM"
+  },
+  {
+    "perp": "COPUSDT",
+    "spot": "RCOPUSDT",
+    "underlying": "COP"
+  },
+  {
+    "perp": "XOMUSDT",
+    "spot": "RXOMUSDT",
+    "underlying": "XOM"
+  },
+  {
+    "perp": "OXYUSDT",
+    "spot": "ROXYUSDT",
+    "underlying": "OXY"
+  },
+  {
+    "perp": "EWJUSDT",
+    "spot": "REWJUSDT",
+    "underlying": "EWJ"
+  },
+  {
+    "perp": "EWYUSDT",
+    "spot": "REWYUSDT",
+    "underlying": "EWY"
+  },
+  {
+    "perp": "EWTUSDT",
+    "spot": "REWTUSDT",
+    "underlying": "EWT"
+  },
+  {
+    "perp": "KWEBUSDT",
+    "spot": "RKWEBUSDT",
+    "underlying": "KWEB"
+  },
+  {
+    "perp": "TQQQUSDT",
+    "spot": "RTQQQUSDT",
+    "underlying": "TQQQ"
+  },
+  {
+    "perp": "SQQQUSDT",
+    "spot": "RSQQQUSDT",
+    "underlying": "SQQQ"
+  },
+  {
+    "perp": "RKLBUSDT",
+    "spot": "RRKLBUSDT",
+    "underlying": "RKLB"
+  },
+  {
+    "perp": "BAUSDT",
+    "spot": "RBAUSDT",
+    "underlying": "BA"
+  },
+  {
+    "perp": "SOXLUSDT",
+    "spot": "RSOXLUSDT",
+    "underlying": "SOXL"
+  },
+  {
+    "perp": "SOXSUSDT",
+    "spot": "RSOXSUSDT",
+    "underlying": "SOXS"
+  },
+  {
+    "perp": "INDAUSDT",
+    "spot": "RINDAUSDT",
+    "underlying": "INDA"
+  },
+  {
+    "perp": "FLYUSDT",
+    "spot": "RFLYUSDT",
+    "underlying": "FLY"
+  },
+  {
+    "perp": "SNDKUSDT",
+    "spot": "RSNDKUSDT",
+    "underlying": "SNDK"
+  },
+  {
+    "perp": "LITEUSDT",
+    "spot": "RLITEUSDT",
+    "underlying": "LITE"
+  },
+  {
+    "perp": "AMDUSDT",
+    "spot": "RAMDUSDT",
+    "underlying": "AMD"
+  },
+  {
+    "perp": "AMATUSDT",
+    "spot": "RAMATUSDT",
+    "underlying": "AMAT"
+  },
+  {
+    "perp": "AAOIUSDT",
+    "spot": "RAAOIUSDT",
+    "underlying": "AAOI"
+  },
+  {
+    "perp": "COHRUSDT",
+    "spot": "RCOHRUSDT",
+    "underlying": "COHR"
+  },
+  {
+    "perp": "BEUSDT",
+    "spot": "RBEUSDT",
+    "underlying": "BE"
+  },
+  {
+    "perp": "NBISUSDT",
+    "spot": "RNBISUSDT",
+    "underlying": "NBIS"
+  },
+  {
+    "perp": "IONQUSDT",
+    "spot": "RIONQUSDT",
+    "underlying": "IONQ"
+  },
+  {
+    "perp": "OKLOUSDT",
+    "spot": "ROKLOUSDT",
+    "underlying": "OKLO"
+  },
+  {
+    "perp": "MPUSDT",
+    "spot": "RMPUSDT",
+    "underlying": "MP"
+  },
+  {
+    "perp": "CRDOUSDT",
+    "spot": "RCRDOUSDT",
+    "underlying": "CRDO"
+  },
+  {
+    "perp": "CRWVUSDT",
+    "spot": "RCRWVUSDT",
+    "underlying": "CRWV"
+  },
+  {
+    "perp": "APLDUSDT",
+    "spot": "RAPLDUSDT",
+    "underlying": "APLD"
+  },
+  {
+    "perp": "KLACUSDT",
+    "spot": "RKLACUSDT",
+    "underlying": "KLAC"
+  },
+  {
+    "perp": "AXTIUSDT",
+    "spot": "RAXTIUSDT",
+    "underlying": "AXTI"
+  },
+  {
+    "perp": "LWLGUSDT",
+    "spot": "RLWLGUSDT",
+    "underlying": "LWLG"
+  },
+  {
+    "perp": "DRAMUSDT",
+    "spot": "RDRAMUSDT",
+    "underlying": "DRAM"
+  },
+  {
+    "perp": "USARUSDT",
+    "spot": "RUSARUSDT",
+    "underlying": "USAR"
+  },
+  {
+    "perp": "NIOUSDT",
+    "spot": "RNIOUSDT",
+    "underlying": "NIO"
+  },
+  {
+    "perp": "CBRSUSDT",
+    "spot": "RCBRSUSDT",
+    "underlying": "CBRS"
+  },
+  {
+    "perp": "INFQUSDT",
+    "spot": "RINFQUSDT",
+    "underlying": "INFQ"
+  },
+  {
+    "perp": "VRTUSDT",
+    "spot": "RVRTUSDT",
+    "underlying": "VRT"
+  },
+  {
+    "perp": "ETNUSDT",
+    "spot": "RETNUSDT",
+    "underlying": "ETN"
+  },
+  {
+    "perp": "OUSTUSDT",
+    "spot": "ROUSTUSDT",
+    "underlying": "OUST"
+  },
+  {
+    "perp": "POETUSDT",
+    "spot": "RPOETUSDT",
+    "underlying": "POET"
+  },
+  {
+    "perp": "ONDSUSDT",
+    "spot": "RONDSUSDT",
+    "underlying": "ONDS"
+  },
+  {
+    "perp": "RDWUSDT",
+    "spot": "RRDWUSDT",
+    "underlying": "RDW"
+  },
+  {
+    "perp": "QCOMUSDT",
+    "spot": "RQCOMUSDT",
+    "underlying": "QCOM"
+  },
+  {
+    "perp": "WDCUSDT",
+    "spot": "RWDCUSDT",
+    "underlying": "WDC"
+  },
+  {
+    "perp": "SMCIUSDT",
+    "spot": "RSMCIUSDT",
+    "underlying": "SMCI"
+  },
+  {
+    "perp": "ASTSUSDT",
+    "spot": "RASTSUSDT",
+    "underlying": "ASTS"
+  },
+  {
+    "perp": "SPCXUSDT",
+    "spot": "RSPCXUSDT",
+    "underlying": "SPCX"
+  },
+  {
+    "perp": "JOBYUSDT",
+    "spot": "RJOBYUSDT",
+    "underlying": "JOBY"
+  },
+  {
+    "perp": "ACHRUSDT",
+    "spot": "RACHRUSDT",
+    "underlying": "ACHR"
+  },
+  {
+    "perp": "RGTIUSDT",
+    "spot": "RRGTIUSDT",
+    "underlying": "RGTI"
+  },
+  {
+    "perp": "QBTSUSDT",
+    "spot": "RQBTSUSDT",
+    "underlying": "QBTS"
+  },
+  {
+    "perp": "QUBTUSDT",
+    "spot": "RQUBTUSDT",
+    "underlying": "QUBT"
+  },
+  {
+    "perp": "PANWUSDT",
+    "spot": "RPANWUSDT",
+    "underlying": "PANW"
+  },
+  {
+    "perp": "SNOWUSDT",
+    "spot": "RSNOWUSDT",
+    "underlying": "SNOW"
+  },
+  {
+    "perp": "DELLUSDT",
+    "spot": "RDELLUSDT",
+    "underlying": "DELL"
+  },
+  {
+    "perp": "KTOSUSDT",
+    "spot": "RKTOSUSDT",
+    "underlying": "KTOS"
+  },
+  {
+    "perp": "AVAVUSDT",
+    "spot": "RAVAVUSDT",
+    "underlying": "AVAV"
+  },
+  {
+    "perp": "LMTUSDT",
+    "spot": "RLMTUSDT",
+    "underlying": "LMT"
+  },
+  {
+    "perp": "NOCUSDT",
+    "spot": "RNOCUSDT",
+    "underlying": "NOC"
+  },
+  {
+    "perp": "NOWUSDT",
+    "spot": "RNOWUSDT",
+    "underlying": "NOW"
+  },
+  {
+    "perp": "NTAPUSDT",
+    "spot": "RNTAPUSDT",
+    "underlying": "NTAP"
+  },
+  {
+    "perp": "SITMUSDT",
+    "spot": "RSITMUSDT",
+    "underlying": "SITM"
+  },
+  {
+    "perp": "SMRUSDT",
+    "spot": "RSMRUSDT",
+    "underlying": "SMR"
+  },
+  {
+    "perp": "CIENUSDT",
+    "spot": "RCIENUSDT",
+    "underlying": "CIEN"
+  },
+  {
+    "perp": "AMCUSDT",
+    "spot": "RAMCUSDT",
+    "underlying": "AMC"
+  },
+  {
+    "perp": "MDBUSDT",
+    "spot": "RMDBUSDT",
+    "underlying": "MDB"
+  },
+  {
+    "perp": "TWLOUSDT",
+    "spot": "RTWLOUSDT",
+    "underlying": "TWLO"
+  },
+  {
+    "perp": "DXYZUSDT",
+    "spot": "RDXYZUSDT",
+    "underlying": "DXYZ"
+  },
+  {
+    "perp": "ADBEUSDT",
+    "spot": "RADBEUSDT",
+    "underlying": "ADBE"
+  },
+  {
+    "perp": "IRENUSDT",
+    "spot": "RIRENUSDT",
+    "underlying": "IREN"
+  },
+  {
+    "perp": "BXUSDT",
+    "spot": "RBXUSDT",
+    "underlying": "BX"
+  },
+  {
+    "perp": "HPEUSDT",
+    "spot": "RHPEUSDT",
+    "underlying": "HPE"
+  },
+  {
+    "perp": "CRWDUSDT",
+    "spot": "RCRWDUSDT",
+    "underlying": "CRWD"
+  },
+  {
+    "perp": "IWMUSDT",
+    "spot": "RIWMUSDT",
+    "underlying": "IWM"
+  },
+  {
+    "perp": "SIMOUSDT",
+    "spot": "RSIMOUSDT",
+    "underlying": "SIMO"
+  },
+  {
+    "perp": "GLWUSDT",
+    "spot": "RGLWUSDT",
+    "underlying": "GLW"
+  },
+  {
+    "perp": "TSEMUSDT",
+    "spot": "RTSEMUSDT",
+    "underlying": "TSEM"
+  },
+  {
+    "perp": "OSSUSDT",
+    "spot": "ROSSUSDT",
+    "underlying": "OSS"
+  },
+  {
+    "perp": "AEHRUSDT",
+    "spot": "RAEHRUSDT",
+    "underlying": "AEHR"
+  },
+  {
+    "perp": "VUSDT",
+    "spot": "RVUSDT",
+    "underlying": "V"
+  },
+  {
+    "perp": "ABNBUSDT",
+    "spot": "RABNBUSDT",
+    "underlying": "ABNB"
+  },
+  {
+    "perp": "CMCSAUSDT",
+    "spot": "RCMCSAUSDT",
+    "underlying": "CMCSA"
+  },
+  {
+    "perp": "KOUSDT",
+    "spot": "RKOUSDT",
+    "underlying": "KO"
+  },
+  {
+    "perp": "FOXAUSDT",
+    "spot": "RFOXAUSDT",
+    "underlying": "FOXA"
+  },
+  {
+    "perp": "MARUSDT",
+    "spot": "RMARUSDT",
+    "underlying": "MAR"
+  },
+  {
+    "perp": "NKEUSDT",
+    "spot": "RNKEUSDT",
+    "underlying": "NKE"
+  },
+  {
+    "perp": "CCLUSDT",
+    "spot": "RCCLUSDT",
+    "underlying": "CCL"
+  },
+  {
+    "perp": "DKNGUSDT",
+    "spot": "RDKNGUSDT",
+    "underlying": "DKNG"
+  },
+  {
+    "perp": "UVXYUSDT",
+    "spot": "RUVXYUSDT",
+    "underlying": "UVXY"
+  },
+  {
+    "perp": "BMNRUSDT",
+    "spot": "RBMNRUSDT",
+    "underlying": "BMNR"
+  },
+  {
+    "perp": "ISRGUSDT",
+    "spot": "RISRGUSDT",
+    "underlying": "ISRG"
+  },
+  {
+    "perp": "SGOVUSDT",
+    "spot": "RSGOVUSDT",
+    "underlying": "SGOV"
+  },
+  {
+    "perp": "XLUUSDT",
+    "spot": "RXLUUSDT",
+    "underlying": "XLU"
+  },
+  {
+    "perp": "XLKUSDT",
+    "spot": "RXLKUSDT",
+    "underlying": "XLK"
+  },
+  {
+    "perp": "ROKUSDT",
+    "spot": "RROKUSDT",
+    "underlying": "ROK"
+  },
+  {
+    "perp": "SMHUSDT",
+    "spot": "RSMHUSDT",
+    "underlying": "SMH"
+  },
+  {
+    "perp": "CGNXUSDT",
+    "spot": "RCGNXUSDT",
+    "underlying": "CGNX"
+  },
+  {
+    "perp": "FLNCUSDT",
+    "spot": "RFLNCUSDT",
+    "underlying": "FLNC"
+  },
+  {
+    "perp": "LRCXUSDT",
+    "spot": "RLRCXUSDT",
+    "underlying": "LRCX"
+  },
+  {
+    "perp": "ALABUSDT",
+    "spot": "RALABUSDT",
+    "underlying": "ALAB"
+  },
+  {
+    "perp": "TERUSDT",
+    "spot": "RTERUSDT",
+    "underlying": "TER"
+  },
+  {
+    "perp": "APDUSDT",
+    "spot": "RAPDUSDT",
+    "underlying": "APD"
+  },
+  {
+    "perp": "LINUSDT",
+    "spot": "RLINUSDT",
+    "underlying": "LIN"
+  },
+  {
+    "perp": "FLEXUSDT",
+    "spot": "RFLEXUSDT",
+    "underlying": "FLEX"
+  },
+  {
+    "perp": "ADIUSDT",
+    "spot": "RADIUSDT",
+    "underlying": "ADI"
+  },
+  {
+    "perp": "GSUSDT",
+    "spot": "RGSUSDT",
+    "underlying": "GS"
+  },
+  {
+    "perp": "JPMUSDT",
+    "spot": "RJPMUSDT",
+    "underlying": "JPM"
+  },
+  {
+    "perp": "GEVUSDT",
+    "spot": "RGEVUSDT",
+    "underlying": "GEV"
+  },
+  {
+    "perp": "STRCUSDT",
+    "spot": "RSTRCUSDT",
+    "underlying": "STRC"
+  },
+  {
+    "perp": "MVLLUSDT",
+    "spot": "RMVLLUSDT",
+    "underlying": "MVLL"
+  },
+  {
+    "perp": "SONYUSDT",
+    "spot": "RSONYUSDT",
+    "underlying": "SONY"
+  },
+  {
+    "perp": "RAMUSDT",
+    "spot": "RRAMUSDT",
+    "underlying": "RAM"
+  },
+  {
+    "perp": "WENUSDT",
+    "spot": "RWENUSDT",
+    "underlying": "WEN"
+  },
+  {
+    "perp": "AALUSDT",
+    "spot": "RAALUSDT",
+    "underlying": "AAL"
+  },
+  {
+    "perp": "VOOUSDT",
+    "spot": "RVOOUSDT",
+    "underlying": "VOO"
+  },
+  {
+    "perp": "SOXXUSDT",
+    "spot": "RSOXXUSDT",
+    "underlying": "SOXX"
+  },
+  {
+    "perp": "TXNUSDT",
+    "spot": "RTXNUSDT",
+    "underlying": "TXN"
+  },
+  {
+    "perp": "BACUSDT",
+    "spot": "RBACUSDT",
+    "underlying": "BAC"
+  },
+  {
+    "perp": "CRMUSDT",
+    "spot": "RCRMUSDT",
+    "underlying": "CRM"
+  },
+  {
+    "perp": "AMKRUSDT",
+    "spot": "RAMKRUSDT",
+    "underlying": "AMKR"
+  },
+  {
+    "perp": "PDDUSDT",
+    "spot": "RPDDUSDT",
+    "underlying": "PDD"
+  },
+  {
+    "perp": "ASXUSDT",
+    "spot": "RASXUSDT",
+    "underlying": "ASX"
+  },
+  {
+    "perp": "SKHYUSDT",
+    "spot": "RSKHYUSDT",
+    "underlying": "SKHY"
+  },
+  {
+    "perp": "TTWOUSDT",
+    "spot": "RTTWOUSDT",
+    "underlying": "TTWO"
+  },
+  {
+    "perp": "ECHOUSDT",
+    "spot": "RECHOUSDT",
+    "underlying": "ECHO"
+  },
+  {
+    "perp": "CONLUSDT",
+    "spot": "RCONLUSDT",
+    "underlying": "CONL"
+  },
+  {
+    "perp": "KSTRUSDT",
+    "spot": "RKSTRUSDT",
+    "underlying": "KSTR"
+  },
+  {
+    "perp": "BSPUSDT",
+    "spot": "RBSPUSDT",
+    "underlying": "BSP"
+  },
+  {
+    "perp": "FWDIUSDT",
+    "spot": "RFWDIUSDT",
+    "underlying": "FWDI"
+  },
+  {
+    "perp": "MSTUUSDT",
+    "spot": "RMSTUUSDT",
+    "underlying": "MSTU"
+  },
+  {
+    "perp": "SNXXUSDT",
+    "spot": "RSNXXUSDT",
+    "underlying": "SNXX"
+  },
+  {
+    "perp": "XBIUSDT",
+    "spot": "RXBIUSDT",
+    "underlying": "XBI"
+  },
+  {
+    "perp": "TMUSDT",
+    "spot": "RTMUSDT",
+    "underlying": "TM"
+  },
+  {
+    "perp": "CPNGUSDT",
+    "spot": "RCPNGUSDT",
+    "underlying": "CPNG"
+  },
+  {
+    "perp": "NVDLUSDT",
+    "spot": "RNVDLUSDT",
+    "underlying": "NVDL"
+  },
+  {
+    "perp": "TSLLUSDT",
+    "spot": "RTSLLUSDT",
+    "underlying": "TSLL"
+  },
+  {
+    "perp": "AMZUUSDT",
+    "spot": "RAMZUUSDT",
+    "underlying": "AMZU"
+  },
+  {
+    "perp": "METUUSDT",
+    "spot": "RMETUUSDT",
+    "underlying": "METU"
+  },
+  {
+    "perp": "AAPUUSDT",
+    "spot": "RAAPUUSDT",
+    "underlying": "AAPU"
+  },
+  {
+    "perp": "MSFUUSDT",
+    "spot": "RMSFUUSDT",
+    "underlying": "MSFU"
+  },
+  {
+    "perp": "TZAUSDT",
+    "spot": "RTZAUSDT",
+    "underlying": "TZA"
+  },
+  {
+    "perp": "SHAZUSDT",
+    "spot": "RSHAZUSDT",
+    "underlying": "SHAZ"
+  },
+  {
+    "perp": "SOFIUSDT",
+    "spot": "RSOFIUSDT",
+    "underlying": "SOFI"
+  },
+  {
+    "perp": "PENGUSDT",
+    "spot": "RPENGUSDT",
+    "underlying": "PENG"
+  },
+  {
+    "perp": "TMFUSDT",
+    "spot": "RTMFUSDT",
+    "underlying": "TMF"
+  },
+  {
+    "perp": "BITOUSDT",
+    "spot": "RBITOUSDT",
+    "underlying": "BITO"
+  },
+  {
+    "perp": "XLVUSDT",
+    "spot": "RXLVUSDT",
+    "underlying": "XLV"
+  },
+  {
+    "perp": "IBBUSDT",
+    "spot": "RIBBUSDT",
+    "underlying": "IBB"
+  },
+  {
+    "perp": "GILDUSDT",
+    "spot": "RGILDUSDT",
+    "underlying": "GILD"
+  },
+  {
+    "perp": "BOTZUSDT",
+    "spot": "RBOTZUSDT",
+    "underlying": "BOTZ"
+  },
+  {
+    "perp": "JMKEUSDT",
+    "spot": "RJMKEUSDT",
+    "underlying": "JMKE"
+  },
+  {
+    "perp": "GFSUSDT",
+    "spot": "RGFSUSDT",
+    "underlying": "GFS"
+  },
+  {
+    "perp": "SSPCUSDT",
+    "spot": "RSSPCUSDT",
+    "underlying": "SSPC"
+  },
+  {
+    "perp": "BKNGUSDT",
+    "spot": "RBKNGUSDT",
+    "underlying": "BKNG"
+  },
+  {
+    "perp": "ZMUSDT",
+    "spot": "RZMUSDT",
+    "underlying": "ZM"
+  },
+  {
+    "perp": "AMGNUSDT",
+    "spot": "RAMGNUSDT",
+    "underlying": "AMGN"
+  },
+  {
+    "perp": "PYPLUSDT",
+    "spot": "RPYPLUSDT",
+    "underlying": "PYPL"
+  },
+  {
+    "perp": "SHOPUSDT",
+    "spot": "RSHOPUSDT",
+    "underlying": "SHOP"
+  },
+  {
+    "perp": "EWZUSDT",
+    "spot": "REWZUSDT",
+    "underlying": "EWZ"
+  },
+  {
+    "perp": "VSTUSDT",
+    "spot": "RVSTUSDT",
+    "underlying": "VST"
+  },
+  {
+    "perp": "XLEUSDT",
+    "spot": "RXLEUSDT",
+    "underlying": "XLE"
+  },
+  {
+    "perp": "DDOGUSDT",
+    "spot": "RDDOGUSDT",
+    "underlying": "DDOG"
+  },
+  {
+    "perp": "UBERUSDT",
+    "spot": "RUBERUSDT",
+    "underlying": "UBER"
+  },
+  {
+    "perp": "MELIUSDT",
+    "spot": "RMELIUSDT",
+    "underlying": "MELI"
+  },
+  {
+    "perp": "ANETUSDT",
+    "spot": "RANETUSDT",
+    "underlying": "ANET"
+  },
+  {
+    "perp": "GDXUSDT",
+    "spot": "RGDXUSDT",
+    "underlying": "GDX"
+  },
+  {
+    "perp": "LYTEUSDT",
+    "spot": "RLYTEUSDT",
+    "underlying": "LYTE"
+  },
+  {
+    "perp": "NETUSDT",
+    "spot": "RNETUSDT",
+    "underlying": "NET"
+  },
+  {
+    "perp": "MRNAUSDT",
+    "spot": "RMRNAUSDT",
+    "underlying": "MRNA"
+  },
+  {
+    "perp": "TEMUSDT",
+    "spot": "RTEMUSDT",
+    "underlying": "TEM"
+  },
+  {
+    "perp": "MRKUSDT",
+    "spot": "RMRKUSDT",
+    "underlying": "MRK"
+  },
+  {
+    "perp": "DEUSDT",
+    "spot": "RDEUSDT",
+    "underlying": "DE"
+  },
+  {
+    "perp": "DJTUSDT",
+    "spot": "RDJTUSDT",
+    "underlying": "DJT"
+  },
+  {
+    "perp": "MARAUSDT",
+    "spot": "RMARAUSDT",
+    "underlying": "MARA"
+  },
+  {
+    "perp": "PURRUSDT",
+    "spot": "RPURRUSDT",
+    "underlying": "PURR"
+  },
+  {
+    "perp": "OKTAUSDT",
+    "spot": "ROKTAUSDT",
+    "underlying": "OKTA"
+  },
+  {
+    "perp": "VEEVUSDT",
+    "spot": "RVEEVUSDT",
+    "underlying": "VEEV"
+  },
+  {
+    "perp": "NVSUSDT",
+    "spot": "RNVSUSDT",
+    "underlying": "NVS"
+  },
+  {
+    "perp": "GTLBUSDT",
+    "spot": "RGTLBUSDT",
+    "underlying": "GTLB"
+  },
+  {
+    "perp": "ZSUSDT",
+    "spot": "RZSUSDT",
+    "underlying": "ZS"
+  },
+  {
+    "perp": "TEAMUSDT",
+    "spot": "RTEAMUSDT",
+    "underlying": "TEAM"
+  },
+  {
+    "perp": "GPROUSDT",
+    "spot": "RGPROUSDT",
+    "underlying": "GPRO"
+  },
+  {
+    "perp": "BYDUSDT",
+    "spot": "RBYDUSDT",
+    "underlying": "BYD"
+  },
+  {
+    "perp": "QLDUSDT",
+    "spot": "RQLDUSDT",
+    "underlying": "QLD"
+  },
+  {
+    "perp": "IBITUSDT",
+    "spot": "RIBITUSDT",
+    "underlying": "IBIT"
+  },
+  {
+    "perp": "CLSKUSDT",
+    "spot": "RCLSKUSDT",
+    "underlying": "CLSK"
+  },
+  {
+    "perp": "SDGRUSDT",
+    "spot": "RSDGRUSDT",
+    "underlying": "SDGR"
+  },
+  {
+    "perp": "GNRCUSDT",
+    "spot": "RGNRCUSDT",
+    "underlying": "GNRC"
+  },
+  {
+    "perp": "PATHUSDT",
+    "spot": "RPATHUSDT",
+    "underlying": "PATH"
+  },
+  {
+    "perp": "HUTUSDT",
+    "spot": "RHUTUSDT",
+    "underlying": "HUT"
+  },
+  {
+    "perp": "TLTUSDT",
+    "spot": "RTLTUSDT",
+    "underlying": "TLT"
+  },
+  {
+    "perp": "JEPQUSDT",
+    "spot": "RJEPQUSDT",
+    "underlying": "JEPQ"
+  },
+  {
+    "perp": "CORZUSDT",
+    "spot": "RCORZUSDT",
+    "underlying": "CORZ"
+  },
+  {
+    "perp": "BLSHUSDT",
+    "spot": "RBLSHUSDT",
+    "underlying": "BLSH"
+  },
+  {
+    "perp": "SECZUSDT",
+    "spot": "RSECZUSDT",
+    "underlying": "SECZ"
+  },
+  {
+    "perp": "WBDUSDT",
+    "spot": "RWBDUSDT",
+    "underlying": "WBD"
+  },
+  {
+    "perp": "URNMUSDT",
+    "spot": "RURNMUSDT",
+    "underlying": "URNM"
+  },
+  {
+    "perp": "TWSTUSDT",
+    "spot": "RTWSTUSDT",
+    "underlying": "TWST"
+  },
+  {
+    "perp": "CVNAUSDT",
+    "spot": "RCVNAUSDT",
+    "underlying": "CVNA"
+  },
+  {
+    "perp": "KODUSDT",
+    "spot": "RKODUSDT",
+    "underlying": "KOD"
+  },
+  {
+    "perp": "RUMUSDT",
+    "spot": "RRUMUSDT",
+    "underlying": "RUM"
+  },
+  {
+    "perp": "AKAMUSDT",
+    "spot": "RAKAMUSDT",
+    "underlying": "AKAM"
+  }
+]

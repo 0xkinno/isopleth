@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:44:45.183Z",
+  "key": "NVDAUSDT",
+  "hash": "3b2074fb657e7fe866a0fdb8fff3b94c12f173b8a802a6118f3a5d4eed1f653d",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161084781,
+    "data": null
+  }
+}

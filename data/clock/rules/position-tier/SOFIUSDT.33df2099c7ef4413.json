@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:09.261Z",
+  "key": "SOFIUSDT",
+  "hash": "33df2099c7ef441385d64abc9b3dcaaaac0142f81607345ff9d65f654474ad26",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161168836,
+    "data": null
+  }
+}

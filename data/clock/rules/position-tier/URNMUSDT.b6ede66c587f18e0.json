@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:34.656Z",
+  "key": "URNMUSDT",
+  "hash": "b6ede66c587f18e0df15e87d4bd22d606fb8f2d5635bf395e23efe8c687ab2b4",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161194271,
+    "data": null
+  }
+}

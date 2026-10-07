@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:37.822Z",
+  "key": "ETHUSDT",
+  "hash": "754110c8ce5b498838021c86cc22f54bf86bb1cf7cb16e2b8db473dd381524da",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161197419,
+    "data": null
+  }
+}

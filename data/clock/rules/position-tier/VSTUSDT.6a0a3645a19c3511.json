@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:17.266Z",
+  "key": "VSTUSDT",
+  "hash": "6a0a3645a19c35114708f6a642d73c0182219fcace3eb6894695df69b6b62859",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161176877,
+    "data": null
+  }
+}

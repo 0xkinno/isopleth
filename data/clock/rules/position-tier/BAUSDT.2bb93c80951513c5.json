@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:06.748Z",
+  "key": "BAUSDT",
+  "hash": "2bb93c80951513c517be27daa0b554efdda819487c0c6439cc3f06f426008c7b",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161106360,
+    "data": null
+  }
+}

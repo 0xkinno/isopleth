@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:20.596Z",
+  "key": "LYTEUSDT",
+  "hash": "536c3ff9cfa986a1154519d08b8d54c22a0ea7721ca0b8b8021798837bd3a472",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161180202,
+    "data": null
+  }
+}

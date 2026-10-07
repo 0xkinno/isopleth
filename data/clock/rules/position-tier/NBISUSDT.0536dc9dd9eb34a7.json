@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:12.384Z",
+  "key": "NBISUSDT",
+  "hash": "0536dc9dd9eb34a7cb5eff11c9840e9962f8734458527c7811bf3d7e7d8bc2c1",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161111991,
+    "data": null
+  }
+}

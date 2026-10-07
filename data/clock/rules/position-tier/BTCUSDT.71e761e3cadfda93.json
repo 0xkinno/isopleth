@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:37.345Z",
+  "key": "BTCUSDT",
+  "hash": "71e761e3cadfda9395a79e002817601cb4e586b12b0c55b269af2281ee91fbdc",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161196966,
+    "data": null
+  }
+}

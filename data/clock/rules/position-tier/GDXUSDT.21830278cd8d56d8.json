@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:20.144Z",
+  "key": "GDXUSDT",
+  "hash": "21830278cd8d56d8638bbecc38cc4fe98afe339a6042e97ffa10f60059e22f80",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161179751,
+    "data": null
+  }
+}

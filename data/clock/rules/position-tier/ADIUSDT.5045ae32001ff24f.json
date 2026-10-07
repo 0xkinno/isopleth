@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:51.389Z",
+  "key": "ADIUSDT",
+  "hash": "5045ae32001ff24fa2f0ddfc1f021f31fb1284b810553288b745bb678c167d13",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161150987,
+    "data": null
+  }
+}

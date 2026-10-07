@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:47.470Z",
+  "key": "CGNXUSDT",
+  "hash": "e8eed6a99efbfc1c17b9d451392cc86b41d2c342fc97f13d1f752516a6580000",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161147077,
+    "data": null
+  }
+}

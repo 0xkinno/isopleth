@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:01.784Z",
+  "key": "KSTRUSDT",
+  "hash": "dd3673b4468e7769a2321b8a92828103589edfc0f47e9f292e27dd9e253acaf2",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161161401,
+    "data": null
+  }
+}

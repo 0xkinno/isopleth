@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:51.841Z",
+  "key": "GSUSDT",
+  "hash": "07b2d38420610d91c85f01734c003dac82decfd749ee4b8302a64ec714bbaa3f",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161151452,
+    "data": null
+  }
+}

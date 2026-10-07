@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:02.666Z",
+  "key": "XOMUSDT",
+  "hash": "10efc4395eb179934a0c7cfae4e2a5fac3d2fa65e019fb1e3ebe11d4018ec1da",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161102271,
+    "data": null
+  }
+}

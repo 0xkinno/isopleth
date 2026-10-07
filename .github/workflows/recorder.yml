@@ -1,0 +1,21 @@
+name: collateral-clock
+on:
+  schedule: [{ cron: "*/10 * * * *" }]
+  workflow_dispatch:
+permissions: { contents: write }
+concurrency: { group: recorder, cancel-in-progress: false }
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: corepack enable && pnpm install --frozen-lockfile
+      - run: pnpm discovery:e1:tick
+      - run: |
+          git config user.name "isopleth-recorder"
+          git config user.email "recorder@users.noreply.github.com"
+          git add data/clock
+          git diff --staged --quiet || git commit -m "clock: $(date -u +%FT%TZ)"
+          git pull --rebase --autostash && git push

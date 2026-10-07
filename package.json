@@ -1,0 +1,31 @@
+{
+  "name": "isopleth",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ISOPLETH - Counterfactual Collateral Surface for Bitget UTA rToken margin. Bitget AI Base Camp Hackathon S2.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@12.3.4",
+  "scripts": {
+    "discovery:e2": "tsx scripts/discovery/e2-instrument-scan.ts",
+    "discovery:e2:rules": "tsx scripts/discovery/e2-rules-extraction.ts",
+    "discovery:e3": "tsx scripts/discovery/e3-silent-fallback-trap.ts",
+    "discovery:e4:windows": "tsx scripts/discovery/e4-build-windows.ts",
+    "discovery:e1": "tsx scripts/discovery/e1-collateral-clock.ts",
+    "discovery:e1:tick": "tsx scripts/discovery/recorder-tick.ts",
+    "discovery:clockmap": "tsx scripts/discovery/segment-clock.ts",
+    "typecheck": "tsc -b --pretty",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  }
+}

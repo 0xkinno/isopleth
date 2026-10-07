@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:05.366Z",
+  "key": "TQQQUSDT",
+  "hash": "e75550ab7f18b4c873ab478333a60ac323fab1a7c33b98bd9f5626226129dbe2",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161104982,
+    "data": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:57.137Z",
+  "key": "TXNUSDT",
+  "hash": "0c6e794b9685f568b2d390bf1f1a04a772620a136074731e008de7b030a727ce",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161156667,
+    "data": null
+  }
+}

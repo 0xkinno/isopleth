@@ -1,0 +1,66 @@
+{
+  "_comment": "Format per FINAL_INSTRUCTION.md section 11: { id, statement, label, evidence_path, reproduce_command, status }. status is PROVEN / PARTIAL / UNKNOWN. This file is hand-maintained until Phase C builds pnpm manifest / the /proof route to generate and render it.",
+  "generatedAt": "2026-10-05",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The rToken universe eligible as UTA collateral can be discovered live from public Bitget endpoints, with no hardcoded symbol list.",
+      "label": "Instrument discovery",
+      "evidence_path": "data/clock/pairs.json, data/clock/instruments-raw/",
+      "reproduce_command": "pnpm discovery:e2",
+      "status": "PROVEN"
+    },
+    {
+      "id": "C2",
+      "statement": "rToken candle requests silently coerce type=index/mark/premium to type=market, with no error — a trap that would otherwise corrupt any code treating candle data as a reference-price series.",
+      "label": "Silent-fallback trap (F8)",
+      "evidence_path": "data/clock/e3-fallback-trap.json",
+      "reproduce_command": "pnpm discovery:e3",
+      "status": "PROVEN"
+    },
+    {
+      "id": "C3",
+      "statement": "The collateral discount-rate tier ladder and the maintenance-margin position-tier ladder for the full rToken + core-crypto universe can be captured live and content-hashed for change detection.",
+      "label": "Tier ladder capture",
+      "evidence_path": "data/clock/rules/",
+      "reproduce_command": "pnpm discovery:e2:rules",
+      "status": "PROVEN"
+    },
+    {
+      "id": "C4",
+      "statement": "The public stock-perp indexPrice freezes on a weekend/holiday schedule and thaws in one step, at instants not published to the minute.",
+      "label": "Collateral Clock (the headline discovery)",
+      "evidence_path": "data/clock/raw/e1.jsonl, data/clock/clock-map.json",
+      "reproduce_command": "pnpm discovery:e1 (long-running) then pnpm discovery:clockmap",
+      "status": "PARTIAL",
+      "note": "As of 2026-10-07: 2 of 241 pairs (AEHRUSDT, LYTEUSDT) show a confirmed ~19-minute freeze+thaw during the weekday-overnight window (20:00-04:00 ET), evidence in data/clock/clock-map.json. But liquid names (AAPLUSDT checked directly) show indexPrice changing on every single tick through the same Sunday-night/early-Monday window the recorder covered - the opposite of a freeze. Current honest read: thin-liquidity names go stale for short stretches overnight (a real, different, smaller finding), while the documented session-wide freeze (F1) has not yet been directly confirmed in a liquid name - partly because recording started mid-weekend (2026-10-04 ~20:30 ET), possibly after the Friday freeze had already begun or partially lifted. The overnight session tonight (2026-10-07) through the Wednesday 09:30 ET open is the next clean test window; do not upgrade this to PROVEN without a liquid-name freeze confirmed across that specific window."
+    },
+    {
+      "id": "C5",
+      "statement": "Whether markPrice floats independently or clamps to the frozen indexPrice during a market closure.",
+      "label": "U6",
+      "evidence_path": "data/clock/clock-map.json",
+      "reproduce_command": "pnpm discovery:clockmap",
+      "status": "UNKNOWN",
+      "note": "210/241 pairs show indexPrice+markPrice+spot all idle together (STALE) in the data so far, versus 31/241 showing the FROZEN signature (index idle, mark/spot moving). Suggestive, not sufficient - sample is a few hours of a single weekday, not a closed-market window."
+    },
+    {
+      "id": "C6",
+      "statement": "Collateral/position tier boundaries are inclusive on the upper bound and exclusive on the lower bound - i.e. a tier covers (lo, hi].",
+      "label": "U5 / U8 tier boundary semantics",
+      "evidence_path": "none yet",
+      "reproduce_command": "n/a - needs a re-fetched Bitget support article or an E5 authenticated boundary probe",
+      "status": "UNKNOWN",
+      "note": "This is the kernel's planned convention (FINAL_INSTRUCTION.md section 6.2) and is currently an assumption carried over from the spec, not an independently verified fact."
+    },
+    {
+      "id": "C7",
+      "statement": "The reference-price clock's reopening gap (G_w) is predictable from the weekend rToken spot move, beating a null and a permutation control.",
+      "label": "E4 shadow-predictor pre-registration",
+      "evidence_path": "data/windows/pre-registration.md, data/windows/window-set.json",
+      "reproduce_command": "not yet built - replay script pending",
+      "status": "UNKNOWN",
+      "note": "Rule is pre-registered in writing. No G_w values exist yet to test it against."
+    }
+  ]
+}

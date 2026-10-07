@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:07.209Z",
+  "key": "SOXLUSDT",
+  "hash": "2bfc1757bfa4c5433c831a47e7c1890f47b8ddcec92bac4225c11837df608998",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161106823,
+    "data": null
+  }
+}

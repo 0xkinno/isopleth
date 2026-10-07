@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:01.263Z",
+  "key": "WMTUSDT",
+  "hash": "e355966ba1035027a4e58c3c41988aedaba932478d74b4f49dd903b5934df151",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161100840,
+    "data": null
+  }
+}

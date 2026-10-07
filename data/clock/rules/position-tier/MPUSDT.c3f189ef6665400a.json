@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:13.769Z",
+  "key": "MPUSDT",
+  "hash": "c3f189ef6665400aec37890e5a1cc754329e28ecf999dca33b6737c6394e16ce",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161113388,
+    "data": null
+  }
+}

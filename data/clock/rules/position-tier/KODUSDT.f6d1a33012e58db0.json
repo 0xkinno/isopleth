@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:36.007Z",
+  "key": "KODUSDT",
+  "hash": "f6d1a33012e58db0bb455a0c3f1dd92c99b34a61846c14cc321d602bbaa6fdc5",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161195625,
+    "data": null
+  }
+}

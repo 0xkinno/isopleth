@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:15.707Z",
+  "key": "KLACUSDT",
+  "hash": "dda3295c77ce196c2e98d3b695d9814bfc2768800e2a8987a76b1a2e4e24034d",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161115244,
+    "data": null
+  }
+}

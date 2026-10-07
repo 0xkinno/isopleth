@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:15.174Z",
+  "key": "APLDUSDT",
+  "hash": "455877ec899788a839368ef6111c82c0963fdc29f7a926a719f911db948b700a",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161114766,
+    "data": null
+  }
+}

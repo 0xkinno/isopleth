@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:36.227Z",
+  "key": "CRWDUSDT",
+  "hash": "d82807555b2021f0df3476b3b82ae5a3da411fbbf15f921c21919ed68fa6dc21",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161135799,
+    "data": null
+  }
+}

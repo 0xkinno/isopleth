@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:44:52.266Z",
+  "key": "GEUSDT",
+  "hash": "871f2dc6ec9d5e3e19d648d50c0e28d5a11ade481dc080d52c70832501c0f513",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161091865,
+    "data": null
+  }
+}

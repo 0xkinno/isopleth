@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:46:21.119Z",
+  "key": "NETUSDT",
+  "hash": "0af9dcc41ccb63ba794a793da16ef3d3476858de6e018106941aab90f4dfba13",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161180659,
+    "data": null
+  }
+}

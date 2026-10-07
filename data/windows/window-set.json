@@ -1,0 +1,394 @@
+{
+  "generatedAt": "2026-10-05T00:41:55.229Z",
+  "launchDate": "2026-06-04",
+  "horizonEnd": "2026-12-31",
+  "calendarSource": "https://www.nyse.com/markets/hours-calendars",
+  "windowCount": 31,
+  "windows": [
+    {
+      "id": "2026-06-05_to_2026-06-08",
+      "freezeStart": "2026-06-05",
+      "thawDate": "2026-06-08",
+      "nonTradingDates": [
+        "2026-06-06",
+        "2026-06-07"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-06-12_to_2026-06-15",
+      "freezeStart": "2026-06-12",
+      "thawDate": "2026-06-15",
+      "nonTradingDates": [
+        "2026-06-13",
+        "2026-06-14"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-06-18_to_2026-06-22",
+      "freezeStart": "2026-06-18",
+      "thawDate": "2026-06-22",
+      "nonTradingDates": [
+        "2026-06-19",
+        "2026-06-20",
+        "2026-06-21"
+      ],
+      "holidaysInvolved": [
+        "Juneteenth National Independence Day"
+      ],
+      "freezeStartIsEarlyClose": false,
+      "kind": "holiday-adjacent-weekend"
+    },
+    {
+      "id": "2026-06-26_to_2026-06-29",
+      "freezeStart": "2026-06-26",
+      "thawDate": "2026-06-29",
+      "nonTradingDates": [
+        "2026-06-27",
+        "2026-06-28"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-07-02_to_2026-07-06",
+      "freezeStart": "2026-07-02",
+      "thawDate": "2026-07-06",
+      "nonTradingDates": [
+        "2026-07-03",
+        "2026-07-04",
+        "2026-07-05"
+      ],
+      "holidaysInvolved": [
+        "Independence Day (observed, July 4 falls on a Saturday)"
+      ],
+      "freezeStartIsEarlyClose": false,
+      "kind": "holiday-adjacent-weekend"
+    },
+    {
+      "id": "2026-07-10_to_2026-07-13",
+      "freezeStart": "2026-07-10",
+      "thawDate": "2026-07-13",
+      "nonTradingDates": [
+        "2026-07-11",
+        "2026-07-12"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-07-17_to_2026-07-20",
+      "freezeStart": "2026-07-17",
+      "thawDate": "2026-07-20",
+      "nonTradingDates": [
+        "2026-07-18",
+        "2026-07-19"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-07-24_to_2026-07-27",
+      "freezeStart": "2026-07-24",
+      "thawDate": "2026-07-27",
+      "nonTradingDates": [
+        "2026-07-25",
+        "2026-07-26"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-07-31_to_2026-08-03",
+      "freezeStart": "2026-07-31",
+      "thawDate": "2026-08-03",
+      "nonTradingDates": [
+        "2026-08-01",
+        "2026-08-02"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-08-07_to_2026-08-10",
+      "freezeStart": "2026-08-07",
+      "thawDate": "2026-08-10",
+      "nonTradingDates": [
+        "2026-08-08",
+        "2026-08-09"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-08-14_to_2026-08-17",
+      "freezeStart": "2026-08-14",
+      "thawDate": "2026-08-17",
+      "nonTradingDates": [
+        "2026-08-15",
+        "2026-08-16"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-08-21_to_2026-08-24",
+      "freezeStart": "2026-08-21",
+      "thawDate": "2026-08-24",
+      "nonTradingDates": [
+        "2026-08-22",
+        "2026-08-23"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-08-28_to_2026-08-31",
+      "freezeStart": "2026-08-28",
+      "thawDate": "2026-08-31",
+      "nonTradingDates": [
+        "2026-08-29",
+        "2026-08-30"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-09-04_to_2026-09-08",
+      "freezeStart": "2026-09-04",
+      "thawDate": "2026-09-08",
+      "nonTradingDates": [
+        "2026-09-05",
+        "2026-09-06",
+        "2026-09-07"
+      ],
+      "holidaysInvolved": [
+        "Labor Day"
+      ],
+      "freezeStartIsEarlyClose": false,
+      "kind": "holiday-adjacent-weekend"
+    },
+    {
+      "id": "2026-09-11_to_2026-09-14",
+      "freezeStart": "2026-09-11",
+      "thawDate": "2026-09-14",
+      "nonTradingDates": [
+        "2026-09-12",
+        "2026-09-13"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-09-18_to_2026-09-21",
+      "freezeStart": "2026-09-18",
+      "thawDate": "2026-09-21",
+      "nonTradingDates": [
+        "2026-09-19",
+        "2026-09-20"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-09-25_to_2026-09-28",
+      "freezeStart": "2026-09-25",
+      "thawDate": "2026-09-28",
+      "nonTradingDates": [
+        "2026-09-26",
+        "2026-09-27"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-10-02_to_2026-10-05",
+      "freezeStart": "2026-10-02",
+      "thawDate": "2026-10-05",
+      "nonTradingDates": [
+        "2026-10-03",
+        "2026-10-04"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-10-09_to_2026-10-12",
+      "freezeStart": "2026-10-09",
+      "thawDate": "2026-10-12",
+      "nonTradingDates": [
+        "2026-10-10",
+        "2026-10-11"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-10-16_to_2026-10-19",
+      "freezeStart": "2026-10-16",
+      "thawDate": "2026-10-19",
+      "nonTradingDates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-10-23_to_2026-10-26",
+      "freezeStart": "2026-10-23",
+      "thawDate": "2026-10-26",
+      "nonTradingDates": [
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-10-30_to_2026-11-02",
+      "freezeStart": "2026-10-30",
+      "thawDate": "2026-11-02",
+      "nonTradingDates": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-11-06_to_2026-11-09",
+      "freezeStart": "2026-11-06",
+      "thawDate": "2026-11-09",
+      "nonTradingDates": [
+        "2026-11-07",
+        "2026-11-08"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-11-13_to_2026-11-16",
+      "freezeStart": "2026-11-13",
+      "thawDate": "2026-11-16",
+      "nonTradingDates": [
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-11-20_to_2026-11-23",
+      "freezeStart": "2026-11-20",
+      "thawDate": "2026-11-23",
+      "nonTradingDates": [
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-11-25_to_2026-11-27",
+      "freezeStart": "2026-11-25",
+      "thawDate": "2026-11-27",
+      "nonTradingDates": [
+        "2026-11-26"
+      ],
+      "holidaysInvolved": [
+        "Thanksgiving Day"
+      ],
+      "freezeStartIsEarlyClose": false,
+      "kind": "midweek-holiday"
+    },
+    {
+      "id": "2026-11-27_to_2026-11-30",
+      "freezeStart": "2026-11-27",
+      "thawDate": "2026-11-30",
+      "nonTradingDates": [
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": true,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-12-04_to_2026-12-07",
+      "freezeStart": "2026-12-04",
+      "thawDate": "2026-12-07",
+      "nonTradingDates": [
+        "2026-12-05",
+        "2026-12-06"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-12-11_to_2026-12-14",
+      "freezeStart": "2026-12-11",
+      "thawDate": "2026-12-14",
+      "nonTradingDates": [
+        "2026-12-12",
+        "2026-12-13"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-12-18_to_2026-12-21",
+      "freezeStart": "2026-12-18",
+      "thawDate": "2026-12-21",
+      "nonTradingDates": [
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "holidaysInvolved": [],
+      "freezeStartIsEarlyClose": false,
+      "kind": "weekend"
+    },
+    {
+      "id": "2026-12-24_to_2026-12-28",
+      "freezeStart": "2026-12-24",
+      "thawDate": "2026-12-28",
+      "nonTradingDates": [
+        "2026-12-25",
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "holidaysInvolved": [
+        "Christmas Day"
+      ],
+      "freezeStartIsEarlyClose": true,
+      "kind": "holiday-adjacent-weekend"
+    }
+  ]
+}

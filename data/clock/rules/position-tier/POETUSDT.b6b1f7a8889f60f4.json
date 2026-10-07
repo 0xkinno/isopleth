@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:20.853Z",
+  "key": "POETUSDT",
+  "hash": "b6b1f7a8889f60f412cd4e06fe34cf37a793703011cb9a5dbb9cafbce84df15a",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161120445,
+    "data": null
+  }
+}

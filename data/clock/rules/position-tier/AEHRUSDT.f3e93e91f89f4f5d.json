@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:39.070Z",
+  "key": "AEHRUSDT",
+  "hash": "f3e93e91f89f4f5d049adeb3ec75abccc0eda33d44be339e037a071d169cee02",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161138639,
+    "data": null
+  }
+}

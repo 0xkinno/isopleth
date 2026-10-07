@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:52.337Z",
+  "key": "JPMUSDT",
+  "hash": "05eede0417b6b399dafe5612fc3af65bf56c0d36f5f31ca48004f1abaee7394e",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161151930,
+    "data": null
+  }
+}

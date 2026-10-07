@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:44:51.349Z",
+  "key": "IBMUSDT",
+  "hash": "e5eb20a643b63b4eb87b994da9695e1807d54fa9a92778093bd96a3a808ed654",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161090965,
+    "data": null
+  }
+}

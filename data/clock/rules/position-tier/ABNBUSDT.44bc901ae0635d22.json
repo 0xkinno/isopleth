@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-05T00:45:40.000Z",
+  "key": "ABNBUSDT",
+  "hash": "44bc901ae0635d223a8db6a269eb2aa37d76768f1a912a7a2a0369d543eb2cf2",
+  "body": {
+    "code": "400172",
+    "msg": "Parameter verification failed",
+    "requestTime": 1791161139615,
+    "data": null
+  }
+}

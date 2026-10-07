@@ -1,0 +1,22 @@
+{
+  "source": "https://www.nyse.com/markets/hours-calendars",
+  "fetchedAt": "2026-10-05T00:00:00Z",
+  "year": 2026,
+  "fullClosures": [
+    { "date": "2026-01-01", "name": "New Year's Day" },
+    { "date": "2026-01-19", "name": "Martin Luther King, Jr. Day" },
+    { "date": "2026-02-16", "name": "Washington's Birthday" },
+    { "date": "2026-04-03", "name": "Good Friday" },
+    { "date": "2026-05-25", "name": "Memorial Day" },
+    { "date": "2026-06-19", "name": "Juneteenth National Independence Day" },
+    { "date": "2026-07-03", "name": "Independence Day (observed, July 4 falls on a Saturday)" },
+    { "date": "2026-09-07", "name": "Labor Day" },
+    { "date": "2026-11-26", "name": "Thanksgiving Day" },
+    { "date": "2026-12-25", "name": "Christmas Day" }
+  ],
+  "earlyCloses_1pmET": [
+    { "date": "2026-11-27", "name": "Day after Thanksgiving" },
+    { "date": "2026-12-24", "name": "Christmas Eve" }
+  ],
+  "note": "Fetched via WebFetch against the live nyse.com calendar page on 2026-10-05. Re-verify before final submission in case NYSE amends the schedule."
+}
