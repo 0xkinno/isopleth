@@ -3,12 +3,23 @@
 // the growing multi-MB raw tick log into the deployment. Every number here
 // traces back to a real file in data/ - nothing here is invented for the UI.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const OUT_DIR = "apps/web/public/data";
+// Resolved relative to this file, never to process.cwd() - this script is
+// invoked both from the monorepo root (pnpm run sync:web) and from inside
+// apps/web (as part of `next build`, where Vercel's Root Directory makes
+// cwd=apps/web), and a cwd-relative path silently resolved to nothing in the
+// latter case, making every number in the deployed summary quietly report
+// zero instead of real data - exactly the kind of silent-wrong-number bug
+// this project's own rules (I5) exist to prevent. This exact bug has already
+// bitten this build twice; do not revert this to a bare relative path again.
+const ROOT = path.resolve(fileURLToPath(new URL(".", import.meta.url)), "../..");
+const OUT_DIR = path.join(ROOT, "apps/web/public/data");
 
-async function readJson<T>(path: string, fallback: T): Promise<T> {
+async function readJson<T>(relPath: string, fallback: T): Promise<T> {
   try {
-    return JSON.parse(await readFile(path, "utf8")) as T;
+    return JSON.parse(await readFile(path.join(ROOT, relPath), "utf8")) as T;
   } catch {
     return fallback;
   }
@@ -69,8 +80,8 @@ async function main() {
   };
 
   await mkdir(OUT_DIR, { recursive: true });
-  await writeFile(`${OUT_DIR}/summary.json`, JSON.stringify(summary, null, 2));
-  console.log(`[sync-web-data] wrote ${OUT_DIR}/summary.json (${clockMap.rawRecordCount} records, ${clockMap.pairCount} pairs, ${confirmedFreezeThaw.length} confirmed freeze+thaw)`);
+  await writeFile(path.join(OUT_DIR, "summary.json"), JSON.stringify(summary, null, 2));
+  console.log(`[sync-web-data] wrote ${path.join(OUT_DIR, "summary.json")} (${clockMap.rawRecordCount} records, ${clockMap.pairCount} pairs, ${confirmedFreezeThaw.length} confirmed freeze+thaw)`);
 }
 
 main().catch((e) => {
