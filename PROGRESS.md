@@ -255,3 +255,102 @@ only so far), the tool-calling loop proper (narration is single-turn), the
 E4 replay harness, `pnpm bench` / `pnpm verify:offline`, Lighthouse
 CLS/LCP, a Playwright-level recorder-down simulation, screenshots, video,
 and the final claims audit before actual submission.
+
+## 2026-10-07 (final pass this session) — closed every remaining build-blocked item, README overhaul, real Vercel blocker
+
+Went through the full checklist above item by item. Everything that was
+blocked on missing code is now built; what remains is blocked on either
+elapsed calendar time or credentials this session doesn't have — both
+stated explicitly below rather than glossed over.
+
+**GitHub Actions recorder had silently never run.** Checked
+`github.com/0xkinno/isopleth/actions`: the `collateral-clock` workflow had
+been active for ~5 hours on a `*/10 * * * *` cron with **zero** total runs.
+Triggered it by hand via `workflow_dispatch` (GitHub API) — it ran clean
+and committed new ticks (43,401 → 43,883). Triggered it a second time a
+few minutes later to keep data flowing while this session continued. This
+explains the apparent recording gap from 2026-10-05 onward far better than
+"the user forgot to start it" — the workflow was there and active, GitHub's
+scheduler just never fired it on its own. Worth checking the Actions tab
+periodically to confirm the 10-minute cron is now running unattended; if
+it stalls again, a manual `workflow_dispatch` is the fix, not a code change.
+
+**Built and verified, all today:**
+- `pnpm verify:offline` (`scripts/verify-offline.ts`): recomputes the
+  kernel against golden fixtures (`scripts/golden/build-golden.ts`,
+  `data/verify/golden.json`), re-verifies the full 43,883-record clock hash
+  chain via a new standalone verifier (`packages/data/src/chainVerify.ts`),
+  checks every file in the last manifest run still hashes the same, and
+  exercises the number-binding and F8 guards. **5/5 passing, zero network,
+  zero model calls.**
+- That same chain verifier closed out break-campaign item **B8** (one byte
+  tampered in a stored snapshot → detected) from `NOT_YET` to a real
+  `PASS` — confirmed the real log verifies clean, then confirmed a
+  one-field tamper on a copy of the last record changes its recomputed
+  hash. Break campaign is now **8/13** verified, 0 failed.
+- `pnpm bench` (`scripts/bench.ts`): a synthetic 36-account grid
+  (leverage × collateral share × position size) compared against two
+  controls at equal dollar cost. Isopleth's optimizer restores the
+  threshold in 100% of the 12 breached accounts; a uniformly-random action
+  at the same cost only works 58.3% of the time: real, measured separation
+  from blind allocation. Plain untargeted cash top-up ties the optimizer
+  at 100% in this grid — reported honestly rather than hidden, with the
+  reason why (`ADD_CASH` is both the cheapest first-tried candidate and
+  directly capital-equivalent to equity in this kernel, so the optimizer
+  frequently picks the same action the control does).
+- `scripts/discovery/e4-replay.ts` + `packages/core/src/e4stat.ts`: the
+  pre-registered E4 rule (LOO-MAE vs. null, permutation test vs. a shadow
+  spot-move predictor) implemented exactly as written in
+  `data/windows/pre-registration.md`, as pure, unit-tested functions
+  (3 tests). Replay reads G_w only from the recorder's own tick log, never
+  Bitget candles — F8 means a candle-reconstructed "reference price" would
+  be fiction. Run today: **0/31 windows replayable**, honestly, because no
+  window in `window-set.json` has fully elapsed inside the recorder's
+  coverage (started 2026-10-04) yet. This is a calendar fact — the next
+  candidate window is the 2026-10-09–12 weekend — not a build gap.
+- A real multi-step LLM tool-calling loop (`packages/llm/src/toolLoop.ts`):
+  the model gets no numbers upfront and must call
+  `get_current_margin`/`get_stressed_margin`/`get_intervention_plan`/
+  `get_user_thesis` to fetch what it needs, bounded at 4 steps, tested with
+  a scripted fake driver (4 tests, zero network). Wired into `/api/narrate`,
+  replacing the single-shot prompt from earlier this session.
+- CSV book input (`apps/web/lib/csvBook.ts`): a documented single-flat-tier
+  simplification, wired into the Workbench's upload button alongside a
+  downloadable template. JSON remains the exact-tier path.
+- Lighthouse, run for the first time against a real production build
+  (`next start`) across all 6 routes: performance 97-99, accessibility/
+  best-practices/SEO 100 on every route, **CLS=0 everywhere**, **LCP
+  2.1-2.6s** (threshold <3s). Raw reports in `docs/lighthouse/*.json`,
+  condensed in `summary.json`.
+- Real Playwright screenshots (Chromium) for the README:
+  `docs/screens/{landing-banner,workbench,contour,scenarios,proof}.jpg`.
+  Taking them surfaced a genuine CSS bug: `.btn { display: inline-flex }`
+  in `globals.css` was declared after `.nav-toggle { display: none }` at
+  equal selector specificity, so the mobile hamburger button never
+  actually hid above the 860px breakpoint — a screenshot at 1600px showed
+  both "Map a book" and "Menu" rendered side by side. The existing
+  Playwright collision test missed it because the two elements don't
+  overlap, they just shouldn't both be visible. Fixed by raising
+  `.nav-toggle`'s specificity (`button.nav-toggle`); re-ran the full
+  45/45 Playwright matrix clean after the fix.
+- README rewritten end-to-end against FINAL_INSTRUCTION.md §12's structure:
+  a Product Links table, the 5 screenshots above (banner + 2×2 grid), and
+  every section re-verified against the file it describes rather than
+  carried over from the previous draft.
+
+**Genuinely still blocked, not a build gap:**
+- **Vercel deployment.** This session has no Vercel login, no
+  `VERCEL_TOKEN`, and no Vercel connector attached (checked — `vercel
+  whoami` returns "Logged out", `ListConnectors` returns nothing for
+  Vercel). Needs either the user to run `vercel --prod` themselves, or to
+  supply a `VERCEL_TOKEN` this session can use non-interactively.
+- **E4 window-set replay / `pnpm break` B13 / the full bench window-set
+  half.** All genuinely blocked on elapsed calendar time (N=0 windows),
+  not on missing code — the harnesses are real and will produce real
+  numbers once the 2026-10-09–12 weekend passes while the recorder keeps
+  running.
+- **Qwen.** Still blocked on `QWEN_API_KEY`; Gemini and the `none` fallback
+  are both wired and verified to carry the product correctly in its place.
+- **Demo video, final claims audit.** Not started — video needs a real
+  deployed URL first; claims audit is meant to happen right before actual
+  submission, not before.

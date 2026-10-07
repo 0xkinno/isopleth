@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-07T12:08:06.649Z",
+  "generatedAt": "2026-10-07T12:20:34.806Z",
   "clock": {
-    "lastClockmapRunAt": "2026-10-07T11:54:48.133Z",
-    "latestSampleUtc": 1791373859281,
-    "rawRecordCount": 43642,
+    "lastClockmapRunAt": "2026-10-07T12:20:02.979Z",
+    "latestSampleUtc": 1791375220651,
+    "rawRecordCount": 43883,
     "pairCount": 241,
     "totalTransitions": 3683,
     "pairsWithConfirmedFreezeThaw": 2,

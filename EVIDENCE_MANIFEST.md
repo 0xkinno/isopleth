@@ -27,14 +27,22 @@ already expects.
 | `data/calendar/nyse-2026.json` | manual capture via live fetch of nyse.com | The NYSE 2026 holiday/early-close calendar | MEASURED | re-fetch nyse.com/markets/hours-calendars and diff |
 | `data/windows/window-set.json` | `scripts/discovery/e4-build-windows.ts` | 31 closed-market windows since the 2026-06-04 rToken launch, pure calendar arithmetic | SYNTHETIC (calendar derivation, no live market data in it) | `pnpm discovery:e4:windows` |
 | `data/windows/pre-registration.md` | written by hand, timestamped before any replay | The null-control analysis rule was fixed *before* results existed | N/A (methodology document, not data) | — |
+| `data/windows/replay-results.json` | `scripts/discovery/e4-replay.ts` | G_w per window, computed ONLY from the recorder's own tick log (never candles, per the F8 trap) — honestly reports 0/31 windows replayable yet | MEASURED (derived, currently empty) | `pnpm discovery:e4:replay` |
+| `data/break/results.json` | `scripts/break.ts` | The 13-attack break campaign: 8 verified, 0 failed, 5 honestly `NOT_YET` | MEASURED (derived) | `pnpm break` |
+| `data/bench/results.json` | `scripts/bench.ts` | Synthetic account-grid benchmark (optimizer vs. random/proportional controls) + window-set replay status | SYNTHETIC (grid) / MEASURED (derived status) | `pnpm bench` |
+| `data/manifests/run_manifest.json` | `scripts/manifest.ts` | Git commit, SHA-256 of every result file, lockfile hash, engine version | MEASURED (derived) | `pnpm manifest` |
+| `data/verify/golden.json` | `scripts/golden/build-golden.ts` | Fixed input books + their expected deterministic kernel hash, the baseline `pnpm verify:offline` recomputes against | SYNTHETIC (fixtures) | `pnpm verify:build-golden` |
+| `packages/data/src/chainVerify.ts` + `tests/unit/e4stat.test.ts`, `tests/unit/tool-loop.test.ts` | hand-written, unit-tested | The hash-chain verifier (used by both `pnpm break` B8 and `pnpm verify:offline`), the E4 pre-registered statistical rule, and the LLM tool-calling loop are real, tested code, not stubs | N/A (code + tests) | `pnpm test` |
+| `docs/lighthouse/*.json`, `docs/lighthouse/summary.json` | Lighthouse CLI against a real `next start` production build | 97-99 performance, 100 accessibility/best-practices/SEO, CLS=0, LCP 2.1-2.6s on every one of the 6 routes | MEASURED | re-run Lighthouse against `pnpm --filter @isopleth/web build && pnpm --filter @isopleth/web start` |
+| `docs/screens/*.jpg` | Playwright (Chromium), against a real running build | The 5 screenshots used in `README.md` — not mockups | MEASURED | re-run Playwright against the dev or production server and screenshot each route |
 
 ## What does NOT have an entry yet (and why)
 
-- **A confirmed freeze+thaw transition.** Does not exist. See `DISCOVERY.md` E1 section — N=0-so-far, honestly stated, not fabricated to fill this table.
-- **`G_w` values / E4 replay output.** The replay script hasn't been built; no post-launch window has both elapsed and been fully recorded yet.
+- **A confirmed freeze+thaw transition in a liquid name.** Does not exist yet. See `DISCOVERY.md` E1 section — 2 confirmed in thin-liquidity names, the documented session-wide freeze is still unconfirmed in a liquid name, honestly stated, not fabricated to fill this table. Next clean test window: the 2026-10-09–12 weekend.
+- **Real `G_w` values.** The replay harness is built and real (see `data/windows/replay-results.json` above) but reports N=0 — no window in `data/windows/window-set.json` has fully elapsed since the recorder started (2026-10-04).
 - **Anything from E5.** No credentials supplied; E5 is optional and was never started.
-- **Anything from E6 (Qwen/MCP).** Blocked on `QWEN_API_KEY`.
-- **`data/bench/results.json`, `data/break/results.json`, `data/manifests/run_manifest.json`, `CLAIMS.json` entries beyond the scaffold.** All Phase C deliverables; Phase C has not started.
+- **A live Qwen call.** Blocked on `QWEN_API_KEY`; Gemini is wired and the `none` driver is proven to carry the whole product correctly in its place.
+- **CSV book input beyond a single flat tier per asset.** Documented as a simplification in the CSV format itself (`apps/web/lib/csvBook.ts`); the JSON path carries exact tier ladders.
 
 ## Provenance rule (I1) applied to this file
 
