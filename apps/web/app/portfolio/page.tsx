@@ -1,6 +1,8 @@
 export const revalidate = 300;
 
+import Image from "next/image";
 import { getSummary } from "../../lib/data";
+import { logoUrlFor } from "../../lib/logos";
 
 export default async function PortfolioPage() {
   const summary = await getSummary();
@@ -17,39 +19,52 @@ export default async function PortfolioPage() {
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid var(--rule)" }}>
+              <Th></Th>
               <Th>Stock perp</Th>
               <Th>rToken spot</Th>
               <Th>Underlying</Th>
             </tr>
           </thead>
           <tbody>
-            {summary.universe.sample.map((p) => (
-              <tr key={p.perp} style={{ borderBottom: "1px solid var(--rule)" }}>
-                <Td mono>{p.perp}</Td>
-                <Td mono>{p.spot}</Td>
-                <Td>{p.underlying}</Td>
-              </tr>
-            ))}
+            {summary.universe.sample.map((p) => {
+              const logo = logoUrlFor(p.underlying);
+              return (
+                <tr key={p.perp} style={{ borderBottom: "1px solid var(--rule)" }}>
+                  <Td>
+                    {logo ? (
+                      <Image src={logo} alt="" width={24} height={24} style={{ borderRadius: 6, display: "block" }} unoptimized />
+                    ) : (
+                      <div style={{ width: 24, height: 24, borderRadius: 6, background: "var(--rule)" }} />
+                    )}
+                  </Td>
+                  <Td mono>{p.perp}</Td>
+                  <Td mono>{p.spot}</Td>
+                  <Td>{p.underlying}</Td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
       <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 12 }}>
         Showing a sample of {summary.universe.sample.length} of {summary.universe.pairCount}. Full
-        list: <code>data/clock/pairs.json</code>.
+        list: <code>data/clock/pairs.json</code>. Logos via Clearbit, keyed by underlying ticker —
+        a gray square means no mapping exists yet for that ticker, never a wrong logo.
       </p>
 
       <div className="panel" style={{ padding: 24, marginTop: 32 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Book builder</h2>
         <p style={{ color: "var(--ink-soft)", fontSize: 14 }}>
-          Manual entry, CSV/JSON import, and a Demo book are planned for this view (Phase D). The
-          Workbench currently runs against a fixed demo book — see <a href="/workbench">/workbench</a>.
+          Manual entry, CSV import, and JSON import are built — see the &quot;Your Book&quot; panel
+          on <a href="/workbench">/workbench</a>, which also runs the fixed demo book and a
+          personalized-thesis prompt.
         </p>
       </div>
     </div>
   );
 }
 
-function Th({ children }: { children: React.ReactNode }) {
+function Th({ children }: { children?: React.ReactNode }) {
   return (
     <th style={{ textAlign: "left", padding: "12px 20px", fontSize: 13, color: "var(--ink-soft)", fontWeight: 500 }}>
       {children}

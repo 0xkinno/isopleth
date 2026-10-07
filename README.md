@@ -25,8 +25,8 @@ Every number on this site traces to a reproducible command. Nothing is typed by 
 
 | | |
 |---|---|
-| **Live app** | Vercel deployment in progress — see [Roadmap](#roadmap) for current status; `pnpm dev:web` runs the identical build locally in the meantime |
-| **Proof page** | [`/proof`](#proof) — the claims ledger, walkable Decision → Result → Scenario → Engine inputs → Source evidence |
+| **Live app** | [isopleth-blue.vercel.app](https://isopleth-blue.vercel.app) — deployed and verified, all 6 routes, zero console errors |
+| **Proof page** | [isopleth-blue.vercel.app/proof](https://isopleth-blue.vercel.app/proof) — the claims ledger, walkable Decision → Result → Scenario → Engine inputs → Source evidence |
 | **Repository** | [github.com/0xkinno/isopleth](https://github.com/0xkinno/isopleth) |
 | **Demo video** | Not yet recorded — see [`SUBMISSION.md`](SUBMISSION.md) for the fixed script and shot list, marked `DO NOT SUBMIT` until filmed |
 | **X post** | Draft fixed in [`SUBMISSION.md`](SUBMISSION.md) (`#BitgetHackathon @Bitget_AI`) — not yet posted |
@@ -227,7 +227,7 @@ Semi-professional cross-asset traders and small desks holding rTokens as UTA Adv
 
 ## Roadmap
 
-Immediate next: confirm a liquid-name freeze+thaw over the 2026-10-09–12 weekend (the GitHub Actions recorder is confirmed live on a 10-minute cron as of this writing); re-run `pnpm bench` and `pnpm discovery:e4:replay` once that window elapses; wire Qwen once credits arrive; deploy to Vercel; capture the demo video.
+Immediate next: confirm a liquid-name freeze+thaw over the 2026-10-09–12 weekend (the GitHub Actions recorder is confirmed live on a 10-minute cron as of this writing); re-run `pnpm bench` and `pnpm discovery:e4:replay` once that window elapses; wire Qwen once credits arrive; capture the demo video.
 
 ## Local setup
 

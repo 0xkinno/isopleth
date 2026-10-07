@@ -60,16 +60,46 @@ async function fetchDiscountRates(coins: string[]): Promise<Array<{ coin: string
   return out;
 }
 
-async function fetchPositionTiers(symbols: string[]): Promise<Array<{ symbol: string; file: string; hash: string }>> {
-  const out: Array<{ symbol: string; file: string; hash: string }> = [];
+/**
+ * Real bug, found 2026-10-07: this originally sent `productType=USDT-FUTURES`
+ * (matching the parameter name used by Bitget's older v2 mix endpoints), but
+ * every other v3 endpoint this codebase calls (instruments, tickers,
+ * discount-rate) uses `category=`, not `productType=`. The old version got
+ * back `{"code":"400172","msg":"Parameter verification failed"}` for every
+ * single symbol and - because nothing checked `env.code` - wrote that error
+ * envelope to disk as if it were a successful capture. All 244 previously
+ * "captured" position-tier files were error responses, not tier data. Fixed
+ * here by trying `category=` first and falling back to `productType=` only
+ * if that also fails, with an explicit success check (`code === "00000"`,
+ * Bitget's documented success code) before ever writing a file - a failed
+ * capture must never again be silently indistinguishable from a real one.
+ */
+async function fetchPositionTiers(symbols: string[]): Promise<Array<{ symbol: string; file: string; hash: string; ok: boolean }>> {
+  const out: Array<{ symbol: string; file: string; hash: string; ok: boolean }> = [];
+  let loggedWorkingParam = false;
+
   for (const symbol of symbols) {
     try {
-      const env = await bitgetPublicGet<unknown>("/api/v3/market/position-tier", {
-        productType: "USDT-FUTURES",
-        symbol,
-      });
+      let env = await bitgetPublicGet<unknown>("/api/v3/market/position-tier", { category: "USDT-FUTURES", symbol });
+      let paramUsed = "category=";
+      if ((env as { code?: string }).code !== "00000") {
+        const fallback = await bitgetPublicGet<unknown>("/api/v3/market/position-tier", { productType: "USDT-FUTURES", symbol });
+        if ((fallback as { code?: string }).code === "00000") {
+          env = fallback;
+          paramUsed = "productType=";
+        }
+      }
+      const ok = (env as { code?: string }).code === "00000";
+      if (!loggedWorkingParam) {
+        console.log(`[e2-rules] position-tier: ${ok ? `"${paramUsed}" succeeded` : "neither category= nor productType= succeeded"} (symbol=${symbol})`);
+        loggedWorkingParam = true;
+      }
+      if (!ok) {
+        console.error(`[e2-rules] position-tier for ${symbol} FAILED: ${JSON.stringify(env).slice(0, 200)} - not writing a file for a failed capture`);
+        continue;
+      }
       const { file, hash } = await writeVersioned("position-tier", symbol, env);
-      out.push({ symbol, file, hash });
+      out.push({ symbol, file, hash, ok: true });
     } catch (e) {
       console.error(`[e2-rules] position-tier for ${symbol} failed: ${e instanceof Error ? e.message : e}`);
     }

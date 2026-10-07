@@ -8,6 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [{ protocol: "https", hostname: "cdn.simpleicons.org" }],
   },
   // Pin the monorepo root explicitly: an unrelated lockfile sitting one
   // level up in this machine's Downloads folder otherwise confuses Next's
