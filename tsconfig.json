@@ -13,7 +13,13 @@
     "resolveJsonModule": true,
     "declaration": false,
     "noEmit": true,
-    "types": ["node"]
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@isopleth/core": ["packages/core/src/index.ts"],
+      "@isopleth/data": ["packages/data/src/client.ts"],
+      "@isopleth/llm": ["packages/llm/src/index.ts"]
+    }
   },
   "include": ["packages/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules", "reference", "research", "data"]

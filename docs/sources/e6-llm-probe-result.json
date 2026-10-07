@@ -1,0 +1,21 @@
+{
+  "probedAt": "2026-10-07T06:19:01.921Z",
+  "llm": {
+    "configuredProvider": "gemini",
+    "driverSelected": "none",
+    "probed": false,
+    "note": "LLM_PROVIDER=gemini but no API key set - fell back to none driver."
+  },
+  "bitgetSignalMcp": {
+    "reachable": true,
+    "sample": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"alt_me_error\": \"\"}"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

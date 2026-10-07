@@ -13,19 +13,27 @@
     "discovery:e2:rules": "tsx scripts/discovery/e2-rules-extraction.ts",
     "discovery:e3": "tsx scripts/discovery/e3-silent-fallback-trap.ts",
     "discovery:e4:windows": "tsx scripts/discovery/e4-build-windows.ts",
+    "discovery:e6": "tsx scripts/discovery/e6-llm-probe.ts",
     "discovery:e1": "tsx scripts/discovery/e1-collateral-clock.ts",
     "discovery:e1:tick": "tsx scripts/discovery/recorder-tick.ts",
     "discovery:clockmap": "tsx scripts/discovery/segment-clock.ts",
+    "sync:web": "tsx scripts/build/sync-web-data.ts",
+    "build:web": "pnpm run sync:web && pnpm --filter @isopleth/web build",
+    "dev:web": "pnpm run sync:web && pnpm --filter @isopleth/web dev",
     "typecheck": "tsc -b --pretty",
-    "test": "vitest run"
+    "test": "vitest run",
+    "break": "tsx scripts/break.ts",
+    "manifest": "tsx scripts/manifest.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "fast-check": "^4.10.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   },
   "dependencies": {
+    "dotenv": "^18.0.5",
     "zod": "^3.24.1"
   }
 }

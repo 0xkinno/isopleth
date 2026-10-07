@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-10-07T07:11:29.024Z",
+  "gitCommit": "61e44d76e9f685cfc34d83ab8ac745c9e75b8bf5",
+  "nodeVersion": "v24.14.1",
+  "engineVersion": "0.1.0",
+  "lockfileHash": "697444065a357a00441b6f3f047436076d8491c9c94e0ad6421caeb570e5b487",
+  "fileHashes": {
+    "data/clock/clock-map.json": "39090177f750d75e7078cef7df59c373ade7a7163acf5b45173f12d76157f9ec",
+    "data/clock/e3-fallback-trap.json": "7b712556678c382d9062ad02a4f6829dafbfce31023de0d7c6e44e9702903409",
+    "data/break/results.json": "35bab831423dda32670eea127dc6c4e856b6cefe6285986a5f1617698cfbbe63",
+    "data/windows/window-set.json": "82e1ff228d464a446db1821f0a2c3d9798c5d43bc36cf90f919b7befb4f2db92",
+    "CLAIMS.json": "e655fa8874e1bb2eed49206c02869e97975d891cad749ef40e0e8c31662430f1"
+  }
+}

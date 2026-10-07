@@ -1,0 +1,214 @@
+:root {
+  --vellum: #ECEFEA;
+  --paper: #F6F7F3;
+  --ink: #12222E;
+  --ink-soft: #4A5B66;
+  --rule: #C9D1CE;
+  --safe: #3F8F6B;
+  --safe-text: #2A6E4F; /* --safe on var(--paper) is 3.65:1, fails WCAG AA text (needs 4.5:1). This passes at 5.67:1. */
+  --warn: #D9A441;
+  --warn-text: #8A5A12; /* --warn on var(--paper) is 2.09:1, fails WCAG AA text. This passes at 5.49:1. */
+  --breach: #B0302A;
+  --contour: #2F7B92;
+  --glow: 0 1px 0 rgba(255, 255, 255, 0.75) inset, 0 28px 56px -28px rgba(47, 123, 146, 0.28);
+  --radius-slab: 2px;
+  --radius-panel: 14px;
+  --radius-chip: 999px;
+
+  --font-display: var(--font-instrument-serif), "Instrument Serif", Georgia, serif;
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--vellum);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* paper grain overlay, fixed, non-interactive */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+code,
+pre {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+p,
+li {
+  overflow-wrap: break-word;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+.two-col-responsive {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 720px) {
+  .two-col-responsive {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.nav-desktop {
+  display: flex;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-mobile-panel {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-desktop {
+    display: none;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .nav-mobile-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 16px 28px;
+    border-top: 1px solid var(--rule);
+    background: var(--vellum);
+  }
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--glow);
+}
+
+.slab {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-slab);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-chip);
+  border: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--paper);
+}
+
+/* text uses the -text variant (WCAG AA against --paper/--vellum); border keeps the brighter brand color */
+.chip-safe { color: var(--safe-text); border-color: var(--safe); }
+.chip-warn { color: var(--warn-text); border-color: var(--warn); }
+.chip-breach { color: var(--breach); border-color: var(--breach); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-slab);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--vellum);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.lead {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

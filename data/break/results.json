@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-10-07T07:10:58.344Z",
+  "total": 13,
+  "verified": 7,
+  "notYet": 6,
+  "failed": 0,
+  "results": [
+    {
+      "id": "B1",
+      "attack": "Reference state UNKNOWN on a collateral asset",
+      "expected": "Refuse (I5), no number produced",
+      "systemResponse": "REFUSED: reference state unknown",
+      "verified": true
+    },
+    {
+      "id": "B2",
+      "attack": "Collateral asset has no tier data",
+      "expected": "Refuse (I5), never fabricate a rate",
+      "systemResponse": "REFUSED: no collateral tier data",
+      "verified": true
+    },
+    {
+      "id": "B3",
+      "attack": "Notional exactly on a tier boundary (23,000)",
+      "expected": "Deterministic per kernel's (lo, hi] convention - boundary value stays in the lower tier",
+      "systemResponse": "adjEquity=23850",
+      "verified": true
+    },
+    {
+      "id": "B4",
+      "attack": "Collateral ratio ladder changes mid-window",
+      "expected": "Both rulesets versioned and replayable",
+      "systemResponse": "NOT_YET: needs a versioned-rules replay harness (Phase C)",
+      "verified": false
+    },
+    {
+      "id": "B5",
+      "attack": "Position notional crosses a maintenance tier boundary",
+      "expected": "Tier selection changes exactly at the documented boundary",
+      "systemResponse": "below=0-50000 above=50000-200000",
+      "verified": true
+    },
+    {
+      "id": "B6",
+      "attack": "Prompt injection in a research source",
+      "expected": "LLM cannot alter calculations or evidence labels (I6)",
+      "systemResponse": "NOT_YET: needs a live LLM call with a research-source tool result (Phase E)",
+      "verified": false
+    },
+    {
+      "id": "B7",
+      "attack": "Narration contains a number the kernel did not produce",
+      "expected": "Number-binding guard rejects it (I6)",
+      "systemResponse": "orphans=[7777777]",
+      "verified": true
+    },
+    {
+      "id": "B8",
+      "attack": "One byte edited in a stored clock snapshot",
+      "expected": "Hash mismatch, diverging recompute, fail closed",
+      "systemResponse": "NOT_YET: needs a standalone hash-chain verifier script (packages/evidence, Phase C)",
+      "verified": false
+    },
+    {
+      "id": "B9",
+      "attack": "Duplicate or out-of-order record in the real tick log",
+      "expected": "Zero duplicate hashes in the hash chain",
+      "systemResponse": "43401 records, 0 duplicate hash(es)",
+      "verified": true
+    },
+    {
+      "id": "B10",
+      "attack": "Public API schema change (simulated)",
+      "expected": "Adapter fails loudly, never produces a plausible wrong value",
+      "systemResponse": "NOT_YET: needs a response-fuzzing harness around packages/data/src/client.ts (Phase C)",
+      "verified": false
+    },
+    {
+      "id": "B11",
+      "attack": "A key with trade permission supplied at boot",
+      "expected": "Boot probe refuses it (I7)",
+      "systemResponse": "NOT_YET: no authenticated key path exists yet (E5/Phase E)",
+      "verified": false
+    },
+    {
+      "id": "B12",
+      "attack": "Code requests rToken candle type=index as a reference index",
+      "expected": "Guard rejects it (confirmed live in E3, data/clock/e3-fallback-trap.json)",
+      "systemResponse": "guard threw as expected",
+      "verified": true
+    },
+    {
+      "id": "B13",
+      "attack": "Null / permuted control on the reopening-gap predictor",
+      "expected": "Contour movement vanishes under the null control",
+      "systemResponse": "NOT_YET: needs E4 replay output (real G_w values), see data/windows/pre-registration.md",
+      "verified": false
+    }
+  ]
+}

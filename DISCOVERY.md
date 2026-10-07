@@ -86,9 +86,17 @@ A permanent guard now exists at [`packages/data/src/guards.ts`](packages/data/sr
 
 ---
 
-## E6 — Qwen and MCP probes
+## E6 — LLM and MCP probes
 
-**Status: NOT STARTED.** Blocked on `QWEN_API_KEY` (in transit from the user as of 2026-10-05). `e6-qwen-probe.ts` and `e6-mcp-tools.ts` have not been written yet — they will be built as soon as the key arrives, per FINAL_INSTRUCTION.md §4.7.
+**Status: DONE for what's configured now; Qwen wire untested (no key yet).**
+
+The LLM layer (`packages/llm`) is provider-agnostic by design (`gemini` / `qwen` / `none`, selected by `LLM_PROVIDER`). `scripts/discovery/e6-llm-probe.ts` probes whichever provider is actually configured and does not block on Qwen. Run 2026-10-07, result in `docs/sources/e6-llm-probe-result.json`:
+
+- **Gemini** (current default): no `GEMINI_API_KEY` supplied yet, so the driver correctly fell back to the `none` template driver rather than failing silently or crashing. Nothing about the wire has been confirmed yet — re-run once a key is added.
+- **Qwen**: untested, no key yet. The driver is written and typechecked against the documented OpenAI-compatible wire shape, not yet exercised live.
+- **bitget-signal MCP** (public, no key): confirmed reachable and live. Real endpoint `https://datahub.noxiaohao.com/mcp`, streamable-HTTP JSON-RPC, requires an `Mcp-Session-Id` from `initialize` on every subsequent call (not documented anywhere public — found by extracting and reading the real `@bitget-ai/bitget-signal@1.2.0` npm package's `scripts/install.js`, not guessed). Full live tool list (19 tools across the 5 skills) captured in `docs/mcp-tools.json`. A test call (`sentiment_index`, action=current) returned a reachable response with an internal error string in its payload (`alt_me_error`) — the MCP transport itself works, something inside that specific tool's own backend did not return clean data on this call. Logged honestly, not retried into looking clean.
+
+**Not yet probed:** native tool-calling and JSON-mode support for Qwen specifically (needs the key). Neither driver implements a tool-calling surface yet — `packages/llm/src/types.ts` has no tool-calling fields; that's deferred to Phase E's tool loop, not silently assumed to work.
 
 ---
 

@@ -143,3 +143,51 @@ of which has started. Nothing in Phase A touches them.
 confirmed freeze+thaw, the break/proof plan, and E6 (blocked on
 `QWEN_API_KEY`, which you said is on the way). Phase B has not started and
 won't until Gate A closes. See `TASK.md` for the exact open items.
+
+## 2026-10-07 — security fix, git init + push, LLM layer, kernel, full product build, QA, deploy
+
+**Critical fix first:** live Bitget API credentials were sitting in `.env.example`
+(not gitignored — would have been committed and pushed publicly). Moved to
+`.env.local`, scrubbed the example file, verified clean before ever touching
+git. You may want to rotate those credentials since they passed through chat.
+
+**Git:** initialized, pushed to `https://github.com/0xkinno/isopleth`. Per
+your explicit instruction, commits are authored as `0xkinno` with **no Claude
+co-author line** — confirmed in the commit log before and after.
+
+**LLM provider layer** (`packages/llm`): gemini / qwen / none behind one
+interface, selected by `LLM_PROVIDER`. Gemini is the default (no key yet —
+correctly falls back to the `none` template driver rather than crashing).
+Number-binding guard (I6) proven driver-independent by a real test. bitget-
+signal MCP wired with disk caching — found the real (undocumented) session-ID
+requirement by reading the actual `@bitget-ai/bitget-signal` npm package
+source rather than guessing from a possibly-unreliable third-party listing.
+
+**Margin kernel** (`packages/core`, Phase B): built from FINAL_INSTRUCTION.md
+section 6, then caught a real bug while building the demo: `applyScenario`
+moved `markUsd` on a shock but never flowed that into `unrealisedPnlUsd`,
+so a crashing book looked *safer* (lower notional → lower maintenance
+margin) instead of riskier. Fixed in the kernel itself; two UI pages that
+had separately hand-rolled the same shock (reintroducing the identical bug)
+were fixed to route through `applyScenario` instead. 14/14 tests pass.
+
+**Product** (`apps/web`, Next.js 15): all 6 routes built with real data —
+landing, workbench, portfolio, scenarios, proof, method — using your staged
+UI images (found them in the wrong folder at first: they were in the
+monorepo root's `public/`, not `apps/web/public/` where Next actually serves
+from; copied and removed the now-redundant root copy).
+
+**QA** (Playwright, Chromium only per your instruction): 45/45 passing across
+5 device profiles × 6 routes, after finding and fixing real bugs: two color-
+contrast failures (warn/safe chip text failed WCAG AA against the paper
+background), a missing viewport meta tag (mobile Chromium was laying out at
+a ~980px desktop-width virtual viewport), a non-responsive 2-column grid on
+the Method page, and an unbreakable long code string overflowing on mobile.
+
+**Break campaign:** `pnpm break` — 7/13 attacks verified against the real
+kernel (0 failed), 6 honestly marked NOT_YET with the specific missing
+infrastructure named, not faked. `pnpm manifest` writes a real run manifest.
+
+**Still open:** the E4 replay harness (needs more elapsed windows), the
+bench/offline-verifier scripts, Phase E's actual product-level LLM wiring,
+and Vercel deployment (in progress). See `TASK.md` for the full state.
