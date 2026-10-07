@@ -36,7 +36,7 @@ function tryParseStep(text: string): { kind: "tool"; name: string; args: Record<
 }
 
 export async function runToolLoop(driver: LlmDriver, tools: ToolSpec[], question: string, opts: { maxSteps?: number } = {}): Promise<ToolLoopResult> {
-  const maxSteps = opts.maxSteps ?? 4;
+  const maxSteps = opts.maxSteps ?? 7;
   const toolList = tools.map((t) => `- ${t.name}: ${t.description}`).join("\n");
   const system = [
     "You narrate pre-computed margin-risk numbers for a trading product called Isopleth.",
@@ -65,7 +65,8 @@ export async function runToolLoop(driver: LlmDriver, tools: ToolSpec[], question
     const tool = tools.find((t) => t.name === step.name);
     const result = tool ? tool.run(step.args) : { error: `unknown tool "${step.name}"` };
     steps.push({ tool: step.name, args: step.args, result });
-    prompt = `Tool "${step.name}" returned: ${JSON.stringify(result)}. Call another tool, or respond with your final narration.`;
+    const gathered = steps.map((x) => `Tool "${x.tool}" returned: ${JSON.stringify(x.result)}`).join("\n");
+    prompt = `${question}\n\nResults so far:\n${gathered}\n\nCall another tool you still need, or respond with your final narration.`;
   }
 
   return { finalText: "", steps, stoppedReason: "max-steps" };
