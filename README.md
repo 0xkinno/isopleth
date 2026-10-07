@@ -217,10 +217,6 @@ Accounts are labelled `SYNTHETIC`, market data `REPLAYED`/`none`, per the projec
 
 Stated first, not buried: [LIMITATIONS.md](LIMITATIONS.md). Leads with "the headline measurement isn't confirmed yet." Also true as of this writing: the E4 window-set replay has N=0 (calendar-blocked, not build-blocked — see Validation above); CSV book input is a documented single-tier simplification (JSON carries exact tier ladders); the Qwen wire is built but untested live pending `QWEN_API_KEY`.
 
-## What is new
-
-Everything in this repo was built for this submission. 14 prior-hackathon/competitor repos were cloned read-only into a gitignored `reference/` folder for research only — never copied from, never named in this build's code, UI, or docs ([CONTRIBUTIONS.md](CONTRIBUTIONS.md) documents the one genuinely reusable finding, the F8 trap, for the benefit of anyone else hitting it).
-
 ## Target user and revenue
 
 Semi-professional cross-asset traders and small desks holding rTokens as UTA Advanced Mode margin. Revenue: per-seat pro tier, API for desks, embeddable margin-safety widget.
