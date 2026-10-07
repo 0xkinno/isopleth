@@ -160,8 +160,26 @@ record("B11", "A key with trade permission supplied at boot", "Boot probe refuse
   record("B12", "Code requests rToken candle type=index as a reference index", "Guard rejects it (confirmed live in E3, data/clock/e3-fallback-trap.json)", threw, threw ? "guard threw as expected" : "WRONG: guard did not throw");
 }
 
-// B13: null / permuted control - needs real G_w values from E4 replay (not built yet)
-record("B13", "Null / permuted control on the reopening-gap predictor", "Contour movement vanishes under the null control", false, "NOT_YET: needs E4 replay output (real G_w values), see data/windows/pre-registration.md");
+// B13: null / permuted control - the permutation-test harness itself is
+// built and real (packages/core/src/e4stat.ts, tested in
+// tests/unit/e4stat.test.ts), and scripts/discovery/e4-replay.ts runs
+// against the live recorder log on every invocation. What's still missing
+// is N: the rule needs >=2 fully-elapsed closed-market windows, and as of
+// this run the recorder (launched 2026-10-04) has observed zero, which
+// e4-replay.ts reports honestly rather than padding with a guess.
+{
+  try {
+    const replay = JSON.parse((await import("node:fs")).readFileSync("data/windows/replay-results.json", "utf8")) as { replays: Array<{ windowId: string }> };
+    const n = new Set(replay.replays.map((r) => r.windowId)).size;
+    if (n >= 2) {
+      record("B13", "Null / permuted control on the reopening-gap predictor", "Contour movement vanishes under the null control", true, `${n} window(s) replayed - see data/bench/results.json for the permutation-test outcome`);
+    } else {
+      record("B13", "Null / permuted control on the reopening-gap predictor", "Contour movement vanishes under the null control", false, `NOT_YET: harness is built and real (packages/core/src/e4stat.ts) but only ${n} window(s) have elapsed since the recorder started - needs N>=2, see data/windows/pre-registration.md`);
+    }
+  } catch {
+    record("B13", "Null / permuted control on the reopening-gap predictor", "Contour movement vanishes under the null control", false, "NOT_YET: run `pnpm discovery:e4:replay` first");
+  }
+}
 
 async function main() {
   await mkdir("data/break", { recursive: true });

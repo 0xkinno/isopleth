@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-10-07T12:12:15.043Z",
+  "server": "next start (production build), localhost",
+  "results": {
+    "home": {
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpSeconds": 2.5912567499999994,
+      "cls": 0
+    },
+    "workbench": {
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpSeconds": 2.2885884000000005,
+      "cls": 0
+    },
+    "scenarios": {
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpSeconds": 2.44066625,
+      "cls": 0
+    },
+    "proof": {
+      "performance": 99,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpSeconds": 2.1239552,
+      "cls": 0
+    },
+    "method": {
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpSeconds": 2.4482415,
+      "cls": 0
+    },
+    "portfolio": {
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpSeconds": 2.2714637000000004,
+      "cls": 0
+    }
+  }
+}

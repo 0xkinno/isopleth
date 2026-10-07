@@ -8,6 +8,7 @@
 import { useRef, useState } from "react";
 import type { MarginResult } from "@isopleth/core";
 import { demoBookJson } from "../lib/demoBook";
+import { parseCsvBook, CSV_TEMPLATE } from "../lib/csvBook";
 
 type Plan = { actions: Array<{ kind: string; target?: string; amountUsd: number }>; interventionCostUsd: number; residualCrossMarginRate: number };
 type EvalResponse =
@@ -75,9 +76,27 @@ export function YourBookPanel() {
   function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    const isCsv = file.name.toLowerCase().endsWith(".csv");
     const reader = new FileReader();
-    reader.onload = () => setBookText(String(reader.result ?? ""));
+    reader.onload = () => {
+      const text = String(reader.result ?? "");
+      if (!isCsv) {
+        setBookText(text);
+        return;
+      }
+      const parsed = parseCsvBook(text);
+      if (!parsed.ok) {
+        setErrors(parsed.errors);
+        return;
+      }
+      setErrors(parsed.warnings);
+      setBookText(JSON.stringify(parsed.book, null, 2));
+    };
     reader.readAsText(file);
+  }
+
+  function downloadCsvTemplate() {
+    download("isopleth-book-template.csv", CSV_TEMPLATE, "text/csv");
   }
 
   function exportRiskPlan() {
@@ -135,8 +154,9 @@ export function YourBookPanel() {
     <div className="panel" style={{ padding: 32, marginBottom: 40 }}>
       <h2 style={{ fontSize: 22, marginBottom: 8 }}>Your book</h2>
       <p style={{ fontSize: 14, color: "var(--ink-soft)", marginBottom: 16 }}>
-        Paste or upload your own book (same shape as <code>@isopleth/core</code>&apos;s <code>Book</code> type). It never leaves this server — the kernel runs the
-        same deterministic code path as the demo above. Malformed input is refused, never guessed at.
+        Paste JSON (same shape as <code>@isopleth/core</code>&apos;s <code>Book</code> type), or upload a <code>.json</code> or <code>.csv</code> file — CSV uses a
+        simplified single-tier format (download the template below). It never leaves this server — the kernel runs the same deterministic code path as the
+        demo above. Malformed input is refused, never guessed at.
       </p>
 
       <label style={{ display: "block", fontSize: 13, marginBottom: 6 }} htmlFor="thesis-input">
@@ -168,9 +188,12 @@ export function YourBookPanel() {
           Load demo book
         </button>
         <button onClick={() => fileInput.current?.click()} className="mono" style={buttonStyle}>
-          Upload .json
+          Upload .json / .csv
         </button>
-        <input ref={fileInput} type="file" accept=".json,application/json" onChange={onFile} style={{ display: "none" }} />
+        <button onClick={downloadCsvTemplate} className="mono" style={buttonStyle}>
+          Download CSV template
+        </button>
+        <input ref={fileInput} type="file" accept=".json,application/json,.csv,text/csv" onChange={onFile} style={{ display: "none" }} />
       </div>
 
       {errors.length > 0 && (

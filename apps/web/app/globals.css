@@ -119,7 +119,13 @@ li {
 .nav-desktop {
   display: flex;
 }
-.nav-toggle {
+/* Element+class beats the later .btn { display: inline-flex } rule at equal
+   class-only specificity - without this, the toggle button never actually
+   hides above the 860px breakpoint, because .btn is declared after
+   .nav-toggle in this file and ties on specificity, so source order (not
+   the media query) decides and .btn wins. Found via a real screenshot at
+   1600px showing both "Map a book" and "Menu" rendered at once. */
+button.nav-toggle {
   display: none;
 }
 .nav-mobile-panel {
@@ -130,7 +136,7 @@ li {
   .nav-desktop {
     display: none;
   }
-  .nav-toggle {
+  button.nav-toggle {
     display: inline-flex;
   }
   .nav-mobile-panel {

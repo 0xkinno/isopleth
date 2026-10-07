@@ -5,7 +5,7 @@
 // instead - this is what makes the product run correctly with the LLM
 // removed entirely (LLM_PROVIDER=none).
 import { NextResponse } from "next/server";
-import { getLlmDriver, bindNumbers, type LlmRequest } from "@isopleth/llm";
+import { getLlmDriver, bindNumbers, runToolLoop, type ToolSpec } from "@isopleth/llm";
 import type { MarginResult } from "@isopleth/core";
 
 function collectFacts(result: MarginResult, shockedResult: MarginResult | null, plan: unknown): number[] {
@@ -57,23 +57,29 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true, text: fallback, provider: "none", verified: true, orphans: [] });
   }
 
-  const req2: LlmRequest = {
-    system:
-      "You narrate pre-computed margin-risk numbers for a trading product called Isopleth. " +
-      "Every number you state must already appear in the facts you are given - never invent, round differently, or recompute one. " +
-      "Two to four sentences, plain language, no markdown.",
-    prompt: `Facts (already computed by a deterministic kernel): ${JSON.stringify(facts)}. Cross margin rate: ${(result.crossMarginRate * 100).toFixed(2)}%. ${
-      shockedResult ? `Under stress, cross margin rate: ${(shockedResult.crossMarginRate * 100).toFixed(2)}%.` : ""
-    } ${safeThesis ? `The user says they are protecting: "${safeThesis}".` : ""} Narrate this for a trader.`,
-  };
+  // Real multi-step tool loop (packages/llm/src/toolLoop.ts): the model is
+  // given no numbers upfront and must call a read-only tool to fetch each
+  // one it needs, one at a time, before narrating - never a single-shot
+  // "here are all the facts, talk about them" prompt. Every tool only
+  // returns data the kernel already computed; none of them let the model
+  // compute anything.
+  const tools: ToolSpec[] = [
+    { name: "get_current_margin", description: "the book's current cross margin rate, adjusted equity, and maintenance margin", run: () => result },
+    { name: "get_stressed_margin", description: "the same, after the standard stress scenario", run: () => shockedResult ?? { note: "no stress scenario was computed" } },
+    { name: "get_intervention_plan", description: "the minimum-cost plan(s) that restore the margin threshold", run: () => plan ?? { note: "no plan was computed" } },
+    { name: "get_user_thesis", description: "what the user said they are protecting, if anything", run: () => ({ thesis: safeThesis || null }) },
+  ];
 
   try {
-    const res = await driver.complete(req2);
-    const bound = bindNumbers(res.text, facts);
-    if (!bound.ok) {
-      return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: false, orphans: bound.orphans, rejectedText: res.text });
+    const loop = await runToolLoop(driver, tools, "Narrate this trader's current risk position in 2-4 sentences, calling tools to gather what you need first.");
+    if (loop.stoppedReason === "max-steps" || loop.finalText.trim().length === 0) {
+      return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: true, orphans: [], note: `tool loop stopped: ${loop.stoppedReason}`, steps: loop.steps.length });
     }
-    return NextResponse.json({ ok: true, text: res.text, provider: driver.name, verified: true, orphans: [] });
+    const bound = bindNumbers(loop.finalText, facts);
+    if (!bound.ok) {
+      return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: false, orphans: bound.orphans, rejectedText: loop.finalText, steps: loop.steps.length });
+    }
+    return NextResponse.json({ ok: true, text: loop.finalText, provider: driver.name, verified: true, orphans: [], steps: loop.steps.length });
   } catch (err) {
     return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: true, orphans: [], driverError: String(err) });
   }

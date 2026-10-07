@@ -7,6 +7,7 @@ import type { LlmDriver } from "./types";
 
 export * from "./types";
 export * from "./bind";
+export * from "./toolLoop";
 
 export function getLlmDriver(env: NodeJS.ProcessEnv = process.env): LlmDriver {
   const provider = (env.LLM_PROVIDER ?? "none").toLowerCase();

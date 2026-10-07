@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-10-07T11:57:01.641Z",
+  "recordedPeriod": {
+    "start": "2026-10-05T00:30:37.748Z",
+    "end": "2026-10-07T11:50:59.281Z"
+  },
+  "windowsInSet": 31,
+  "windowsReplayed": 0,
+  "pairWindowObservations": 0,
+  "skipped": [
+    {
+      "windowId": "2026-06-05_to_2026-06-08",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-06-12_to_2026-06-15",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-06-18_to_2026-06-22",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-06-26_to_2026-06-29",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-07-02_to_2026-07-06",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-07-10_to_2026-07-13",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-07-17_to_2026-07-20",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-07-24_to_2026-07-27",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-07-31_to_2026-08-03",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-08-07_to_2026-08-10",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-08-14_to_2026-08-17",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-08-21_to_2026-08-24",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-08-28_to_2026-08-31",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-09-04_to_2026-09-08",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-09-11_to_2026-09-14",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-09-18_to_2026-09-21",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-09-25_to_2026-09-28",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-10-02_to_2026-10-05",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-10-09_to_2026-10-12",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-10-16_to_2026-10-19",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-10-23_to_2026-10-26",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-10-30_to_2026-11-02",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-11-06_to_2026-11-09",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-11-13_to_2026-11-16",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-11-20_to_2026-11-23",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-11-25_to_2026-11-27",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-11-27_to_2026-11-30",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-12-04_to_2026-12-07",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-12-11_to_2026-12-14",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-12-18_to_2026-12-21",
+      "reason": "outside the recorder's covered period"
+    },
+    {
+      "windowId": "2026-12-24_to_2026-12-28",
+      "reason": "outside the recorder's covered period"
+    }
+  ],
+  "replays": []
+}

@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-10-07T11:58:33.435Z",
+  "accountLabel": "SYNTHETIC",
+  "marketDataLabel": "REPLAYED (window-set) / none (synthetic grid)",
+  "syntheticGrid": {
+    "gridPoints": 36,
+    "breachedUnderStress": 12,
+    "isopleth": {
+      "planFound": 12,
+      "planFoundPct": 100,
+      "avgCostUsd": 6375
+    },
+    "randomTopUpControl": {
+      "restoredThresholdAtEqualCost": 7,
+      "restoredPct": 58.3
+    },
+    "proportionalTopUpControl": {
+      "restoredThresholdAtEqualCost": 12,
+      "restoredPct": 100
+    },
+    "falseAlarmRateApprox": 0
+  },
+  "windowSetReplay": {
+    "status": "INSUFFICIENT_N",
+    "n": 0,
+    "note": "the pre-registered rule (data/windows/pre-registration.md) requires leave-one-window-out cross-validation, which is undefined below N=2. Honest state: not enough closed-market windows have elapsed since the E1 recorder started (2026-10-04) to test this yet."
+  },
+  "whatWouldMakeThisFalse": [
+    "Random or proportional top-up at equal cost restoring the threshold as often as Isopleth's optimized plan (synthetic grid) - would mean the optimizer adds no value over blind capital allocation.",
+    "The window-set replay's LOO-MAE improvement falling under 20%, or its permutation p-value landing at or above 0.05, once N>=2 windows exist.",
+    "A false-alarm rate that is not small relative to the breach rate, which would mean the contour's fragility threshold is too sensitive to be useful."
+  ]
+}

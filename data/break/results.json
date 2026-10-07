@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:54:18.527Z",
+  "generatedAt": "2026-10-07T12:12:45.386Z",
   "total": 13,
   "verified": 8,
   "notYet": 5,
@@ -58,14 +58,14 @@
       "id": "B8",
       "attack": "One byte edited in a stored clock snapshot",
       "expected": "Hash mismatch, diverging recompute, fail closed",
-      "systemResponse": "chain clean over 43401 records; a one-field tamper on the last record changes its recomputed hash (detected=true)",
+      "systemResponse": "chain clean over 43642 records; a one-field tamper on the last record changes its recomputed hash (detected=true)",
       "verified": true
     },
     {
       "id": "B9",
       "attack": "Duplicate or out-of-order record in the real tick log",
       "expected": "Zero duplicate hashes in the hash chain",
-      "systemResponse": "43401 records, 0 duplicate hash(es)",
+      "systemResponse": "43642 records, 0 duplicate hash(es)",
       "verified": true
     },
     {
@@ -93,7 +93,7 @@
       "id": "B13",
       "attack": "Null / permuted control on the reopening-gap predictor",
       "expected": "Contour movement vanishes under the null control",
-      "systemResponse": "NOT_YET: needs E4 replay output (real G_w values), see data/windows/pre-registration.md",
+      "systemResponse": "NOT_YET: harness is built and real (packages/core/src/e4stat.ts) but only 0 window(s) have elapsed since the recorder started - needs N>=2, see data/windows/pre-registration.md",
       "verified": false
     }
   ]
