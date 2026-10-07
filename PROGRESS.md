@@ -191,3 +191,67 @@ infrastructure named, not faked. `pnpm manifest` writes a real run manifest.
 **Still open:** the E4 replay harness (needs more elapsed windows), the
 bench/offline-verifier scripts, Phase E's actual product-level LLM wiring,
 and Vercel deployment (in progress). See `TASK.md` for the full state.
+
+## 2026-10-07 (later) — closed the Phase D/E/F/G gaps section 9-12 of FINAL_INSTRUCTION.md called out
+
+Read `FINAL_INSTRUCTION.md`, `TASK.md`, and `PROGRESS.md` end to end against
+what actually exists in the repo, then closed the gaps that were still real
+work rather than cosmetic:
+
+- **Book input + personalized thesis + export (Phase D)**: Workbench now has
+  a "Your book" panel (`apps/web/components/YourBookPanel.tsx`) — paste or
+  upload JSON in the same shape as `@isopleth/core`'s `Book` type, a "What
+  are you protecting?" free-text thesis field, and export buttons for a
+  risk-plan `.txt` and a recheck-reminder `.ics`. Recompute happens
+  server-side at the new `/api/evaluate` route so the kernel's hashing
+  (`node:crypto` in `packages/core/src/hash.ts`) never has to be bundled for
+  the browser. A new `apps/web/lib/bookValidate.ts` fails closed (I5) on a
+  malformed book with specific per-field errors, never a guess.
+- **LLM wired into the product (Phase E)**: a new `/api/narrate` route calls
+  `getLlmDriver()`, runs the result through `bindNumbers` (the existing I6
+  guard), and serves the deterministic template whenever a number doesn't
+  bind, the driver is `none`, or the driver throws. Wired to Workbench's
+  "Explain with AI" button. Verified live end-to-end against a running
+  `next start` server with no `LLM_PROVIDER` set (the `none` path) — request
+  and response logged below, both routes respond correctly including the
+  thesis text flowing into the narration.
+- **Orchestrated load motion (Phase F, §9.6)**: `ContourChart.tsx` now draws
+  its contour path once on mount via `strokeDasharray`/`strokeDashoffset`
+  (1.4s, the documented `cubic-bezier(0.22, 1, 0.36, 1)` easing), and checks
+  `prefers-reduced-motion` with `matchMedia` directly rather than relying on
+  there being no animation to disable.
+- **Secret-exposure scan automated (Phase G)**: `pnpm secrets:scan`
+  (`scripts/secret-scan.ts`) walks every git-tracked file (via `git
+  ls-files`) and flags credential-shaped strings — generic `*_KEY=`/`*_SECRET=`
+  assignments, AWS access key IDs, PEM private-key blocks, bearer tokens,
+  Bitget `bg_`-style keys — skipping lines that look like placeholders.
+  Clean run: 339 files, 0 hits. This replaces the by-hand check mentioned in
+  the 2026-10-07 entry above with something that runs every time.
+- **Two real bugs found and fixed while re-running the Playwright matrix**
+  (not cosmetic — both silently broke CI):
+  1. `apps/web/playwright.config.ts`'s `webServer.command` was `set PORT=...
+     && pnpm start` — Windows-cmd-only syntax. On Linux (and macOS) `set`
+     just sets a shell variable no child process inherits, so the server
+     never saw the right port and the whole 45-test suite hung on its
+     60-second timeout and failed. Reproduced directly this session.
+     Replaced with `next start -p <port>`, which works identically on every
+     platform.
+  2. No `favicon.ico` and no `app/icon.*` existed anywhere in `apps/web`,
+     so every route logged a console 404 under `next start` (production
+     mode) — which the layout test's "no console errors" assertion
+     correctly failed on. Added `apps/web/app/icon.svg` (a small inline
+     contour mark in the brand palette); Next's App Router serves it
+     automatically.
+  Re-ran the full matrix after both fixes: **45/45 passing** again, Chromium
+  only, 5 device profiles × 6 routes, confirmed via a real `pnpm exec next
+  start` + Playwright run (not just inspection).
+- Added `@isopleth/llm` as a workspace dependency of `apps/web` (tsconfig
+  path + package.json), `pnpm typecheck` and `pnpm test` (14/14) still clean,
+  `pnpm run build:web` still produces a working production build with the
+  two new API routes listed as dynamic (`ƒ`) and everything else static.
+
+**Still open, unchanged from the checklist above:** CSV book input (JSON
+only so far), the tool-calling loop proper (narration is single-turn), the
+E4 replay harness, `pnpm bench` / `pnpm verify:offline`, Lighthouse
+CLS/LCP, a Playwright-level recorder-down simulation, screenshots, video,
+and the final claims audit before actual submission.

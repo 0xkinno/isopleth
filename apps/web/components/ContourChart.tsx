@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { scaleLinear } from "d3-scale";
 import { line as d3line, curveMonotoneX } from "d3-shape";
 import type { ContourFrame } from "../lib/contourDemo";
@@ -20,6 +20,37 @@ export function ContourChart({
 }) {
   const [frameIdx, setFrameIdx] = useState(Math.floor(frames.length / 2));
   const frame = frames[frameIdx]!;
+  const pathRefs = useRef<Array<SVGPathElement | null>>([]);
+  const hasDrawnIn = useRef(false);
+
+  // One orchestrated load moment (FINAL_INSTRUCTION.md 9.6): the contour
+  // draws itself once, 1.4s, on first mount only - never on every scenario
+  // change, and never at all under prefers-reduced-motion.
+  useEffect(() => {
+    if (hasDrawnIn.current) return;
+    hasDrawnIn.current = true;
+    const reduceMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    for (const path of pathRefs.current) {
+      if (!path) continue;
+      const length = path.getTotalLength();
+      if (reduceMotion) {
+        path.style.strokeDasharray = "";
+        path.style.strokeDashoffset = "0";
+        continue;
+      }
+      path.style.strokeDasharray = `${length}`;
+      path.style.strokeDashoffset = `${length}`;
+      path.style.transition = "none";
+      // Force layout before the transition so the browser animates from the
+      // offset above, not from whatever it painted first.
+      path.getBoundingClientRect();
+      path.style.transition = "stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1)";
+      path.style.strokeDashoffset = "0";
+    }
+    // frame.points intentionally not a dependency - this effect must run
+    // exactly once, on mount, regardless of which frame is initially shown.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const xScale = useMemo(() => scaleLinear().domain([xRange.min, xRange.max]).range([MARGIN.left, WIDTH - MARGIN.right]), [xRange]);
   const yScale = useMemo(() => scaleLinear().domain(yRange).range([HEIGHT - MARGIN.bottom, MARGIN.top]), [yRange]);
@@ -56,7 +87,17 @@ export function ContourChart({
         <line x1={MARGIN.left} y1={MARGIN.top} x2={MARGIN.left} y2={HEIGHT - MARGIN.bottom} stroke="var(--rule)" />
 
         {runs.map((run, i) => (
-          <path key={i} d={pathGen(run) ?? undefined} fill="none" stroke="var(--contour)" strokeWidth={2.5} style={{ filter: "drop-shadow(0 0 6px rgba(47,123,146,0.35))" }} />
+          <path
+            key={i}
+            ref={(el) => {
+              pathRefs.current[i] = el;
+            }}
+            d={pathGen(run) ?? undefined}
+            fill="none"
+            stroke="var(--contour)"
+            strokeWidth={2.5}
+            style={{ filter: "drop-shadow(0 0 6px rgba(47,123,146,0.35))" }}
+          />
         ))}
 
         {/* current book position crosshair, at (0% shock, 0% shock) */}

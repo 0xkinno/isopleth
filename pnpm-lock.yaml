@@ -137,6 +137,9 @@ importers:
       '@isopleth/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@isopleth/llm':
+        specifier: workspace:*
+        version: link:../../packages/llm
       d3-scale:
         specifier: ^4.0.2
         version: 4.0.2

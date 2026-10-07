@@ -10,9 +10,17 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}`,
     screenshot: "only-on-failure",
+    // Optional override for sandboxes that ship a headed Chromium binary
+    // but not the exact chromium_headless_shell revision this Playwright
+    // version expects to download. Unset in normal/CI use.
+    ...(process.env.PLAYWRIGHT_CHROMIUM_PATH ? { launchOptions: { executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH } } : {}),
   },
   webServer: {
-    command: `set PORT=${PORT} && pnpm start`,
+    // `next start -p` instead of shell env-var syntax (the previous
+    // `set PORT=... && pnpm start` is Windows-cmd-only and silently hangs
+    // CI on Linux/macOS, where `set` just sets a shell variable no child
+    // process inherits).
+    command: `pnpm exec next start -p ${PORT}`,
     url: `http://localhost:${PORT}`,
     reuseExistingServer: true,
     timeout: 60_000,
