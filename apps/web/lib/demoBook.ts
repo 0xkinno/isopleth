@@ -45,3 +45,8 @@ export function demoBook(): Book {
     partialLiqFeeUsd: 0,
   };
 }
+
+/** Pretty-printed JSON of the same demo book, for the editable "Your book" panel. */
+export function demoBookJson(): string {
+  return JSON.stringify(demoBook(), null, 2);
+}

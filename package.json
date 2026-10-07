@@ -23,7 +23,8 @@
     "typecheck": "tsc -b --pretty",
     "test": "vitest run",
     "break": "tsx scripts/break.ts",
-    "manifest": "tsx scripts/manifest.ts"
+    "manifest": "tsx scripts/manifest.ts",
+    "secrets:scan": "tsx scripts/secret-scan.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

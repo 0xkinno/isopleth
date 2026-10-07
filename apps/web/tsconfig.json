@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@isopleth/core": ["../../packages/core/src/index.ts"]
+      "@isopleth/core": ["../../packages/core/src/index.ts"],
+      "@isopleth/llm": ["../../packages/llm/src/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

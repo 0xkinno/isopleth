@@ -99,11 +99,11 @@ The `/workbench` route runs a real demo book through `@isopleth/core`'s kernel, 
 
 ## LUI fluency
 
-Provider-agnostic LLM layer (`packages/llm`): Gemini today, Qwen via one env var once credits arrive, `none` (deterministic template) as the zero-network fallback. A number-binding guard rejects any narrated number not already in the kernel's output — proven with a test that runs the same book through two different drivers and asserts byte-identical kernel output (`tests/unit/number-binding.test.ts`).
+Provider-agnostic LLM layer (`packages/llm`): Gemini today, Qwen via one env var once credits arrive, `none` (deterministic template) as the zero-network fallback. A number-binding guard rejects any narrated number not already in the kernel's output — proven with a test that runs the same book through two different drivers and asserts byte-identical kernel output (`tests/unit/number-binding.test.ts`), and wired live into the product at `/api/narrate`, called from the Workbench's "Explain with AI" button.
 
 ## Personalized thesis
 
-Planned for Phase D's session-state layer (not yet built — see [TASK.md](TASK.md)).
+The Workbench's "Your book" panel asks "What are you protecting?" — a free-text thesis carried into both the AI narration prompt and the exported risk plan, alongside a manual JSON/file book input that recomputes the real kernel server-side (`/api/evaluate`, validated fail-closed by `apps/web/lib/bookValidate.ts`).
 
 ## Bitget integration
 

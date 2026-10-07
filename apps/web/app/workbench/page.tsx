@@ -2,6 +2,7 @@ import { evaluate, applyScenario, minimumIntervention, type Scenario } from "@is
 import { demoBook } from "../../lib/demoBook";
 import { buildContourFrames, X_RANGE, Y_RANGE } from "../../lib/contourDemo";
 import { ContourChart } from "../../components/ContourChart";
+import { YourBookPanel } from "../../components/YourBookPanel";
 
 export default function WorkbenchPage() {
   const book = demoBook();
@@ -47,7 +48,7 @@ export default function WorkbenchPage() {
         <ContourChart frames={frames} xRange={X_RANGE} yRange={Y_RANGE} />
       </div>
 
-      <div className="panel" style={{ padding: 32 }}>
+      <div className="panel" style={{ padding: 32, marginBottom: 40 }}>
         <h2 style={{ fontSize: 22, marginBottom: 16 }}>Minimum-intervention plan</h2>
         {!shockedResult.ok && (
           <p style={{ color: "var(--breach)", marginBottom: 16 }}>
@@ -71,6 +72,8 @@ export default function WorkbenchPage() {
           </ol>
         )}
       </div>
+
+      <YourBookPanel />
     </div>
   );
 }

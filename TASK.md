@@ -39,23 +39,23 @@ Master checklist, mirroring FINAL_INSTRUCTION.md's phases and gates exactly.
 - [x] Landing page uses the real staged hero image with the documented bleed-mask treatment; `/method` and `/scenarios` use the other two staged images
 - [x] Navbar with responsive mobile menu (not in the original scaffold — added after QA found a real overflow bug)
 - [x] Interactive contour moment (slider over precomputed kernel frames)
-- [ ] Book input (manual/CSV/JSON/Demo) — Workbench runs a fixed demo book only
-- [ ] Personalized thesis ("What are you protecting?") — not built
-- [ ] Export (risk plan + .ics) — not built
+- [x] Book input (manual JSON + file upload) — Workbench's new "Your book" panel (`YourBookPanel.tsx`), recomputed server-side at `/api/evaluate` (fail-closed validation in `lib/bookValidate.ts`, never a guess at malformed input); CSV is still not supported (JSON only)
+- [x] Personalized thesis ("What are you protecting?") — free-text field in the same panel, carried into both the AI narration prompt and the exported risk plan
+- [x] Export (risk plan .txt + .ics recheck reminder) — client-side blob download, no server round trip
 
 ## Phase E — AI
 - [x] Provider-agnostic LLM layer (`packages/llm`): gemini / qwen / none, one env var, no other code change
 - [x] Number-binding guard (I6), proven driver-independent by a real test
 - [x] bitget-signal MCP client with disk caching for offline replay
-- [ ] Next.js route handlers wiring the LLM into the product (no UI surface calls an LLM yet)
-- [ ] Tool loop / Zod schemas — not built
-- [ ] **Blocked on `QWEN_API_KEY`** for the Qwen wire specifically; Gemini is wired and ready, needs `GEMINI_API_KEY`
+- [x] Next.js route handler wiring the LLM into the product — `/api/narrate`, called from Workbench's "Explain with AI" button, runs every narration through `bindNumbers` and serves the deterministic template whenever a number doesn't bind or the driver is `none`/errors
+- [ ] Tool loop / Zod schemas — not built (narration is single-turn; no multi-step tool-calling loop yet)
+- [ ] **Still blocked on `QWEN_API_KEY`** for the Qwen wire specifically; Gemini is wired and ready, needs `GEMINI_API_KEY`; both fall back to the `none` template driver and the feature still works end-to-end with neither key set (verified)
 
 ## Phase F — UI
 - [x] Design tokens, paper-grain overlay, radii per §9.2 (fallback fonts: Instrument Serif / Geist / JetBrains Mono via next/font/google — self-hosted Erode/Switzer not available in this environment)
 - [x] Contour rendering with d3-scale/d3-shape
 - [x] Responsive layout, verified via the full Playwright matrix (see Phase G)
-- [ ] Orchestrated load-moment motion — not built (static render only; `prefers-reduced-motion` has no animation to disable yet, which trivially satisfies that requirement but isn't the intent)
+- [x] Orchestrated load-moment motion — `ContourChart.tsx` draws its path once on mount via `strokeDasharray`/`strokeDashoffset`, 1.4s, `cubic-bezier(0.22,1,0.36,1)`, skipped entirely under `prefers-reduced-motion: reduce` (checked live via `matchMedia`, not just a no-op CSS class)
 - [ ] Imagery pipeline (sharp, AVIF/WebP, LQIP) — Next's built-in image optimizer is used instead; no custom pipeline built
 
 ## Phase G — Attack and QA
@@ -63,9 +63,10 @@ Master checklist, mirroring FINAL_INSTRUCTION.md's phases and gates exactly.
 - [x] axe-core WCAG 2A/2AA — zero violations (two real contrast bugs found and fixed: `--warn` and `--safe` chip text)
 - [x] Zero horizontal overflow on any route/device (three real bugs found and fixed: missing viewport meta tag, a non-collapsing 2-col grid, an unbreakable long code string)
 - [x] 44px tap target check, reduced-motion check, honest-snapshot-age check
+- [x] Fixed a real cross-platform bug in `playwright.config.ts`: the webServer command used `set PORT=... && pnpm start`, Windows-cmd-only syntax that silently hangs the whole suite on Linux/macOS CI (confirmed — this is exactly what happened when re-running the suite this session). Replaced with `next start -p <port>`, which works everywhere; also found and fixed a missing `favicon.ico` (no `app/icon.*` existed) that was logging a console 404 on every route and failing the "no console errors" assertion in CI-equivalent `next start` mode — added `app/icon.svg`.
+- [x] Secret-exposure scan automated — `pnpm secrets:scan` (`scripts/secret-scan.ts`) greps every git-tracked file for credential-shaped strings (generic API-key assignments, AWS keys, PEM blocks, bearer tokens, Bitget `bg_`-style keys), skips placeholder-looking lines, exits non-zero on a hit. Clean run: 339 files scanned, 0 hits.
 - [ ] Lighthouse CLS/LCP thresholds — not run
-- [ ] Secret-exposure scan — not automated (checked by hand before the git push, see PROGRESS.md)
-- [ ] Recorder-down / Qwen-off dedicated tests — partially covered (the "none" driver fallback is tested in `tests/unit/number-binding.test.ts`; no Playwright-level simulation of a down recorder)
+- [ ] Recorder-down / Qwen-off dedicated tests — partially covered (the "none" driver fallback is tested in `tests/unit/number-binding.test.ts` and now also exercised end-to-end by `/api/narrate` with no `LLM_PROVIDER` set; still no Playwright-level simulation of a down recorder)
 
 ## Phase H — Ship
 - [x] README rewritten per §12's structure with real numbers (not hand-typed — pulled from the same JSON files the app reads)
