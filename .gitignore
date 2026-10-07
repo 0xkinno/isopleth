@@ -29,3 +29,6 @@ data/clock/raw/e1-errors.jsonl
 test-results/
 playwright-report/
 docs/screens/*.png
+
+# vercel CLI project link metadata
+.vercel

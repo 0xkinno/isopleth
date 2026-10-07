@@ -28,9 +28,11 @@
     "verify:build-golden": "tsx scripts/golden/build-golden.ts",
     "verify:offline": "tsx scripts/verify-offline.ts",
     "discovery:e4:replay": "tsx scripts/discovery/e4-replay.ts",
-    "bench": "tsx scripts/bench.ts"
+    "bench": "tsx scripts/bench.ts",
+    "screenshots": "tsx scripts/capture-screenshots.ts"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^22.10.2",
     "fast-check": "^4.10.2",
     "tsx": "^4.19.2",
