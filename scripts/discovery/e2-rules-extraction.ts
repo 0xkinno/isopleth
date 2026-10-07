@@ -38,8 +38,19 @@ async function writeVersioned(category: string, key: string, body: unknown) {
 async function fetchDiscountRates(coins: string[]): Promise<Array<{ coin: string; strategy: string; file: string; hash: string }>> {
   const out: Array<{ coin: string; strategy: string; file: string; hash: string }> = [];
 
-  const bulk = await bitgetPublicGet<unknown>("/api/v3/market/discount-rate", {});
-  const bulkList = Array.isArray(bulk.data) ? bulk.data : (bulk.data as { discountRateList?: unknown[] })?.discountRateList;
+  // Real bug, found 2026-10-07: a network failure on this single bulk call
+  // (observed live: Bitget timing out / aborting the connection on this
+  // specific endpoint from the user's own machine) used to crash the whole
+  // script before position-tier - the part actually being debugged - ever
+  // ran. A transport failure here must degrade to the per-coin fallback
+  // below, never abort the run.
+  let bulk: Awaited<ReturnType<typeof bitgetPublicGet>> | null = null;
+  try {
+    bulk = await bitgetPublicGet<unknown>("/api/v3/market/discount-rate", {}, { timeoutMs: 15_000 });
+  } catch (e) {
+    console.error(`[e2-rules] discount-rate: bulk call failed transport-level (${e instanceof Error ? e.message : e}), falling back to per-coin calls`);
+  }
+  const bulkList = bulk ? (Array.isArray(bulk.data) ? bulk.data : (bulk.data as { discountRateList?: unknown[] })?.discountRateList) : undefined;
   if (Array.isArray(bulkList) && bulkList.length > 0) {
     const { file, hash } = await writeVersioned("discount-rate", "ALL_COINS", bulk);
     console.log(`[e2-rules] discount-rate: bulk call returned ${bulkList.length} entries -> ${file}`);
@@ -120,7 +131,12 @@ async function main() {
   const stockPerpSymbols = pairs.map((p) => p.perp);
 
   console.log(`[e2-rules] capturing discount-rate for ${rTokenCoins.length} rToken coin(s)...`);
-  const discountResults = await fetchDiscountRates(rTokenCoins);
+  let discountResults: Array<{ coin: string; strategy: string; file: string; hash: string }> = [];
+  try {
+    discountResults = await fetchDiscountRates(rTokenCoins);
+  } catch (e) {
+    console.error(`[e2-rules] discount-rate capture failed entirely (${e instanceof Error ? e.message : e}) - continuing to position-tier anyway`);
+  }
 
   console.log(`[e2-rules] capturing position-tier for ${stockPerpSymbols.length} stock perp(s) + ${CRYPTO_PERPS.length} crypto perp(s)...`);
   const tierResults = await fetchPositionTiers([...stockPerpSymbols, ...CRYPTO_PERPS]);

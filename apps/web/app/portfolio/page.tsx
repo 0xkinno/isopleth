@@ -48,8 +48,9 @@ export default async function PortfolioPage() {
       </div>
       <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 12 }}>
         Showing a sample of {summary.universe.sample.length} of {summary.universe.pairCount}. Full
-        list: <code>data/clock/pairs.json</code>. Logos via Clearbit, keyed by underlying ticker —
-        a gray square means no mapping exists yet for that ticker, never a wrong logo.
+        list: <code>data/clock/pairs.json</code>. Logos via Simple Icons (local SVG for Amazon, which
+        Simple Icons does not carry), keyed by underlying ticker — a gray square means no verified
+        mapping exists yet for that ticker, never a wrong logo.
       </p>
 
       <div className="panel" style={{ padding: 24, marginTop: 32 }}>

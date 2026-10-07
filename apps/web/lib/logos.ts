@@ -40,10 +40,22 @@ const TICKER_SLUG: Record<string, string> = {
   TEAM: "atlassian",
   MDB: "mongodb",
   OKTA: "okta",
+  MSTR: "microstrategy",
 };
 
-/** Returns a Simple Icons logo URL for a ticker, or null if no verified mapping exists. */
+// Simple Icons has no Amazon mark at all (delisted library-wide, not just a
+// missing slug - verified 2026-10-07 against amazon/amazonaws/amazonalexa,
+// all 404, while unrelated slugs like twitch/imdb return 200 on the same
+// CDN). Amazon's real smile-arrow mark is served locally instead, sourced
+// from the Homarr dashboard-icons project (MIT-licensed SVG set).
+const LOCAL_ICON: Record<string, string> = {
+  AMZN: "/icons/amzn.svg",
+};
+
+/** Returns a logo URL for a ticker (local asset or Simple Icons CDN), or null if no verified mapping exists. */
 export function logoUrlFor(underlying: string): string | null {
-  const slug = TICKER_SLUG[underlying.toUpperCase()];
+  const ticker = underlying.toUpperCase();
+  if (LOCAL_ICON[ticker]) return LOCAL_ICON[ticker];
+  const slug = TICKER_SLUG[ticker];
   return slug ? `https://cdn.simpleicons.org/${slug}` : null;
 }
