@@ -14,8 +14,8 @@ jobs:
       - run: corepack enable && pnpm install --frozen-lockfile
       - run: pnpm discovery:e1:tick
       - run: |
-          git config user.name "isopleth-recorder"
-          git config user.email "recorder@users.noreply.github.com"
+          git config user.name "0xkinno"
+          git config user.email "ojilerekingsley@gmail.com"
           git add data/clock
           git diff --staged --quiet || git commit -m "clock: $(date -u +%FT%TZ)"
           git pull --rebase --autostash && git push

@@ -227,7 +227,7 @@ Semi-professional cross-asset traders and small desks holding rTokens as UTA Adv
 
 ## Roadmap
 
-See [TASK.md](TASK.md) for the full phase-by-phase checklist. Immediate next: confirm a liquid-name freeze+thaw over the 2026-10-09–12 weekend (the GitHub Actions recorder is confirmed live on a 10-minute cron as of this writing); re-run `pnpm bench` and `pnpm discovery:e4:replay` once that window elapses; wire Qwen once credits arrive; deploy to Vercel; capture the demo video.
+Immediate next: confirm a liquid-name freeze+thaw over the 2026-10-09–12 weekend (the GitHub Actions recorder is confirmed live on a 10-minute cron as of this writing); re-run `pnpm bench` and `pnpm discovery:e4:replay` once that window elapses; wire Qwen once credits arrive; deploy to Vercel; capture the demo video.
 
 ## Local setup
 
@@ -246,4 +246,4 @@ Works from a clean clone — nothing above needs an API key.
 
 ## Docs index
 
-[FINAL_INSTRUCTION.md](FINAL_INSTRUCTION.md) · [TASK.md](TASK.md) · [MILESTONE.md](MILESTONE.md) · [PROGRESS.md](PROGRESS.md) · [DISCOVERY.md](DISCOVERY.md) · [CLAIMS.json](CLAIMS.json) · [PROOF.md](PROOF.md) · [EVIDENCE_MANIFEST.md](EVIDENCE_MANIFEST.md) · [METHOD.md](METHOD.md) · [LIMITATIONS.md](LIMITATIONS.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [CONTRIBUTIONS.md](CONTRIBUTIONS.md) · [SUBMISSION.md](SUBMISSION.md)
+[MILESTONE.md](MILESTONE.md) · [PROGRESS.md](PROGRESS.md) · [DISCOVERY.md](DISCOVERY.md) · [CLAIMS.json](CLAIMS.json) · [PROOF.md](PROOF.md) · [EVIDENCE_MANIFEST.md](EVIDENCE_MANIFEST.md) · [METHOD.md](METHOD.md) · [LIMITATIONS.md](LIMITATIONS.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [CONTRIBUTIONS.md](CONTRIBUTIONS.md) · [SUBMISSION.md](SUBMISSION.md)
