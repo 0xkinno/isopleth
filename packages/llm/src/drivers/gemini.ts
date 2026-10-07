@@ -3,7 +3,7 @@
 // swapping providers is genuinely a config change, not a dependency change.
 import type { LlmDriver, LlmRequest, LlmResult } from "../types";
 
-const DEFAULT_MODEL = "gemini-2.0-flash";
+const DEFAULT_MODEL = "gemini-3.8-flash";
 
 export function makeGeminiDriver(opts: { apiKey: string; model?: string }): LlmDriver {
   const model = opts.model ?? DEFAULT_MODEL;
