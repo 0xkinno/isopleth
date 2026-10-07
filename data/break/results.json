@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-07T08:27:04.461Z",
+  "generatedAt": "2026-10-07T11:54:18.527Z",
   "total": 13,
-  "verified": 7,
-  "notYet": 6,
+  "verified": 8,
+  "notYet": 5,
   "failed": 0,
   "results": [
     {
@@ -58,8 +58,8 @@
       "id": "B8",
       "attack": "One byte edited in a stored clock snapshot",
       "expected": "Hash mismatch, diverging recompute, fail closed",
-      "systemResponse": "NOT_YET: needs a standalone hash-chain verifier script (packages/evidence, Phase C)",
-      "verified": false
+      "systemResponse": "chain clean over 43401 records; a one-field tamper on the last record changes its recomputed hash (detected=true)",
+      "verified": true
     },
     {
       "id": "B9",

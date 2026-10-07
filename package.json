@@ -24,7 +24,11 @@
     "test": "vitest run",
     "break": "tsx scripts/break.ts",
     "manifest": "tsx scripts/manifest.ts",
-    "secrets:scan": "tsx scripts/secret-scan.ts"
+    "secrets:scan": "tsx scripts/secret-scan.ts",
+    "verify:build-golden": "tsx scripts/golden/build-golden.ts",
+    "verify:offline": "tsx scripts/verify-offline.ts",
+    "discovery:e4:replay": "tsx scripts/discovery/e4-replay.ts",
+    "bench": "tsx scripts/bench.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

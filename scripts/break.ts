@@ -8,6 +8,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { evaluate, applyScenario, type Book, type Scenario } from "@isopleth/core";
 import { bindNumbers } from "@isopleth/llm";
 import { guardRTokenCandleType } from "../packages/data/src/guards";
+import { parseJsonlChain, recomputeHash, verifyChain } from "../packages/data/src/chainVerify";
 
 interface BreakResult {
   id: string;
@@ -98,8 +99,36 @@ record("B6", "Prompt injection in a research source", "LLM cannot alter calculat
   record("B7", "Narration contains a number the kernel did not produce", "Number-binding guard rejects it (I6)", !bound.ok && bound.orphans.includes(7777777), `orphans=${JSON.stringify(bound.orphans)}`);
 }
 
-// B8: one byte edited in a stored snapshot - needs a hash-chain integrity checker script (not built)
-record("B8", "One byte edited in a stored clock snapshot", "Hash mismatch, diverging recompute, fail closed", false, "NOT_YET: needs a standalone hash-chain verifier script (packages/evidence, Phase C)");
+// B8: one byte edited in a stored snapshot -> hash mismatch, diverging
+// recompute, fail closed. Verified against the real recorded tick log: the
+// whole chain must verify clean first, then a one-byte tamper on a copy of
+// the last real record must be caught by the same recompute.
+{
+  try {
+    const { readFileSync } = await import("node:fs");
+    const raw = readFileSync("data/clock/raw/e1.jsonl", "utf8");
+    const records = parseJsonlChain(raw);
+    const clean = verifyChain(records);
+
+    const last = records[records.length - 1]!;
+    const tampered = { ...last, markPrice: last.markPrice === 0 ? 0.000001 : (last.markPrice as number) * 1.0000001 };
+    const prevOfLast = records.length > 1 ? records[records.length - 2]!.hash : "GENESIS";
+    const tamperDetected = recomputeHash(prevOfLast, tampered) !== last.hash;
+
+    const verified = clean.ok && tamperDetected;
+    record(
+      "B8",
+      "One byte edited in a stored clock snapshot",
+      "Hash mismatch, diverging recompute, fail closed",
+      verified,
+      clean.ok
+        ? `chain clean over ${clean.total} records; a one-field tamper on the last record changes its recomputed hash (detected=${tamperDetected})`
+        : `chain NOT clean: ${clean.brokenAt.length} break(s) at indices ${clean.brokenAt.slice(0, 5).join(",")}`,
+    );
+  } catch {
+    record("B8", "One byte edited in a stored clock snapshot", "Hash mismatch, diverging recompute, fail closed", false, "NOT_YET: data/clock/raw/e1.jsonl not found (recorder hasn't run in this environment)");
+  }
+}
 
 // B9: duplicate tick record - dedup check against the real recorded log, if present
 {

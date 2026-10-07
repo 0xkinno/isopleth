@@ -1,0 +1,108 @@
+{
+  "leveraged-demo": {
+    "book": {
+      "collateral": [
+        {
+          "coin": "rAAPL",
+          "qty": 40,
+          "referenceUsd": 230,
+          "referenceState": "OPEN_LIVE",
+          "tiers": [
+            {
+              "startUsd": 0,
+              "rate": 0.9
+            }
+          ],
+          "rulesetVersion": "golden-1",
+          "evidence": "SYNTHETIC",
+          "sourceRefs": []
+        }
+      ],
+      "positions": [
+        {
+          "symbol": "BTCUSDT",
+          "side": "LONG",
+          "qty": 1.1,
+          "markUsd": 62000,
+          "kind": "crypto",
+          "tiers": [
+            {
+              "symbol": "BTCUSDT",
+              "minNotional": 0,
+              "maxNotional": 500000,
+              "maintenanceMarginRate": 0.01,
+              "takerFee": 0.0006,
+              "sourceRef": "golden"
+            }
+          ]
+        },
+        {
+          "symbol": "ETHUSDT",
+          "side": "LONG",
+          "qty": 10,
+          "markUsd": 3200,
+          "kind": "crypto",
+          "tiers": [
+            {
+              "symbol": "ETHUSDT",
+              "minNotional": 0,
+              "maxNotional": 500000,
+              "maintenanceMarginRate": 0.01,
+              "takerFee": 0.0006,
+              "sourceRef": "golden"
+            }
+          ]
+        }
+      ],
+      "cashUsd": 3000,
+      "liabilitiesUsd": 0,
+      "unrealisedPnlUsd": 0,
+      "partialLiqFeeUsd": 0
+    },
+    "expectedHash": "2b2fa9cf58aa8355882c9fee24e6f698d2fd186ab04d17136a6d20d94db367ac"
+  },
+  "cash-only": {
+    "book": {
+      "collateral": [],
+      "positions": [],
+      "cashUsd": 10000,
+      "liabilitiesUsd": 0,
+      "unrealisedPnlUsd": 0,
+      "partialLiqFeeUsd": 0
+    },
+    "expectedHash": "5a797be36444ba479561b7155162b0d38c8d6b60eb7b9c4c47d30354c3123f63"
+  },
+  "single-rtoken": {
+    "book": {
+      "collateral": [
+        {
+          "coin": "rAAPL",
+          "qty": 50,
+          "referenceUsd": 220,
+          "referenceState": "OPEN_LIVE",
+          "tiers": [
+            {
+              "startUsd": 0,
+              "rate": 0.95
+            },
+            {
+              "startUsd": 8000,
+              "rate": 0.85
+            }
+          ],
+          "rulesetVersion": "golden-1",
+          "evidence": "SYNTHETIC",
+          "sourceRefs": [
+            "golden-fixture"
+          ]
+        }
+      ],
+      "positions": [],
+      "cashUsd": 500,
+      "liabilitiesUsd": 0,
+      "unrealisedPnlUsd": 0,
+      "partialLiqFeeUsd": 0
+    },
+    "expectedHash": "26438d74004b94048eec6c1adf59e5f34b8b2fe3a21a2e6e4080df7b827df820"
+  }
+}
