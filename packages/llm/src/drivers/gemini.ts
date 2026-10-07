@@ -17,16 +17,17 @@ export function makeGeminiDriver(opts: { apiKey: string; model?: string }): LlmD
       if (req.system) body.systemInstruction = { role: "system", parts: [{ text: req.system }] };
       if (req.json) body.generationConfig = { responseMimeType: "application/json" };
 
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      const json = (await res.json()) as {
-        candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-      };
-      if (!res.ok) {
-        throw new Error(`Gemini request failed: status=${res.status} body=${JSON.stringify(json).slice(0, 500)}`);
+      // 429/503 from Google are transient ("high demand"); retry briefly instead of failing the whole narration.
+      let res: Response | undefined;
+      let json: { candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }> } = {};
+      for (let attempt = 0; attempt < 4; attempt += 1) {
+        res = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+        json = (await res.json()) as typeof json;
+        if (res.ok || (res.status !== 503 && res.status !== 429)) break;
+        await new Promise((r) => setTimeout(r, 700 * (attempt + 1)));
+      }
+      if (!res || !res.ok) {
+        throw new Error(`Gemini request failed: status=${res?.status} body=${JSON.stringify(json).slice(0, 500)}`);
       }
       const text: string = json.candidates?.[0]?.content?.parts?.map((p) => p.text ?? "").join("") ?? "";
       return { text, provider: "gemini", raw: json };
