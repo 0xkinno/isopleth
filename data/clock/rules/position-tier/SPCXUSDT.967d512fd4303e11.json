@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-10-08T05:43:09.051Z",
+  "key": "SPCXUSDT",
+  "hash": "967d512fd4303e119accae9d270620dc7b71ce0a122e96f552cf2096acbd0b30",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438188958,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "50000",
+        "leverage": "75",
+        "mmr": "0.008"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "50000",
+        "maxTierValue": "400000",
+        "leverage": "50",
+        "mmr": "0.01"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "400000",
+        "maxTierValue": "1000000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "1000000",
+        "maxTierValue": "4000000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "4000000",
+        "maxTierValue": "8000000",
+        "leverage": "15",
+        "mmr": "0.0333"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "8000000",
+        "maxTierValue": "40000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "40000000",
+        "maxTierValue": "50000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "8",
+        "minTierValue": "50000000",
+        "maxTierValue": "80000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "9",
+        "minTierValue": "80000000",
+        "maxTierValue": "100000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "10",
+        "minTierValue": "100000000",
+        "maxTierValue": "200000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

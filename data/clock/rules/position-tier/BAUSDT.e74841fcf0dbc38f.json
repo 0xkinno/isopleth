@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-08T05:42:51.940Z",
+  "key": "BAUSDT",
+  "hash": "e74841fcf0dbc38f3bc870359620b081404cae40d3d4147bb2edd803a9c5443b",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438171846,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "5000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "5000",
+        "maxTierValue": "25000",
+        "leverage": "15",
+        "mmr": "0.0334"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "25000",
+        "maxTierValue": "50000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "50000",
+        "maxTierValue": "100000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "100000",
+        "maxTierValue": "150000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "150000",
+        "maxTierValue": "500000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "500000",
+        "maxTierValue": "1250000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

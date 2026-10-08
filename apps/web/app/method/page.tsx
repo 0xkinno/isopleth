@@ -41,6 +41,8 @@ export default async function MethodPage() {
           <ul>
             <li>The rToken-eligible stock-perp universe ({summary.universe.pairCount} pairs) — discovered live, not hardcoded.</li>
             <li>Collateral discount-rate tier ladders, content-hashed for change detection (520 real entries).</li>
+            <li>Maintenance-margin ladders for {summary.universe.pairCount} stock perps plus BTC, ETH and SOL: 243 real ladders, 1,778 bands, each contiguous with a non-decreasing maintenance rate (checked offline).</li>
+            <li>Reference lag: the public index was unchanged from the previous tick on 17.5% of 44,603 recorded ticks; median gap to spot 0.114%. See <a href="/scenarios">Scenarios</a>.</li>
             <li>
               The F8 silent-fallback trap (rToken candle <code>type=index/mark/premium</code> silently
               returns <code>type=market</code> data) — {summary.f8Trap.confirmed ? "confirmed live" : "not yet confirmed"}.
@@ -72,23 +74,11 @@ export default async function MethodPage() {
           </p>
         </Section>
 
-        <Section title="KNOWN ISSUE, BEING FIXED">
-          <p>
-            Position-tier capture currently fails against Bitget&apos;s live API (wrong request
-            parameter) and was silently recorded as succeeded — see{" "}
-            <a href="https://github.com/0xkinno/isopleth/blob/main/ARCHITECTURE.md#known-issues-stated-plainly-not-buried" target="_blank" rel="noreferrer">
-              ARCHITECTURE.md
-            </a>{" "}
-            for the exact cause and fix in progress. This is why U5/U8 below remain open — there has
-            never been real tier-ladder data to check them against.
-          </p>
-        </Section>
-
         <Section title="UNKNOWN">
           <ul>
-            <li>Whether collateral tiers apply marginally per coin or on aggregated value (U5) — blocked on the position-tier fix above.</li>
+            <li>Whether collateral tiers apply marginally per coin or on aggregated value (U5). The ladders are captured and contiguous, but a ladder cannot say how its bands are applied.</li>
             <li>Whether markPrice clamps to the frozen index or floats independently (U6) — needs more elapsed closed-market time.</li>
-            <li>Tier boundary inclusivity/exclusivity (U8) — blocked on the position-tier fix above.</li>
+            <li>Tier boundary inclusivity/exclusivity (U8). Adjacent bands share the boundary value, so the published ladder cannot settle it; the kernel keeps (lo, hi] and labels it an assumption.</li>
             <li>Whether private per-coin valuation tracks the public index (U3/U4) — needs an optional read-only key, never a prerequisite.</li>
           </ul>
         </Section>

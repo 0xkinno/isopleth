@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-10-08T05:42:36.002Z",
+  "key": "INTCUSDT",
+  "hash": "221832c8f6b78efbc99e202b8a559cd40a30831a9dd158086d8af263637439d3",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438155910,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "50000",
+        "leverage": "50",
+        "mmr": "0.01"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "50000",
+        "maxTierValue": "250000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "250000",
+        "maxTierValue": "2000000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "2000000",
+        "maxTierValue": "5000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "5000000",
+        "maxTierValue": "8000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "8000000",
+        "maxTierValue": "15000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "15000000",
+        "maxTierValue": "50000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "8",
+        "minTierValue": "50000000",
+        "maxTierValue": "200000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

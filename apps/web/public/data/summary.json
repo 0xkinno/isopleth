@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T18:30:46.959Z",
+  "generatedAt": "2026-10-08T05:50:30.665Z",
   "clock": {
     "lastClockmapRunAt": "2026-10-07T12:20:02.979Z",
     "latestSampleUtc": 1791375220651,
@@ -34,7 +34,7 @@
     },
     {
       "id": "C2",
-      "statement": "rToken candle requests silently coerce type=index/mark/premium to type=market, with no error — a trap that would otherwise corrupt any code treating candle data as a reference-price series.",
+      "statement": "rToken candle requests silently coerce type=index/mark/premium to type=market, with no error - a trap that would otherwise corrupt any code treating candle data as a reference-price series.",
       "label": "Silent-fallback trap (F8)",
       "evidence_path": "data/clock/e3-fallback-trap.json",
       "reproduce_command": "pnpm discovery:e3",
@@ -46,7 +46,8 @@
       "label": "Tier ladder capture",
       "evidence_path": "data/clock/rules/",
       "reproduce_command": "pnpm discovery:e2:rules",
-      "status": "PROVEN"
+      "status": "PROVEN",
+      "note": "As of 2026-10-08: 520 collateral discount-rate entries and 243 real maintenance-margin (position-tier) ladders, 1,778 bands in total, are captured and content-hashed. Every ladder is a genuine success envelope, contiguous, with non-decreasing maintenance rate; this is checked offline by `pnpm verify:offline` (position-tier-ladders). An earlier version of the capture script silently stored error envelopes (wrong request parameter); it was fixed to require code 00000 before writing, and the 244 bad files were removed. One symbol (WBDUSDT) was delisted (code 40309) and is correctly not stored."
     },
     {
       "id": "C4",
@@ -70,10 +71,10 @@
       "id": "C6",
       "statement": "Collateral/position tier boundaries are inclusive on the upper bound and exclusive on the lower bound - i.e. a tier covers (lo, hi].",
       "label": "U5 / U8 tier boundary semantics",
-      "evidence_path": "none yet",
+      "evidence_path": "data/clock/rules/position-tier/ (structure only)",
       "reproduce_command": "n/a - needs a re-fetched Bitget support article or an E5 authenticated boundary probe",
       "status": "UNKNOWN",
-      "note": "This is the kernel's planned convention (FINAL_INSTRUCTION.md section 6.2) and is currently an assumption carried over from the spec, not an independently verified fact."
+      "note": "The kernel's planned convention (tiers cover (lo, hi]) remains an assumption. The 243 captured ladders show bands are contiguous (each band starts exactly where the previous one ends), which confirms the structure but cannot settle inclusive vs exclusive at the shared boundary value, nor marginal vs aggregated application. Needs the Bitget support wording or an E5 authenticated boundary probe."
     },
     {
       "id": "C7",
@@ -83,6 +84,40 @@
       "reproduce_command": "not yet built - replay script pending",
       "status": "UNKNOWN",
       "note": "Rule is pre-registered in writing. No G_w values exist yet to test it against."
+    },
+    {
+      "id": "C8",
+      "statement": "The public reference index can be measured against market spot from the real recorded chain: how often it sat unchanged while spot moved, the size of the gap, and the margin shift a fixed leveraged book would see under each collateral valuation.",
+      "label": "Reference lag, measured",
+      "evidence_path": "apps/web/public/data/clock-replay.json (built from data/clock/raw/e1.jsonl)",
+      "reproduce_command": "pnpm replay:build",
+      "status": "PROVEN",
+      "note": "Measured over 44,603 ticks on 240 pairs: the reference index was unchanged from the previous tick 17.5% of the time; median |spot - index| 0.114%, 95th percentile 0.559%; one pair (BYDUSDT) excluded as a unit-mapping anomaly (gap above 50%). Prices are REPLAYED, the book is SYNTHETIC. This does not claim how Bitget's private engine values collateral (that is C5)."
+    },
+    {
+      "id": "C9",
+      "statement": "Every kernel answer carries a receipt (SHA-256 over engine version, canonical input and result) that anyone can recompute, and that stops verifying if the result is edited by a single dollar.",
+      "label": "Verifiable result receipts",
+      "evidence_path": "scripts/verify-offline.ts (receipt-round-trip), tests/unit/mcp-tools.test.ts",
+      "reproduce_command": "pnpm verify:offline && pnpm test",
+      "status": "PROVEN"
+    },
+    {
+      "id": "C10",
+      "statement": "Isopleth is callable as a read-only MCP server (Streamable HTTP) exposing six tools over the deterministic kernel and the stored measurements; it exposes no order, transfer or write capability, and refuses unknown tools.",
+      "label": "Read-only MCP tool surface",
+      "evidence_path": "apps/web/app/mcp/route.ts, apps/web/lib/mcpTools.ts, tests/unit/mcp-tools.test.ts",
+      "reproduce_command": "pnpm test",
+      "status": "PROVEN"
+    },
+    {
+      "id": "C11",
+      "statement": "Twelve of the thirteen planned break attacks are verified by an executable harness; the thirteenth (null/permuted control) needs at least two fully elapsed closed-market windows that the recorder has not yet observed.",
+      "label": "Break campaign",
+      "evidence_path": "data/break/results.json",
+      "reproduce_command": "pnpm break",
+      "status": "PARTIAL",
+      "note": "B13 is time-blocked, not build-blocked: harness exists in packages/core/src/e4stat.ts."
     }
   ],
   "f8Trap": {

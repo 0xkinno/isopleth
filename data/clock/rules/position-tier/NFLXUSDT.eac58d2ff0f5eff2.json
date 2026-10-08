@@ -1,0 +1,75 @@
+{
+  "capturedAt": "2026-10-08T05:42:40.201Z",
+  "key": "NFLXUSDT",
+  "hash": "eac58d2ff0f5eff251d51ec7b9bc8956a9089089f48bdf409fd4e9725535a3c8",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438160116,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "10000",
+        "leverage": "50",
+        "mmr": "0.01"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "10000",
+        "maxTierValue": "50000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "50000",
+        "maxTierValue": "100000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "100000",
+        "maxTierValue": "500000",
+        "leverage": "15",
+        "mmr": "0.04"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "500000",
+        "maxTierValue": "2000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "2000000",
+        "maxTierValue": "5000000",
+        "leverage": "5",
+        "mmr": "0.12"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "5000000",
+        "maxTierValue": "10000000",
+        "leverage": "4",
+        "mmr": "0.15"
+      },
+      {
+        "tier": "8",
+        "minTierValue": "10000000",
+        "maxTierValue": "50000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "9",
+        "minTierValue": "50000000",
+        "maxTierValue": "100000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-08T05:43:11.821Z",
+  "key": "PANWUSDT",
+  "hash": "357c80cca740eee65bcee6edcbefe6a14afd73b87c8910a6f4ebe4e84235cd27",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438191735,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "250000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "250000",
+        "maxTierValue": "2000000",
+        "leverage": "15",
+        "mmr": "0.04"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "2000000",
+        "maxTierValue": "5000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "5000000",
+        "maxTierValue": "8000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "8000000",
+        "maxTierValue": "15000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "15000000",
+        "maxTierValue": "50000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "50000000",
+        "maxTierValue": "200000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-08T05:43:29.612Z",
+  "key": "ISRGUSDT",
+  "hash": "b84327e115ad777691d6b60b3abd5cbb0b89dfbeaa4764ccb1ab26e7b4798bd2",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438209512,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "100000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "100000",
+        "maxTierValue": "500000",
+        "leverage": "15",
+        "mmr": "0.04"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "500000",
+        "maxTierValue": "2000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "2000000",
+        "maxTierValue": "5000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "5000000",
+        "maxTierValue": "10000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "10000000",
+        "maxTierValue": "25000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "25000000",
+        "maxTierValue": "50000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "capturedAt": "2026-10-08T05:43:47.327Z",
+  "key": "FWDIUSDT",
+  "hash": "23de2ec3040090811edba6902c77b847b8584cd4bf886e88d0b27dc3e31a1287",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438227236,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "300000",
+        "leverage": "5",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "300000",
+        "maxTierValue": "600000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "600000",
+        "maxTierValue": "10000000",
+        "leverage": "3",
+        "mmr": "0.17"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "10000000",
+        "maxTierValue": "25000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "25000000",
+        "maxTierValue": "50000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

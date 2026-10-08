@@ -3,6 +3,7 @@ import { demoBook } from "../../lib/demoBook";
 import { buildContourFrames, X_RANGE, Y_RANGE } from "../../lib/contourDemo";
 import { ContourChart } from "../../components/ContourChart";
 import { YourBookPanel } from "../../components/YourBookPanel";
+import { AskBar } from "../../components/AskBar";
 
 export default function WorkbenchPage() {
   const book = demoBook();
@@ -42,6 +43,8 @@ export default function WorkbenchPage() {
         <ResultCard title="Current book" result={result} />
         <ResultCard title="Shocked (-15% crypto, -12% reference)" result={shockedResult} />
       </div>
+
+      <AskBar />
 
       <div className="panel" style={{ padding: 32, marginBottom: 40 }}>
         <h2 style={{ fontSize: 22, marginBottom: 16 }}>Counterfactual surface</h2>

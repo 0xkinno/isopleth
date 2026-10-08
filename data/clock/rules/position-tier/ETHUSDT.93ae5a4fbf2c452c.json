@@ -1,0 +1,117 @@
+{
+  "capturedAt": "2026-10-08T05:44:23.424Z",
+  "key": "ETHUSDT",
+  "hash": "93ae5a4fbf2c452c5524eaaf5efea729aa32a84a1415756d139303b9c3b5f5e6",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438263285,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "200000",
+        "leverage": "150",
+        "mmr": "0.004"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "200000",
+        "maxTierValue": "1000000",
+        "leverage": "100",
+        "mmr": "0.005"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "1000000",
+        "maxTierValue": "3000000",
+        "leverage": "75",
+        "mmr": "0.01"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "3000000",
+        "maxTierValue": "12000000",
+        "leverage": "50",
+        "mmr": "0.015"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "12000000",
+        "maxTierValue": "40000000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "40000000",
+        "maxTierValue": "70000000",
+        "leverage": "20",
+        "mmr": "0.03"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "70000000",
+        "maxTierValue": "100000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "8",
+        "minTierValue": "100000000",
+        "maxTierValue": "150000000",
+        "leverage": "8",
+        "mmr": "0.07"
+      },
+      {
+        "tier": "9",
+        "minTierValue": "150000000",
+        "maxTierValue": "200000000",
+        "leverage": "7",
+        "mmr": "0.08"
+      },
+      {
+        "tier": "10",
+        "minTierValue": "200000000",
+        "maxTierValue": "250000000",
+        "leverage": "6",
+        "mmr": "0.09"
+      },
+      {
+        "tier": "11",
+        "minTierValue": "250000000",
+        "maxTierValue": "300000000",
+        "leverage": "5",
+        "mmr": "0.12"
+      },
+      {
+        "tier": "12",
+        "minTierValue": "300000000",
+        "maxTierValue": "400000000",
+        "leverage": "4",
+        "mmr": "0.15"
+      },
+      {
+        "tier": "13",
+        "minTierValue": "400000000",
+        "maxTierValue": "500000000",
+        "leverage": "3",
+        "mmr": "0.2"
+      },
+      {
+        "tier": "14",
+        "minTierValue": "500000000",
+        "maxTierValue": "800000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "15",
+        "minTierValue": "800000000",
+        "maxTierValue": "1200000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

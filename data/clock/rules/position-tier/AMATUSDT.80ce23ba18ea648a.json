@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-08T05:42:55.649Z",
+  "key": "AMATUSDT",
+  "hash": "80ce23ba18ea648a82d6efb4433b6af4d04a90a5306d880c25890ecf0a0002f9",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438175564,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "100000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "100000",
+        "maxTierValue": "500000",
+        "leverage": "15",
+        "mmr": "0.0334"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "500000",
+        "maxTierValue": "2000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "2000000",
+        "maxTierValue": "5000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "5000000",
+        "maxTierValue": "10000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "10000000",
+        "maxTierValue": "25000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "25000000",
+        "maxTierValue": "50000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

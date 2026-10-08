@@ -1,0 +1,96 @@
+{
+  "capturedAt": "2026-10-08T05:42:31.800Z",
+  "key": "AMZNUSDT",
+  "hash": "d7125dbf606d23f0f37c446c7ca9599b0fca5e324c8b0050ef3e2f6ce2b973e9",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438151707,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "10000",
+        "leverage": "100",
+        "mmr": "0.005"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "10000",
+        "maxTierValue": "20000",
+        "leverage": "75",
+        "mmr": "0.007"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "20000",
+        "maxTierValue": "30000",
+        "leverage": "50",
+        "mmr": "0.01"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "30000",
+        "maxTierValue": "50000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "50000",
+        "maxTierValue": "100000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "100000",
+        "maxTierValue": "2000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "2000000",
+        "maxTierValue": "3000000",
+        "leverage": "8",
+        "mmr": "0.07"
+      },
+      {
+        "tier": "8",
+        "minTierValue": "3000000",
+        "maxTierValue": "4000000",
+        "leverage": "6",
+        "mmr": "0.09"
+      },
+      {
+        "tier": "9",
+        "minTierValue": "4000000",
+        "maxTierValue": "5000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "10",
+        "minTierValue": "5000000",
+        "maxTierValue": "10000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "11",
+        "minTierValue": "10000000",
+        "maxTierValue": "50000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "12",
+        "minTierValue": "50000000",
+        "maxTierValue": "100000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

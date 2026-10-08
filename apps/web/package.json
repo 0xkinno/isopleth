@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx ../../scripts/build/sync-web-data.ts && next build",
+    "build": "tsx ../../scripts/build/sync-web-data.ts && tsx ../../scripts/build/build-replay.ts && next build",
     "start": "next start",
     "lint": "next lint"
   },

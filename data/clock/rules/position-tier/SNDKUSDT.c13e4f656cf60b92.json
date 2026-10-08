@@ -1,0 +1,89 @@
+{
+  "capturedAt": "2026-10-08T05:42:54.254Z",
+  "key": "SNDKUSDT",
+  "hash": "c13e4f656cf60b9211be84bb30c5d9e62e506c7afab91bc10e1e112ddaacc395",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438174158,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "50000",
+        "leverage": "75",
+        "mmr": "0.008"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "50000",
+        "maxTierValue": "250000",
+        "leverage": "50",
+        "mmr": "0.01"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "250000",
+        "maxTierValue": "500000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "500000",
+        "maxTierValue": "1500000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "1500000",
+        "maxTierValue": "5000000",
+        "leverage": "15",
+        "mmr": "0.04"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "5000000",
+        "maxTierValue": "10000000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "10000000",
+        "maxTierValue": "25000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "8",
+        "minTierValue": "25000000",
+        "maxTierValue": "50000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "9",
+        "minTierValue": "50000000",
+        "maxTierValue": "100000000",
+        "leverage": "3",
+        "mmr": "0.1666"
+      },
+      {
+        "tier": "10",
+        "minTierValue": "100000000",
+        "maxTierValue": "200000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "11",
+        "minTierValue": "200000000",
+        "maxTierValue": "400000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

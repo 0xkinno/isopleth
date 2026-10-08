@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { evaluate, applyScenario, type Scenario } from "@isopleth/core";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { demoBook } from "../../lib/demoBook";
+import { ClockReplay, type ReplayData } from "../../components/ClockReplay";
 
 const PRESETS = [
   { id: "reference-shock", label: "Reference shock", desc: "The rToken reference moves by x%.", refPct: -15, markPct: 0 },
@@ -9,15 +12,25 @@ const PRESETS = [
   { id: "crypto-crash", label: "Crypto mark shock", desc: "Crypto legs move independently of the reference axis.", refPct: 0, markPct: -10.5 },
 ];
 
-export default function ScenariosPage() {
+async function loadReplay(): Promise<ReplayData | null> {
+  try {
+    return JSON.parse(await readFile(path.join(process.cwd(), "public", "data", "clock-replay.json"), "utf8")) as ReplayData;
+  } catch {
+    return null;
+  }
+}
+
+export default async function ScenariosPage() {
   const book = demoBook();
+  const replay = await loadReplay();
 
   return (
     <div className="container" style={{ paddingTop: 48, paddingBottom: 96 }}>
       <h1 style={{ fontSize: 36, marginBottom: 8 }}>Scenarios</h1>
       <p className="lead" style={{ marginBottom: 32 }}>
-        Named state transitions, run through the same kernel as the Workbench. Historical analog
-        replay is planned once the recorder has enough elapsed windows (see /method).
+        Named state transitions, run through the same kernel as the Workbench, and below them a replay
+        of the real recorded reference clock: how long the public reference sat frozen while market
+        spot kept moving, and what that does to a leveraged book.
       </p>
 
       <div style={{ position: "relative", borderRadius: "var(--radius-panel)", overflow: "hidden", marginBottom: 32, height: 180 }}>
@@ -53,6 +66,16 @@ export default function ScenariosPage() {
           );
         })}
       </div>
+
+      {replay && (
+        <div style={{ marginTop: 56 }}>
+          <h2 style={{ fontSize: 28, marginBottom: 8 }}>Clock replay</h2>
+          <p className="lead" style={{ marginBottom: 24 }}>
+            Measured, not modelled: every price below is a real tick from the hash-chained Collateral Clock.
+          </p>
+          <ClockReplay data={replay} />
+        </div>
+      )}
     </div>
   );
 }

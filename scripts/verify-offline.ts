@@ -7,7 +7,7 @@
 // Deliberately imports nothing that can reach the network: no
 // packages/data/src/client.ts (Bitget), no packages/llm driver construction
 // beyond the pure, local bindNumbers/extractNumbers guard functions.
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { evaluate, resultHash } from "@isopleth/core";
 import { bindNumbers } from "@isopleth/llm";
@@ -107,12 +107,76 @@ function checkFallbackGuard() {
   check("f8-fallback-guard", threw, threw ? "guardRTokenCandleType throws on type=index, as required by the confirmed F8 trap" : "guard failed to throw");
 }
 
+
+// Real captured maintenance-margin ladders (E2): every file must be a genuine success envelope,
+// contiguous (each band starts where the previous ends), with non-decreasing maintenance rates.
+async function checkPositionTierLadders() {
+  const dir = "data/clock/rules/position-tier";
+  let files: string[];
+  try {
+    files = (await readdir(dir)).filter((f) => f.endsWith(".json"));
+  } catch {
+    check("position-tier-ladders", false, `${dir} not present in this checkout`);
+    return;
+  }
+  const problems: string[] = [];
+  const symbols = new Set<string>();
+  let bands = 0;
+  for (const f of files) {
+    const rec = JSON.parse(await readFile(`${dir}/${f}`, "utf8")) as { key: string; body: { code?: string; data?: Array<{ minTierValue: string; maxTierValue: string; mmr: string }> } };
+    symbols.add(rec.key);
+    const data = rec.body.data;
+    if (rec.body.code !== "00000" || !Array.isArray(data) || data.length === 0) {
+      problems.push(`${rec.key}: not a success envelope`);
+      continue;
+    }
+    let prevMax: number | null = null;
+    let prevMmr = -1;
+    for (const t of data) {
+      const lo = Number(t.minTierValue);
+      const hi = Number(t.maxTierValue);
+      const mmr = Number(t.mmr);
+      bands += 1;
+      if (prevMax !== null && Math.abs(lo - prevMax) > 1e-9) problems.push(`${rec.key}: gap or overlap at ${lo}`);
+      if (!(hi > lo) || mmr < prevMmr) problems.push(`${rec.key}: non-monotonic band at ${lo}`);
+      prevMax = hi;
+      prevMmr = mmr;
+    }
+  }
+  check("position-tier-ladders", files.length > 0 && problems.length === 0, problems.length === 0 ? `${symbols.size} real ladders, ${bands} bands, all contiguous with non-decreasing maintenance rate` : problems.slice(0, 5).join("; "));
+}
+
+// A result receipt must verify, and must stop verifying the moment the result is touched.
+function checkReceiptRoundTrip() {
+  const book = {
+    collateral: [{ coin: "rAAPL", qty: 40, referenceUsd: 230, referenceState: "OPEN_LIVE", tiers: [{ startUsd: 0, rate: 0.9 }], rulesetVersion: "receipt-1", evidence: "SYNTHETIC", sourceRefs: [] }],
+    positions: [{ symbol: "BTCUSDT", side: "LONG", qty: 1, markUsd: 60_000, kind: "crypto", tiers: [{ symbol: "BTCUSDT", minNotional: 0, maxNotional: 500_000, maintenanceMarginRate: 0.01, takerFee: 0.0006, sourceRef: "receipt" }] }],
+    cashUsd: 2_000,
+    liabilitiesUsd: 0,
+    unrealisedPnlUsd: 0,
+    partialLiqFeeUsd: 0,
+  } as Parameters<typeof evaluate>[0];
+  const r = evaluate(book);
+  if (!r.ok) {
+    check("receipt-round-trip", false, `fixture book refused: ${r.reason}`);
+    return;
+  }
+  const hash = resultHash(book, r);
+  const again = resultHash(JSON.parse(JSON.stringify(book)), JSON.parse(JSON.stringify(r)));
+  const tampered = JSON.parse(JSON.stringify(r)) as { value: { adjEquityUsd: number } };
+  tampered.value.adjEquityUsd += 1;
+  const ok = hash === again && resultHash(book, tampered) !== hash;
+  check("receipt-round-trip", ok, ok ? "receipt recomputes identically from serialized inputs; a one-dollar edit to the result breaks it" : "receipt did not behave");
+}
+
 async function main() {
   await checkGolden();
   await checkClockChain();
   await checkManifestHashes();
   checkNumberBindingGuard();
   checkFallbackGuard();
+  await checkPositionTierLadders();
+  checkReceiptRoundTrip();
 
   const passed = checks.filter((c) => c.ok).length;
   console.log(`[verify:offline] ${passed}/${checks.length} checks passed, no network, no model\n`);

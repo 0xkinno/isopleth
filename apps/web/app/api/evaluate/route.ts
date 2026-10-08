@@ -3,7 +3,7 @@
 // never computed in the browser, so the hashing in packages/core/src/hash.ts
 // (node:crypto) stays server-only.
 import { NextResponse } from "next/server";
-import { evaluate, applyScenario, minimumIntervention, type Scenario } from "@isopleth/core";
+import { evaluate, applyScenario, minimumIntervention, resultHash, ENGINE_VERSION, type Scenario } from "@isopleth/core";
 import { validateBook } from "../../../lib/bookValidate";
 
 export async function POST(req: Request) {
@@ -34,5 +34,5 @@ export async function POST(req: Request) {
   const shockedResult = evaluate(shocked);
   const plan = minimumIntervention(shocked, 0.8);
 
-  return NextResponse.json({ ok: true, result, shockedResult, plan, scenario });
+  return NextResponse.json({ ok: true, result, shockedResult, plan, scenario, receipt: { engineVersion: ENGINE_VERSION, hash: resultHash(book, result) } });
 }

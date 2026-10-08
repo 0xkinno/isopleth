@@ -1,0 +1,54 @@
+{
+  "capturedAt": "2026-10-08T05:43:53.282Z",
+  "key": "SHAZUSDT",
+  "hash": "f434b42e5268007fae2bdcf636636fc77bbb9cca23996ed6291f9aee1f02add4",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438233190,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "200000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "200000",
+        "maxTierValue": "400000",
+        "leverage": "15",
+        "mmr": "0.04"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "400000",
+        "maxTierValue": "1000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "1000000",
+        "maxTierValue": "1500000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "1500000",
+        "maxTierValue": "7500000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "7500000",
+        "maxTierValue": "12500000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

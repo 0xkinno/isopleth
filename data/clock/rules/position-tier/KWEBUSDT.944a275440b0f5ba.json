@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-08T05:42:50.081Z",
+  "key": "KWEBUSDT",
+  "hash": "944a275440b0f5ba03611d68710256ec3a90e09c55d2cdd382e37d05f45daa5a",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438170001,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "5000",
+        "leverage": "25",
+        "mmr": "0.02"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "5000",
+        "maxTierValue": "25000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "25000",
+        "maxTierValue": "200000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "200000",
+        "maxTierValue": "500000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "500000",
+        "maxTierValue": "850000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "850000",
+        "maxTierValue": "1500000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "1500000",
+        "maxTierValue": "2500000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

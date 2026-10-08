@@ -1,1233 +1,1471 @@
 {
-  "capturedAt": "2026-10-05T00:46:38.269Z",
+  "capturedAt": "2026-10-08T05:44:23.900Z",
   "discountRate": [
     {
       "coin": "ALL_COINS",
       "strategy": "bulk-no-param",
-      "file": "data/clock/rules/discount-rate/ALL_COINS.5c14d93ae22f0f2e.json",
-      "hash": "5c14d93ae22f0f2e0e07f1159235c49e3a824eb48630108067da03a1ed8c2907"
+      "file": "data/clock/rules/discount-rate/ALL_COINS.e58b77538c1d3600.json",
+      "hash": "e58b77538c1d360058beab33a03f44ad9278ba2f505d9ca737064dee7a5d4d83"
     }
   ],
   "positionTier": [
     {
       "symbol": "TSLAUSDT",
-      "file": "data/clock/rules/position-tier/TSLAUSDT.4ed294228c0aa655.json",
-      "hash": "4ed294228c0aa655db21a4807e2209bf6b050af8aef128ae1268ab6e4f962834"
+      "file": "data/clock/rules/position-tier/TSLAUSDT.e57f3ed082357f2e.json",
+      "hash": "e57f3ed082357f2e22da2eb8b3537d8a8f243ca017f6b042b3213248e14ed695",
+      "ok": true
     },
     {
       "symbol": "CRCLUSDT",
-      "file": "data/clock/rules/position-tier/CRCLUSDT.3d75d87596063a2b.json",
-      "hash": "3d75d87596063a2b2c20f5504bf702f1199ce5165f53971d9d0731457bb67e60"
+      "file": "data/clock/rules/position-tier/CRCLUSDT.7d6c20099369b47a.json",
+      "hash": "7d6c20099369b47a379f9dd1775eea9053a03d5bfb08ef64bf68093fd1cb5d60",
+      "ok": true
     },
     {
       "symbol": "NVDAUSDT",
-      "file": "data/clock/rules/position-tier/NVDAUSDT.3b2074fb657e7fe8.json",
-      "hash": "3b2074fb657e7fe866a0fdb8fff3b94c12f173b8a802a6118f3a5d4eed1f653d"
+      "file": "data/clock/rules/position-tier/NVDAUSDT.82d32ec7db1458be.json",
+      "hash": "82d32ec7db1458be3fcf60f809800c2598b4f7e761156bf23afe6e666258e035",
+      "ok": true
     },
     {
       "symbol": "GOOGLUSDT",
-      "file": "data/clock/rules/position-tier/GOOGLUSDT.a0d864d304e2dc6a.json",
-      "hash": "a0d864d304e2dc6a09c99d48c4afd720ca4ba76198a61c16fd8f1d08e6aa7292"
+      "file": "data/clock/rules/position-tier/GOOGLUSDT.65c30314339a3ee0.json",
+      "hash": "65c30314339a3ee0acb7267ee07bb2aa12e6882596904112a1ebdd1b859d27ca",
+      "ok": true
     },
     {
       "symbol": "AAPLUSDT",
-      "file": "data/clock/rules/position-tier/AAPLUSDT.6f08e524ee00a669.json",
-      "hash": "6f08e524ee00a669aed9ddef2a51420609840d36d629c288a27392bddfabd3af"
+      "file": "data/clock/rules/position-tier/AAPLUSDT.d36e1ce71009d00c.json",
+      "hash": "d36e1ce71009d00c7b50b4d0509c6bbf282a71ef004c01b892047fb50c2ffea8",
+      "ok": true
     },
     {
       "symbol": "AMZNUSDT",
-      "file": "data/clock/rules/position-tier/AMZNUSDT.9459949784f6ed38.json",
-      "hash": "9459949784f6ed38323895ce4499cc01e2c627d48c80227b8c6544451bee27b9"
+      "file": "data/clock/rules/position-tier/AMZNUSDT.d7125dbf606d23f0.json",
+      "hash": "d7125dbf606d23f0f37c446c7ca9599b0fca5e324c8b0050ef3e2f6ce2b973e9",
+      "ok": true
     },
     {
       "symbol": "METAUSDT",
-      "file": "data/clock/rules/position-tier/METAUSDT.63f488e10e56fedd.json",
-      "hash": "63f488e10e56fedd5ee0cfc1aae9899a3db7c3e4177be38707b65b15bfaacb3d"
+      "file": "data/clock/rules/position-tier/METAUSDT.66c28c4ab98f3179.json",
+      "hash": "66c28c4ab98f317953c62bf512023ebf76016535846a8a40f7272437e89b228f",
+      "ok": true
     },
     {
       "symbol": "MCDUSDT",
-      "file": "data/clock/rules/position-tier/MCDUSDT.f87453f147918739.json",
-      "hash": "f87453f14791873914dd62e4dd4c4abd248bcc4d693edc69d01f911148e7f2e7"
+      "file": "data/clock/rules/position-tier/MCDUSDT.ac53d36cddd79e3c.json",
+      "hash": "ac53d36cddd79e3cac9d99594d23ee2a95bf96b1424694d41402d76c9f35c9fd",
+      "ok": true
     },
     {
       "symbol": "MSTRUSDT",
-      "file": "data/clock/rules/position-tier/MSTRUSDT.baaa753b04b25cf3.json",
-      "hash": "baaa753b04b25cf3a7ff2c99bd49c0d544e45581d2939a141bc61ef2fb43c5f4"
+      "file": "data/clock/rules/position-tier/MSTRUSDT.793c51cb3900b2a9.json",
+      "hash": "793c51cb3900b2a944189778a607377825bc54c1944604ee33f829310491dce8",
+      "ok": true
     },
     {
       "symbol": "COINUSDT",
-      "file": "data/clock/rules/position-tier/COINUSDT.629e89ce3a69f5c4.json",
-      "hash": "629e89ce3a69f5c4114f93330be43feb2c7e2d389cae9555bee07c5df4187e18"
+      "file": "data/clock/rules/position-tier/COINUSDT.36e7cfcdc67054af.json",
+      "hash": "36e7cfcdc67054af436d2f5058740081e34be48e14157facae7c67a897416cc7",
+      "ok": true
     },
     {
       "symbol": "HOODUSDT",
-      "file": "data/clock/rules/position-tier/HOODUSDT.4eae3db92233ee47.json",
-      "hash": "4eae3db92233ee47c43eb4bac91d842305ba877ef7b0489209777e0e3b9f9d30"
+      "file": "data/clock/rules/position-tier/HOODUSDT.e1d6cf7fb740ac5c.json",
+      "hash": "e1d6cf7fb740ac5cd3b1bd77a28b6c984e5e519a70d791e41be6f2fa77af1730",
+      "ok": true
     },
     {
       "symbol": "ARMUSDT",
-      "file": "data/clock/rules/position-tier/ARMUSDT.5ae355679e3bb550.json",
-      "hash": "5ae355679e3bb550ebc76f5db2f940378b4d86d169a946bc4063f4d7a558d973"
+      "file": "data/clock/rules/position-tier/ARMUSDT.7f154f8115315a0b.json",
+      "hash": "7f154f8115315a0b76b34f89d035a13732d35d55d43a71a9867f86a5344749c9",
+      "ok": true
     },
     {
       "symbol": "ASMLUSDT",
-      "file": "data/clock/rules/position-tier/ASMLUSDT.ba361a6a8caeabba.json",
-      "hash": "ba361a6a8caeabba8a6eaa1ef7b883f75b3507897976957a55b2856785021a45"
+      "file": "data/clock/rules/position-tier/ASMLUSDT.b6f63d445b33caee.json",
+      "hash": "b6f63d445b33caee96e1306a0fa138948108038854f0e7b1f7e99054d0df77a1",
+      "ok": true
     },
     {
       "symbol": "BABAUSDT",
-      "file": "data/clock/rules/position-tier/BABAUSDT.e49937eeb0593906.json",
-      "hash": "e49937eeb0593906b94b7e87a1bbdbe7434f42b11f1361c8d843014eb8f96fbc"
+      "file": "data/clock/rules/position-tier/BABAUSDT.f720cfbd071a2ae1.json",
+      "hash": "f720cfbd071a2ae1524db6ce71fa581a84b90e77ae691f9bb606d710400d5484",
+      "ok": true
     },
     {
       "symbol": "INTCUSDT",
-      "file": "data/clock/rules/position-tier/INTCUSDT.dd89b886c9d6211b.json",
-      "hash": "dd89b886c9d6211b21adec049cb033d24d95ca8fcf2078c74db9a14f88dcf45b"
+      "file": "data/clock/rules/position-tier/INTCUSDT.221832c8f6b78efb.json",
+      "hash": "221832c8f6b78efbc99e202b8a559cd40a30831a9dd158086d8af263637439d3",
+      "ok": true
     },
     {
       "symbol": "IBMUSDT",
-      "file": "data/clock/rules/position-tier/IBMUSDT.e5eb20a643b63b4e.json",
-      "hash": "e5eb20a643b63b4eb87b994da9695e1807d54fa9a92778093bd96a3a808ed654"
+      "file": "data/clock/rules/position-tier/IBMUSDT.5724c1139859393e.json",
+      "hash": "5724c1139859393e95668b7072b4dbe95df69bc8efe9e774ecb1431bbb43ca40",
+      "ok": true
     },
     {
       "symbol": "APPUSDT",
-      "file": "data/clock/rules/position-tier/APPUSDT.f91208dd32bba818.json",
-      "hash": "f91208dd32bba8182d20c2ffd53dfae8422f9e8a4fff751b988dd1ab5a60f303"
+      "file": "data/clock/rules/position-tier/APPUSDT.b6be7d3cf78a58b4.json",
+      "hash": "b6be7d3cf78a58b4e0d476c5bfc5c48c9a9ffd9baf06cd5c69407091c7fcc2af",
+      "ok": true
     },
     {
       "symbol": "GEUSDT",
-      "file": "data/clock/rules/position-tier/GEUSDT.871f2dc6ec9d5e3e.json",
-      "hash": "871f2dc6ec9d5e3e19d648d50c0e28d5a11ade481dc080d52c70832501c0f513"
+      "file": "data/clock/rules/position-tier/GEUSDT.761975b15980e1cc.json",
+      "hash": "761975b15980e1cc0983fc990007afec2b159213c80242464370034a4be3239e",
+      "ok": true
     },
     {
       "symbol": "ORCLUSDT",
-      "file": "data/clock/rules/position-tier/ORCLUSDT.c9e5870c6c9a615b.json",
-      "hash": "c9e5870c6c9a615b79d0e3c3c3e6c52c7d0a911dd29aef3368bf01aed38ee6fc"
+      "file": "data/clock/rules/position-tier/ORCLUSDT.f9ff540e9ea5ec85.json",
+      "hash": "f9ff540e9ea5ec85d7f4969d8819bbb6d19f42c582dbc18f201dd4a290806f5b",
+      "ok": true
     },
     {
       "symbol": "PLTRUSDT",
-      "file": "data/clock/rules/position-tier/PLTRUSDT.af6277c5b031a96d.json",
-      "hash": "af6277c5b031a96d2b9bfff6f076a86ba61ef9e723922fc41829a0040f2fa11a"
+      "file": "data/clock/rules/position-tier/PLTRUSDT.b631aae8f459c20e.json",
+      "hash": "b631aae8f459c20e6049febf9f17423385c3d34ad552c378b2503d03db3583c6",
+      "ok": true
     },
     {
       "symbol": "GMEUSDT",
-      "file": "data/clock/rules/position-tier/GMEUSDT.8ccc0dd5290c4e9b.json",
-      "hash": "8ccc0dd5290c4e9b568d135ef83990a6a746f6125aa682d45c7718cda3474083"
+      "file": "data/clock/rules/position-tier/GMEUSDT.2455d771f85571c8.json",
+      "hash": "2455d771f85571c895a1b152f3912225f0fced0e5802eeb421bf64d18f8dbb91",
+      "ok": true
     },
     {
       "symbol": "MRVLUSDT",
-      "file": "data/clock/rules/position-tier/MRVLUSDT.7872780ac620c875.json",
-      "hash": "7872780ac620c875671a86778ada2bc7bf44287fb41ff2150b7a912f5145b137"
+      "file": "data/clock/rules/position-tier/MRVLUSDT.f20d60e917761f77.json",
+      "hash": "f20d60e917761f77b07c7ff8ad1df6fa2b3e727c064700b63eacf2e591284ba2",
+      "ok": true
     },
     {
       "symbol": "MSFTUSDT",
-      "file": "data/clock/rules/position-tier/MSFTUSDT.e7dfa88884071cb8.json",
-      "hash": "e7dfa88884071cb8cf72e40f2e30fcacea80b6200e7713fae90e1c4b45975bd6"
+      "file": "data/clock/rules/position-tier/MSFTUSDT.a57637d0e601cf29.json",
+      "hash": "a57637d0e601cf2978dbd8d7f2941d861ff27431a67e9eb4af55da9193241b07",
+      "ok": true
     },
     {
       "symbol": "NFLXUSDT",
-      "file": "data/clock/rules/position-tier/NFLXUSDT.9f5b0228fbc05cda.json",
-      "hash": "9f5b0228fbc05cda0a3e8f92c0eb7455ade1c65a2a8009abe4d3665084f9586a"
+      "file": "data/clock/rules/position-tier/NFLXUSDT.eac58d2ff0f5eff2.json",
+      "hash": "eac58d2ff0f5eff251d51ec7b9bc8956a9089089f48bdf409fd4e9725535a3c8",
+      "ok": true
     },
     {
       "symbol": "FUTUUSDT",
-      "file": "data/clock/rules/position-tier/FUTUUSDT.da005cc5e6656973.json",
-      "hash": "da005cc5e6656973da1ca1512dacf9e5f8215bd0b4fa8069bfe58e148de084bc"
+      "file": "data/clock/rules/position-tier/FUTUUSDT.5373f7fa80ef68ec.json",
+      "hash": "5373f7fa80ef68eccc04a0a69cf2f9a5609df7c2ff640e3037d61194c2d4d490",
+      "ok": true
     },
     {
       "symbol": "JDUSDT",
-      "file": "data/clock/rules/position-tier/JDUSDT.5fc3443a724b707a.json",
-      "hash": "5fc3443a724b707abe66cfc745e0b82de9f570adb2abfd49fcc1e197ff6a1db5"
+      "file": "data/clock/rules/position-tier/JDUSDT.f5c19027af4c70e9.json",
+      "hash": "f5c19027af4c70e98f6d26a39401ec14506d39434c8f21b6ff6b2a6d1ff8a7a3",
+      "ok": true
     },
     {
       "symbol": "RDDTUSDT",
-      "file": "data/clock/rules/position-tier/RDDTUSDT.a2bacdf97e070ff8.json",
-      "hash": "a2bacdf97e070ff8e643ecd36b5d1d9fa7b40a9242b1da9f2c06b9f5195f7be5"
+      "file": "data/clock/rules/position-tier/RDDTUSDT.6871285040d25bcb.json",
+      "hash": "6871285040d25bcbc1bc9689b890a815517783594a05c702c6eddcc596b0f36f",
+      "ok": true
     },
     {
       "symbol": "QQQUSDT",
-      "file": "data/clock/rules/position-tier/QQQUSDT.45ce13cf14daa1b8.json",
-      "hash": "45ce13cf14daa1b8a729402e6ea0b1952a83eea2c0657837b8a0072c6c49fdb6"
+      "file": "data/clock/rules/position-tier/QQQUSDT.e989430db66b156c.json",
+      "hash": "e989430db66b156c786369141d0a56c28fca9bab3b3647adb7720d3edd7e12eb",
+      "ok": true
     },
     {
       "symbol": "CSCOUSDT",
-      "file": "data/clock/rules/position-tier/CSCOUSDT.08d7230d87e93bc4.json",
-      "hash": "08d7230d87e93bc4eb6ce39d1f59cbd3038526b029080701e9083075bc99fb64"
+      "file": "data/clock/rules/position-tier/CSCOUSDT.eca03f4d368b563a.json",
+      "hash": "eca03f4d368b563a70abb9cc7a405922ec562e1f91e1ab7eece9d2333049700e",
+      "ok": true
     },
     {
       "symbol": "PEPUSDT",
-      "file": "data/clock/rules/position-tier/PEPUSDT.5d53e0995f55bced.json",
-      "hash": "5d53e0995f55bceda53e68899f9c547c5124d7af1970c50c0f4b312b1374fe8e"
+      "file": "data/clock/rules/position-tier/PEPUSDT.5419b0930ba3d8be.json",
+      "hash": "5419b0930ba3d8beb84b006b056e663badb631ba4d138e9ef7c480d0a84caa23",
+      "ok": true
     },
     {
       "symbol": "UNHUSDT",
-      "file": "data/clock/rules/position-tier/UNHUSDT.7c31d2b47960c80e.json",
-      "hash": "7c31d2b47960c80e417588d1b99a12e0033aacd9f00df0d74d0a8d39f8771223"
+      "file": "data/clock/rules/position-tier/UNHUSDT.f0a50413c4788409.json",
+      "hash": "f0a50413c47884093ecfdd793dcc7edb3ecbac5d2caf47e9698897494b60e4bd",
+      "ok": true
     },
     {
       "symbol": "LLYUSDT",
-      "file": "data/clock/rules/position-tier/LLYUSDT.5fbd086d6acc1b00.json",
-      "hash": "5fbd086d6acc1b000bf9cf1aa4c1c5265cbd44ed95768c299300a02d904dfce9"
+      "file": "data/clock/rules/position-tier/LLYUSDT.61ded828d35f44bc.json",
+      "hash": "61ded828d35f44bc528d4cf2dcc6abef6fb51fa42f2150cbc7a3e8d255a3b2db",
+      "ok": true
     },
     {
       "symbol": "AVGOUSDT",
-      "file": "data/clock/rules/position-tier/AVGOUSDT.2f9eeb73ca17110d.json",
-      "hash": "2f9eeb73ca17110d0106fae2bfa2fce10055a4743b069f031fa5eae93723da39"
+      "file": "data/clock/rules/position-tier/AVGOUSDT.4ede188bd2cef307.json",
+      "hash": "4ede188bd2cef30781fd09b86f15250de3958648e3061319e76ba8abb3304e2b",
+      "ok": true
     },
     {
       "symbol": "MUUSDT",
-      "file": "data/clock/rules/position-tier/MUUSDT.4024c6411816464c.json",
-      "hash": "4024c6411816464ca6e18e684cc11ddb6a99ccb70aed6778d093740fce593fad"
+      "file": "data/clock/rules/position-tier/MUUSDT.6a3c3c262097d189.json",
+      "hash": "6a3c3c262097d189628725efab159bd1bc9ac0c5e569a4dc6ca1bfcc8186fd94",
+      "ok": true
     },
     {
       "symbol": "SPYUSDT",
-      "file": "data/clock/rules/position-tier/SPYUSDT.3824252fbf46f042.json",
-      "hash": "3824252fbf46f042ff405885be1b1dd80645ea0af869a38c6be4e474e43d2c03"
+      "file": "data/clock/rules/position-tier/SPYUSDT.9c1532964f9728df.json",
+      "hash": "9c1532964f9728df38510b5ff3e6249f8b867a02830775536667e5b4db660d4f",
+      "ok": true
     },
     {
       "symbol": "COSTUSDT",
-      "file": "data/clock/rules/position-tier/COSTUSDT.791967b1d551af0b.json",
-      "hash": "791967b1d551af0b263ccdbb80e80d81b766156ea3226d900ce49437b98a8177"
+      "file": "data/clock/rules/position-tier/COSTUSDT.bbc754baa3cabf75.json",
+      "hash": "bbc754baa3cabf75fdd07235773b846e241bfd4888ef2da755709685f3bf0ab9",
+      "ok": true
     },
     {
       "symbol": "WMTUSDT",
-      "file": "data/clock/rules/position-tier/WMTUSDT.e355966ba1035027.json",
-      "hash": "e355966ba1035027a4e58c3c41988aedaba932478d74b4f49dd903b5934df151"
+      "file": "data/clock/rules/position-tier/WMTUSDT.12981755369ee449.json",
+      "hash": "12981755369ee44921c5f57b0fc31886ab47ff5945577557e44bdfe598b4d98b",
+      "ok": true
     },
     {
       "symbol": "TSMUSDT",
-      "file": "data/clock/rules/position-tier/TSMUSDT.f63418ab378c09f0.json",
-      "hash": "f63418ab378c09f0f0dcbf7d5c40b09f4e5a6539fa398e7a24cb5a7fe7c4bc74"
+      "file": "data/clock/rules/position-tier/TSMUSDT.cb209f7fcf2413e2.json",
+      "hash": "cb209f7fcf2413e2771f4340c441c75764f781b037f41bc53f4f8b31c58d5cdf",
+      "ok": true
     },
     {
       "symbol": "COPUSDT",
-      "file": "data/clock/rules/position-tier/COPUSDT.ad438fd463fa0d80.json",
-      "hash": "ad438fd463fa0d80344567d33e7bc395363e95250e162fd2fd2f59a810735778"
+      "file": "data/clock/rules/position-tier/COPUSDT.1077e6864b25e241.json",
+      "hash": "1077e6864b25e241a2a4f65878b7c5d243b68a0f5a03dc9901e8e0d32a6eacd1",
+      "ok": true
     },
     {
       "symbol": "XOMUSDT",
-      "file": "data/clock/rules/position-tier/XOMUSDT.10efc4395eb17993.json",
-      "hash": "10efc4395eb179934a0c7cfae4e2a5fac3d2fa65e019fb1e3ebe11d4018ec1da"
+      "file": "data/clock/rules/position-tier/XOMUSDT.37719f81da6d997b.json",
+      "hash": "37719f81da6d997bad78e2a625ae6db9b2689e3f5ec5cbee5610703758f8caa6",
+      "ok": true
     },
     {
       "symbol": "OXYUSDT",
-      "file": "data/clock/rules/position-tier/OXYUSDT.c4b5a830e6618cc7.json",
-      "hash": "c4b5a830e6618cc7f16a175dba3f1dae2925129079f5f9ccc00966053209d760"
+      "file": "data/clock/rules/position-tier/OXYUSDT.fdc9c5dd6b9eb876.json",
+      "hash": "fdc9c5dd6b9eb876762f1c8d8bb259a659bf61c85682ae2f955d8f4bc146a259",
+      "ok": true
     },
     {
       "symbol": "EWJUSDT",
-      "file": "data/clock/rules/position-tier/EWJUSDT.5bc4657a9869f308.json",
-      "hash": "5bc4657a9869f3080771b0e3486864a95560256156d08c6d873155cdafbac72e"
+      "file": "data/clock/rules/position-tier/EWJUSDT.756e894f59fd67ad.json",
+      "hash": "756e894f59fd67adf61227a1d3dd784fc8a467981ad6385a3194fce841e7acf4",
+      "ok": true
     },
     {
       "symbol": "EWYUSDT",
-      "file": "data/clock/rules/position-tier/EWYUSDT.eb28a32148970355.json",
-      "hash": "eb28a32148970355f1621dadfe3943d3e29177c4e30c7bd367aa2cad28003064"
+      "file": "data/clock/rules/position-tier/EWYUSDT.f202fb7f32d2f889.json",
+      "hash": "f202fb7f32d2f889bd0a696c2919d157f07bdc9926acfa71d730842fa573c683",
+      "ok": true
     },
     {
       "symbol": "EWTUSDT",
-      "file": "data/clock/rules/position-tier/EWTUSDT.c7f54f9f19cc7c93.json",
-      "hash": "c7f54f9f19cc7c93b57ffbce0859386023e1e875ce1839545421ca4a2e6291d9"
+      "file": "data/clock/rules/position-tier/EWTUSDT.4fe4cac7866387c1.json",
+      "hash": "4fe4cac7866387c1b7bfd55af018a7a13024ba97b447bae4c5906845d2418037",
+      "ok": true
     },
     {
       "symbol": "KWEBUSDT",
-      "file": "data/clock/rules/position-tier/KWEBUSDT.211f347e35162715.json",
-      "hash": "211f347e35162715e26ed63c9b8f258b77844411dd2d22215b02f9973cc619a9"
+      "file": "data/clock/rules/position-tier/KWEBUSDT.944a275440b0f5ba.json",
+      "hash": "944a275440b0f5ba03611d68710256ec3a90e09c55d2cdd382e37d05f45daa5a",
+      "ok": true
     },
     {
       "symbol": "TQQQUSDT",
-      "file": "data/clock/rules/position-tier/TQQQUSDT.e75550ab7f18b4c8.json",
-      "hash": "e75550ab7f18b4c873ab478333a60ac323fab1a7c33b98bd9f5626226129dbe2"
+      "file": "data/clock/rules/position-tier/TQQQUSDT.801400b865d7e4aa.json",
+      "hash": "801400b865d7e4aa24035fbafcebeb3629da4270490620004f6a9e965333cbf2",
+      "ok": true
     },
     {
       "symbol": "SQQQUSDT",
-      "file": "data/clock/rules/position-tier/SQQQUSDT.68f2291e5028ade2.json",
-      "hash": "68f2291e5028ade273a448a2407cf56b4bfd920596e8985241df8b79d3bdf091"
+      "file": "data/clock/rules/position-tier/SQQQUSDT.5ba7215979d03f33.json",
+      "hash": "5ba7215979d03f3395edffa1d72679e473ebe8a961542b48440d6557c615ccfb",
+      "ok": true
     },
     {
       "symbol": "RKLBUSDT",
-      "file": "data/clock/rules/position-tier/RKLBUSDT.a0e1ef9bd275318f.json",
-      "hash": "a0e1ef9bd275318f14bc544f8ae0724cd1a53fd43d36dd1da9c7d4b634e10f08"
+      "file": "data/clock/rules/position-tier/RKLBUSDT.43b7e3213206b291.json",
+      "hash": "43b7e3213206b2910c8acb0309fc2d262a3a1910887b5eb9fc4f58f91ee463df",
+      "ok": true
     },
     {
       "symbol": "BAUSDT",
-      "file": "data/clock/rules/position-tier/BAUSDT.2bb93c80951513c5.json",
-      "hash": "2bb93c80951513c517be27daa0b554efdda819487c0c6439cc3f06f426008c7b"
+      "file": "data/clock/rules/position-tier/BAUSDT.e74841fcf0dbc38f.json",
+      "hash": "e74841fcf0dbc38f3bc870359620b081404cae40d3d4147bb2edd803a9c5443b",
+      "ok": true
     },
     {
       "symbol": "SOXLUSDT",
-      "file": "data/clock/rules/position-tier/SOXLUSDT.2bfc1757bfa4c543.json",
-      "hash": "2bfc1757bfa4c5433c831a47e7c1890f47b8ddcec92bac4225c11837df608998"
+      "file": "data/clock/rules/position-tier/SOXLUSDT.2029fe4b5a4c5163.json",
+      "hash": "2029fe4b5a4c5163c615de2e8a59fb30ee2fff3b3a324d95d6158c1717acc3c3",
+      "ok": true
     },
     {
       "symbol": "SOXSUSDT",
-      "file": "data/clock/rules/position-tier/SOXSUSDT.8c2ed5683a3f059f.json",
-      "hash": "8c2ed5683a3f059f9f686760e06fda4f647b2fb84029f4c927f0a2f70df3d152"
+      "file": "data/clock/rules/position-tier/SOXSUSDT.4821f412e675f384.json",
+      "hash": "4821f412e675f384053fc8f47a1b27aa5200eb0269ac3c3b5ef7345ba109b1c4",
+      "ok": true
     },
     {
       "symbol": "INDAUSDT",
-      "file": "data/clock/rules/position-tier/INDAUSDT.a3c52364eb6a5b47.json",
-      "hash": "a3c52364eb6a5b474fb025522b21c04a79299d50eaa0f596eee63f8041923640"
+      "file": "data/clock/rules/position-tier/INDAUSDT.b6cea9b033fb1acd.json",
+      "hash": "b6cea9b033fb1acda71285d66cd28a7018cc869132a4bf296f2ea7371b9b6bb0",
+      "ok": true
     },
     {
       "symbol": "FLYUSDT",
-      "file": "data/clock/rules/position-tier/FLYUSDT.af59c7a7b3c0e55e.json",
-      "hash": "af59c7a7b3c0e55e8c1e6ab1c31b063421ada0685ac9aa8538ce77941522eec5"
+      "file": "data/clock/rules/position-tier/FLYUSDT.d09bc618edd770bd.json",
+      "hash": "d09bc618edd770bd478772f43a6e533d35a6f8f676917b363ca1145f1d5450d6",
+      "ok": true
     },
     {
       "symbol": "SNDKUSDT",
-      "file": "data/clock/rules/position-tier/SNDKUSDT.f2927b2304624edd.json",
-      "hash": "f2927b2304624edd28d38ab86e5e7594f02bfc97197b6ef70f10c220c13c2793"
+      "file": "data/clock/rules/position-tier/SNDKUSDT.c13e4f656cf60b92.json",
+      "hash": "c13e4f656cf60b9211be84bb30c5d9e62e506c7afab91bc10e1e112ddaacc395",
+      "ok": true
     },
     {
       "symbol": "LITEUSDT",
-      "file": "data/clock/rules/position-tier/LITEUSDT.de409aab16e7954d.json",
-      "hash": "de409aab16e7954d1683fe859bfe5b663b8ae1ef3711d618e8cd3b2460a9e784"
+      "file": "data/clock/rules/position-tier/LITEUSDT.96dfb9acdd0ec42e.json",
+      "hash": "96dfb9acdd0ec42e178c6526209a1c61a77a94f143fdd3719958b64e24c7ce0c",
+      "ok": true
     },
     {
       "symbol": "AMDUSDT",
-      "file": "data/clock/rules/position-tier/AMDUSDT.28bc219bf5be9c20.json",
-      "hash": "28bc219bf5be9c20053296a141901ae24210304c8b1ee5c5f1c377be1a7eeb1f"
+      "file": "data/clock/rules/position-tier/AMDUSDT.53dda43c464d5382.json",
+      "hash": "53dda43c464d5382957c3933cddfb302c6422cd3c8bbc13a656ad25af7d4bf9a",
+      "ok": true
     },
     {
       "symbol": "AMATUSDT",
-      "file": "data/clock/rules/position-tier/AMATUSDT.425cc9dd42752569.json",
-      "hash": "425cc9dd427525690ba561d9251a985e1a6cbbbbcae48f0129496db5d8145506"
+      "file": "data/clock/rules/position-tier/AMATUSDT.80ce23ba18ea648a.json",
+      "hash": "80ce23ba18ea648a82d6efb4433b6af4d04a90a5306d880c25890ecf0a0002f9",
+      "ok": true
     },
     {
       "symbol": "AAOIUSDT",
-      "file": "data/clock/rules/position-tier/AAOIUSDT.4d0f9a57b5ea83cc.json",
-      "hash": "4d0f9a57b5ea83cc3093e0976f1de0907bdfcb76ab62222ae40ae2ccbbcc6553"
+      "file": "data/clock/rules/position-tier/AAOIUSDT.f8516b6d1b75f071.json",
+      "hash": "f8516b6d1b75f07125448bfc071494f92124cfb3909840f6efda13785392e8ef",
+      "ok": true
     },
     {
       "symbol": "COHRUSDT",
-      "file": "data/clock/rules/position-tier/COHRUSDT.7de09b3d3ebd4c11.json",
-      "hash": "7de09b3d3ebd4c1164caf3d2e2b42e85facdc57288ee15ae9ea22d86daf3289f"
+      "file": "data/clock/rules/position-tier/COHRUSDT.ef9b779eecae404c.json",
+      "hash": "ef9b779eecae404c121c6ce0c5e7c1f2dbb5187e1d9991503003be006bd975d3",
+      "ok": true
     },
     {
       "symbol": "BEUSDT",
-      "file": "data/clock/rules/position-tier/BEUSDT.5fd77d2edb8ca121.json",
-      "hash": "5fd77d2edb8ca1211ce6358539746f997dc8d7f23f82af18cbaa62a34dc5a947"
+      "file": "data/clock/rules/position-tier/BEUSDT.734033d8a5ee2cd6.json",
+      "hash": "734033d8a5ee2cd6b0dfd50f5184d432bb52a51404266e66181a9ef8b2cf8f43",
+      "ok": true
     },
     {
       "symbol": "NBISUSDT",
-      "file": "data/clock/rules/position-tier/NBISUSDT.0536dc9dd9eb34a7.json",
-      "hash": "0536dc9dd9eb34a7cb5eff11c9840e9962f8734458527c7811bf3d7e7d8bc2c1"
+      "file": "data/clock/rules/position-tier/NBISUSDT.fe26b0de8868c79d.json",
+      "hash": "fe26b0de8868c79d6e0e9146393ad2622257f2e8e89292696e493c13113d2215",
+      "ok": true
     },
     {
       "symbol": "IONQUSDT",
-      "file": "data/clock/rules/position-tier/IONQUSDT.f0ea43b0506a945b.json",
-      "hash": "f0ea43b0506a945b20096935f130ce35899ac4e3dcc8915e2fe2ffa2b7aa1e85"
+      "file": "data/clock/rules/position-tier/IONQUSDT.989a32502d48ca53.json",
+      "hash": "989a32502d48ca53f71d5d65b812dc447d70a083a8b1125101d8fae952eb4a29",
+      "ok": true
     },
     {
       "symbol": "OKLOUSDT",
-      "file": "data/clock/rules/position-tier/OKLOUSDT.f69ca002acb8dab2.json",
-      "hash": "f69ca002acb8dab2f9c417489f69c9c1d3e3184de7493f39963e4c45d84a8a7a"
+      "file": "data/clock/rules/position-tier/OKLOUSDT.a580c6ef8d702dd2.json",
+      "hash": "a580c6ef8d702dd25d7da37baebced41a0c4ecc63499c6f44c09d743b89c9ed2",
+      "ok": true
     },
     {
       "symbol": "MPUSDT",
-      "file": "data/clock/rules/position-tier/MPUSDT.c3f189ef6665400a.json",
-      "hash": "c3f189ef6665400aec37890e5a1cc754329e28ecf999dca33b6737c6394e16ce"
+      "file": "data/clock/rules/position-tier/MPUSDT.0783c90cb637d687.json",
+      "hash": "0783c90cb637d6875ece60199a967ba89df812e381c991248827bab00e3bebbf",
+      "ok": true
     },
     {
       "symbol": "CRDOUSDT",
-      "file": "data/clock/rules/position-tier/CRDOUSDT.a6e1d8411a50a685.json",
-      "hash": "a6e1d8411a50a685d874198deecbd0f5f5c7cd70f4ae6b80d035aad74b16813b"
+      "file": "data/clock/rules/position-tier/CRDOUSDT.eb76cae81bc19381.json",
+      "hash": "eb76cae81bc193812767dbc831d9a4c12a7d3d16284f2f6d94a608618c2611a7",
+      "ok": true
     },
     {
       "symbol": "CRWVUSDT",
-      "file": "data/clock/rules/position-tier/CRWVUSDT.3e22d4edd5752a76.json",
-      "hash": "3e22d4edd5752a76e3a081faa49bad40bb2099b2269fe125819715b0238b15cc"
+      "file": "data/clock/rules/position-tier/CRWVUSDT.4869e8f7fca3dee1.json",
+      "hash": "4869e8f7fca3dee13bb6c7b8e9e60adbb04f845898bb29c72d5f2a8d703e0efe",
+      "ok": true
     },
     {
       "symbol": "APLDUSDT",
-      "file": "data/clock/rules/position-tier/APLDUSDT.455877ec899788a8.json",
-      "hash": "455877ec899788a839368ef6111c82c0963fdc29f7a926a719f911db948b700a"
+      "file": "data/clock/rules/position-tier/APLDUSDT.7716a1892e02f740.json",
+      "hash": "7716a1892e02f740a99dc4e1e5dca4cf75a24dc9512c02735feadd780596ffde",
+      "ok": true
     },
     {
       "symbol": "KLACUSDT",
-      "file": "data/clock/rules/position-tier/KLACUSDT.dda3295c77ce196c.json",
-      "hash": "dda3295c77ce196c2e98d3b695d9814bfc2768800e2a8987a76b1a2e4e24034d"
+      "file": "data/clock/rules/position-tier/KLACUSDT.df10c82e27b99c59.json",
+      "hash": "df10c82e27b99c59e906b63982e42ca0ff69df926620b5955ec2927def08730c",
+      "ok": true
     },
     {
       "symbol": "AXTIUSDT",
-      "file": "data/clock/rules/position-tier/AXTIUSDT.502040b293f28ee8.json",
-      "hash": "502040b293f28ee87fa438ff4688f296894defa33efce72e038af0d7f629a0c5"
+      "file": "data/clock/rules/position-tier/AXTIUSDT.e1e75c088890aa51.json",
+      "hash": "e1e75c088890aa51d630c73a144ea6770623728dc8fc7019eed4fb145e9755e2",
+      "ok": true
     },
     {
       "symbol": "LWLGUSDT",
-      "file": "data/clock/rules/position-tier/LWLGUSDT.bd4ddef02181df45.json",
-      "hash": "bd4ddef02181df4539c4a4ab1ea861b8e0922baedd40b17d4c97ce6f04468111"
+      "file": "data/clock/rules/position-tier/LWLGUSDT.dc0047289ad7b11b.json",
+      "hash": "dc0047289ad7b11bca9801a393a8cdfae930b73b8952e278e5340ece9008ab02",
+      "ok": true
     },
     {
       "symbol": "DRAMUSDT",
-      "file": "data/clock/rules/position-tier/DRAMUSDT.f8a2b82547e3daed.json",
-      "hash": "f8a2b82547e3daed2bd20c6768ecd0b63f4232fe6eaa489ec28f90d5d444d694"
+      "file": "data/clock/rules/position-tier/DRAMUSDT.71013057956392f2.json",
+      "hash": "71013057956392f2e09e6280a269844d64a69839197286e03e08e6eea4172161",
+      "ok": true
     },
     {
       "symbol": "USARUSDT",
-      "file": "data/clock/rules/position-tier/USARUSDT.8d301a24a03fadd9.json",
-      "hash": "8d301a24a03fadd9305f3f61c133051975d31663496cff381649b669f372aa53"
+      "file": "data/clock/rules/position-tier/USARUSDT.a6e9b2a653ca628b.json",
+      "hash": "a6e9b2a653ca628b214b01fe8b075495bffc9edd8cc1ff283ff7b41505895d7e",
+      "ok": true
     },
     {
       "symbol": "NIOUSDT",
-      "file": "data/clock/rules/position-tier/NIOUSDT.f336ecd7ea5415e0.json",
-      "hash": "f336ecd7ea5415e0df4c7a695509a7fdd07c199da0e1b56f7f3c776720105979"
+      "file": "data/clock/rules/position-tier/NIOUSDT.c157b724203904a0.json",
+      "hash": "c157b724203904a00153e54c3e65e9a734bc6170e6ee4d952a5d1d6909b44b84",
+      "ok": true
     },
     {
       "symbol": "CBRSUSDT",
-      "file": "data/clock/rules/position-tier/CBRSUSDT.8dd1b07f4e9304a0.json",
-      "hash": "8dd1b07f4e9304a080cf2aa53c75d4a6291fb6f358d6c3ef19e17a3d07f99ab2"
+      "file": "data/clock/rules/position-tier/CBRSUSDT.e1c79f52c102a8a9.json",
+      "hash": "e1c79f52c102a8a999929eb6f63a1c7b67e5a21fa173686f688eb9781126bd08",
+      "ok": true
     },
     {
       "symbol": "INFQUSDT",
-      "file": "data/clock/rules/position-tier/INFQUSDT.d7cc23111ecbbc38.json",
-      "hash": "d7cc23111ecbbc388c42ad681487d88e7f53cfba41fb4fef9a982ba5642d8e50"
+      "file": "data/clock/rules/position-tier/INFQUSDT.45760dfa69cf817e.json",
+      "hash": "45760dfa69cf817efcb2090ab12f1d689a7dacff882686fd5d02a7e6ba96e25f",
+      "ok": true
     },
     {
       "symbol": "VRTUSDT",
-      "file": "data/clock/rules/position-tier/VRTUSDT.83535466e368b132.json",
-      "hash": "83535466e368b1320f800568ccefe6a8de011f599a41f9a4a0eae85ba4eb6751"
+      "file": "data/clock/rules/position-tier/VRTUSDT.f768cc62e03f078b.json",
+      "hash": "f768cc62e03f078be8a8f5b0f694d3f0bffa03d7d47a069421a71439c855b03a",
+      "ok": true
     },
     {
       "symbol": "ETNUSDT",
-      "file": "data/clock/rules/position-tier/ETNUSDT.f830f2420c7a8ca8.json",
-      "hash": "f830f2420c7a8ca8def7f527e3648131c24c6cf8b2423e2013488a67db1e3e61"
+      "file": "data/clock/rules/position-tier/ETNUSDT.721b8bd0c0627df2.json",
+      "hash": "721b8bd0c0627df252ac63646cbd17e6b7815930da56df73475af7ba04863d51",
+      "ok": true
     },
     {
       "symbol": "OUSTUSDT",
-      "file": "data/clock/rules/position-tier/OUSTUSDT.bfa9fee4e315299d.json",
-      "hash": "bfa9fee4e315299db1228130c7268701564c14951572ef47caae9be46ac11a25"
+      "file": "data/clock/rules/position-tier/OUSTUSDT.c3ed63acd20de8f2.json",
+      "hash": "c3ed63acd20de8f2604600b00542cd47e6db3b7ca3254269cbd03a2c3d0ac609",
+      "ok": true
     },
     {
       "symbol": "POETUSDT",
-      "file": "data/clock/rules/position-tier/POETUSDT.b6b1f7a8889f60f4.json",
-      "hash": "b6b1f7a8889f60f412cd4e06fe34cf37a793703011cb9a5dbb9cafbce84df15a"
+      "file": "data/clock/rules/position-tier/POETUSDT.d838896d0ab496bf.json",
+      "hash": "d838896d0ab496bf9458501f657f02c540f585cfd3bd9f41018ffdd2ad907a41",
+      "ok": true
     },
     {
       "symbol": "ONDSUSDT",
-      "file": "data/clock/rules/position-tier/ONDSUSDT.a9d8617247048f13.json",
-      "hash": "a9d8617247048f1333d722225ba53a51eddab9b1ef7eabddcf1dcb8aa979b0b7"
+      "file": "data/clock/rules/position-tier/ONDSUSDT.a39240ad5def5d99.json",
+      "hash": "a39240ad5def5d991dd1b35b372c85daca013e48ca70f9e36e900fc517bd5d06",
+      "ok": true
     },
     {
       "symbol": "RDWUSDT",
-      "file": "data/clock/rules/position-tier/RDWUSDT.2e20fac802d64344.json",
-      "hash": "2e20fac802d6434476a2346ed1612dad3f1eb168893338d425550cba00013089"
+      "file": "data/clock/rules/position-tier/RDWUSDT.c4a57bf16d684f53.json",
+      "hash": "c4a57bf16d684f5372bc89e698824332af475f5f4db2104eff1b35dc55df2b14",
+      "ok": true
     },
     {
       "symbol": "QCOMUSDT",
-      "file": "data/clock/rules/position-tier/QCOMUSDT.fecb17e1764e40f6.json",
-      "hash": "fecb17e1764e40f60f6a87ca507863dd3935f59f02c8044b92815137ed930da4"
+      "file": "data/clock/rules/position-tier/QCOMUSDT.90cd791a798695fc.json",
+      "hash": "90cd791a798695fc2db55470d563787c43abd3ab3b255a1b33729fcca3d57f5f",
+      "ok": true
     },
     {
       "symbol": "WDCUSDT",
-      "file": "data/clock/rules/position-tier/WDCUSDT.1fc53fe1c514e3b7.json",
-      "hash": "1fc53fe1c514e3b7d6de41e27186393f7f3e0b95a6642def2d25fb9c8809d6b6"
+      "file": "data/clock/rules/position-tier/WDCUSDT.d8314a21e7174f15.json",
+      "hash": "d8314a21e7174f158002ef447752916d1c0ce290353e888b7a9911a529d669a2",
+      "ok": true
     },
     {
       "symbol": "SMCIUSDT",
-      "file": "data/clock/rules/position-tier/SMCIUSDT.6c77f4b6c1e3b31c.json",
-      "hash": "6c77f4b6c1e3b31c0f1cf16c87b3b1a98fb8bd2c19358aed8aab705731888861"
+      "file": "data/clock/rules/position-tier/SMCIUSDT.5b31314f182b234b.json",
+      "hash": "5b31314f182b234b1b3954a1d05d0bd35d9e801662040345ed9c9034b3c70c72",
+      "ok": true
     },
     {
       "symbol": "ASTSUSDT",
-      "file": "data/clock/rules/position-tier/ASTSUSDT.2b9e7260a38271e2.json",
-      "hash": "2b9e7260a38271e2ab79f316ad1dfd510b896238017c826ee5432b4af584ddfc"
+      "file": "data/clock/rules/position-tier/ASTSUSDT.cf7a20c4bc6b005a.json",
+      "hash": "cf7a20c4bc6b005adf3ecaef60ef2f7d0f71cbe261afd5a0dc6bb1d37c10b17d",
+      "ok": true
     },
     {
       "symbol": "SPCXUSDT",
-      "file": "data/clock/rules/position-tier/SPCXUSDT.e75533ff4c178d70.json",
-      "hash": "e75533ff4c178d70f57140672c4ad4837250aaa5e049d22ff6c992b9a8b2d449"
+      "file": "data/clock/rules/position-tier/SPCXUSDT.967d512fd4303e11.json",
+      "hash": "967d512fd4303e119accae9d270620dc7b71ce0a122e96f552cf2096acbd0b30",
+      "ok": true
     },
     {
       "symbol": "JOBYUSDT",
-      "file": "data/clock/rules/position-tier/JOBYUSDT.2572cfe42163249a.json",
-      "hash": "2572cfe42163249a8e27a3e9f7531ca79e39bf93e05fde9e8143ddc19bb7b05b"
+      "file": "data/clock/rules/position-tier/JOBYUSDT.24fd58de8664f08c.json",
+      "hash": "24fd58de8664f08c2a5c7e3709f294da610731198d0c75fa7fa25d2c1512dc42",
+      "ok": true
     },
     {
       "symbol": "ACHRUSDT",
-      "file": "data/clock/rules/position-tier/ACHRUSDT.95c3fb573c1484b1.json",
-      "hash": "95c3fb573c1484b162202a5a022237fb023dec1c2b2292e4835600da464252f9"
+      "file": "data/clock/rules/position-tier/ACHRUSDT.7e5e2920713c09cc.json",
+      "hash": "7e5e2920713c09cca0d65774ca3b31a4449ed36deb0f2167e18a8985048f6722",
+      "ok": true
     },
     {
       "symbol": "RGTIUSDT",
-      "file": "data/clock/rules/position-tier/RGTIUSDT.c1b2f87e53159129.json",
-      "hash": "c1b2f87e53159129303001e3f9525be20a1b57106558839e05d0c12413344782"
+      "file": "data/clock/rules/position-tier/RGTIUSDT.67e3681178317568.json",
+      "hash": "67e36811783175688f69fd9bbf48b53129442a715f468cf04d55503ec041ffb3",
+      "ok": true
     },
     {
       "symbol": "QBTSUSDT",
-      "file": "data/clock/rules/position-tier/QBTSUSDT.726552f11642e012.json",
-      "hash": "726552f11642e01222dfe269e9c667956fa16fe78252033f414fc9d169bc0ecc"
+      "file": "data/clock/rules/position-tier/QBTSUSDT.2e624f0ab4a8fc38.json",
+      "hash": "2e624f0ab4a8fc3800c0057a272949fd225789d859d89a938cc8b39a7360c0cb",
+      "ok": true
     },
     {
       "symbol": "QUBTUSDT",
-      "file": "data/clock/rules/position-tier/QUBTUSDT.7c15116cf2c7a715.json",
-      "hash": "7c15116cf2c7a7158bb6cd07d70f49eede8489730deac3efcb84546759597483"
+      "file": "data/clock/rules/position-tier/QUBTUSDT.e3b5623840880626.json",
+      "hash": "e3b56238408806260be7c754fe7f5397a200e7860f0a2f622103300a76788694",
+      "ok": true
     },
     {
       "symbol": "PANWUSDT",
-      "file": "data/clock/rules/position-tier/PANWUSDT.e5201b9944fee23d.json",
-      "hash": "e5201b9944fee23d22ad974b614577bc254385994e31ead720b7ef91e05a54e0"
+      "file": "data/clock/rules/position-tier/PANWUSDT.357c80cca740eee6.json",
+      "hash": "357c80cca740eee65bcee6edcbefe6a14afd73b87c8910a6f4ebe4e84235cd27",
+      "ok": true
     },
     {
       "symbol": "SNOWUSDT",
-      "file": "data/clock/rules/position-tier/SNOWUSDT.57910610c01636fc.json",
-      "hash": "57910610c01636fcbf70fdf0f143bd996b800ed580580ab8514fb56766ed1943"
+      "file": "data/clock/rules/position-tier/SNOWUSDT.2b6790773118b8b6.json",
+      "hash": "2b6790773118b8b67230c08f3778456be9225e08ea9785191a9c53eb17d03bf1",
+      "ok": true
     },
     {
       "symbol": "DELLUSDT",
-      "file": "data/clock/rules/position-tier/DELLUSDT.d43a048babb4531e.json",
-      "hash": "d43a048babb4531efe1408c5d8be7adc5776e7021d670da273c2dd840e644e33"
+      "file": "data/clock/rules/position-tier/DELLUSDT.9b43e63963aea339.json",
+      "hash": "9b43e63963aea33942c624eae602d9587f8894d1eecae3754df3592655ae5e08",
+      "ok": true
     },
     {
       "symbol": "KTOSUSDT",
-      "file": "data/clock/rules/position-tier/KTOSUSDT.1efbb6bc27593d0a.json",
-      "hash": "1efbb6bc27593d0ae3f57810839aa1c59868103a924b1c7cf81924b454c1fdf6"
+      "file": "data/clock/rules/position-tier/KTOSUSDT.2585937b842c4be7.json",
+      "hash": "2585937b842c4be7aced2cffb2e8bbdbf55c6325458c7ce3efe42c870a1268d8",
+      "ok": true
     },
     {
       "symbol": "AVAVUSDT",
-      "file": "data/clock/rules/position-tier/AVAVUSDT.348d65e8940324cf.json",
-      "hash": "348d65e8940324cf22f5a692631aa026ebceae14e1b5d8d60368ac62dd045544"
+      "file": "data/clock/rules/position-tier/AVAVUSDT.b138202b3d1fb366.json",
+      "hash": "b138202b3d1fb3661c93947830f5ecf5ae6e7c426ab39fbe335686425ed92473",
+      "ok": true
     },
     {
       "symbol": "LMTUSDT",
-      "file": "data/clock/rules/position-tier/LMTUSDT.57809f37cc380271.json",
-      "hash": "57809f37cc380271dabe85c23fb98b914c694aa3ccbea4727c09dc5a7b78e590"
+      "file": "data/clock/rules/position-tier/LMTUSDT.6d328bb6dec57e22.json",
+      "hash": "6d328bb6dec57e22c18ff6357fe66012951faa9408746b2e83f1209ce0f581f1",
+      "ok": true
     },
     {
       "symbol": "NOCUSDT",
-      "file": "data/clock/rules/position-tier/NOCUSDT.e70c7c1883e93cc5.json",
-      "hash": "e70c7c1883e93cc52a1f08e6cac68ebcf1a70bf015f4d9222193c512439c4e9e"
+      "file": "data/clock/rules/position-tier/NOCUSDT.f67f73ca4b3f1d77.json",
+      "hash": "f67f73ca4b3f1d77c55d2d1a1e297f7d87a2d3fa15122aac0a09eedbd09ef844",
+      "ok": true
     },
     {
       "symbol": "NOWUSDT",
-      "file": "data/clock/rules/position-tier/NOWUSDT.a142275765e337e9.json",
-      "hash": "a142275765e337e92a0bb7a2dc2bc66286d69bc4c301a6eac15453a35c847546"
+      "file": "data/clock/rules/position-tier/NOWUSDT.f8198f91f9f3b499.json",
+      "hash": "f8198f91f9f3b499c96448ca6f2442aa8adf6ac83676dd03e4086c8bfdfbc237",
+      "ok": true
     },
     {
       "symbol": "NTAPUSDT",
-      "file": "data/clock/rules/position-tier/NTAPUSDT.a9e4035ce85bd93e.json",
-      "hash": "a9e4035ce85bd93e00e1f547e6ebf88b3e726ca46c419ee2f9b348d225fdc0f7"
+      "file": "data/clock/rules/position-tier/NTAPUSDT.c413df2f96102ed8.json",
+      "hash": "c413df2f96102ed8243cdb0155b436b0280f47b4f27079fb08366676bfc91a9c",
+      "ok": true
     },
     {
       "symbol": "SITMUSDT",
-      "file": "data/clock/rules/position-tier/SITMUSDT.92576d12c1dbad94.json",
-      "hash": "92576d12c1dbad94661ed427e97582ea57478fee1fd91ffc0048de934f1cc095"
+      "file": "data/clock/rules/position-tier/SITMUSDT.43899c8b87361140.json",
+      "hash": "43899c8b873611403405a5c45e3d38e75beccda09141a112da735263456a8fc1",
+      "ok": true
     },
     {
       "symbol": "SMRUSDT",
-      "file": "data/clock/rules/position-tier/SMRUSDT.b7addd7040a52f74.json",
-      "hash": "b7addd7040a52f743855db1f4534c3fd3aa8fc5ae2677ac91bf9cc6a5ed730e5"
+      "file": "data/clock/rules/position-tier/SMRUSDT.1bc6d76229008ab4.json",
+      "hash": "1bc6d76229008ab4258516fa2d8b6b3a2381bdecda14e6f8af9e239f4d097d22",
+      "ok": true
     },
     {
       "symbol": "CIENUSDT",
-      "file": "data/clock/rules/position-tier/CIENUSDT.926a4635d70a9b89.json",
-      "hash": "926a4635d70a9b89152f5749bc39d5806b855f22654fbe45d326f670e329aaa4"
+      "file": "data/clock/rules/position-tier/CIENUSDT.8986a28a9b3f5747.json",
+      "hash": "8986a28a9b3f57475596fa47818954c53835d01623b747e9645f4c200995bd6c",
+      "ok": true
     },
     {
       "symbol": "AMCUSDT",
-      "file": "data/clock/rules/position-tier/AMCUSDT.6b9185db9c5911c7.json",
-      "hash": "6b9185db9c5911c7e0da3060821594a3f94070c4fe193294d850651e6c53215d"
+      "file": "data/clock/rules/position-tier/AMCUSDT.02ed9604b0296661.json",
+      "hash": "02ed9604b0296661a7e4ada038752d86dde9081777dd3bd42eec65b99e0fce19",
+      "ok": true
     },
     {
       "symbol": "MDBUSDT",
-      "file": "data/clock/rules/position-tier/MDBUSDT.4c3a0ece6e8c08c9.json",
-      "hash": "4c3a0ece6e8c08c997aeca4d910d58ec772ae7232b3b721d45c244e2b88000e9"
+      "file": "data/clock/rules/position-tier/MDBUSDT.6d5a53d06dc4abb1.json",
+      "hash": "6d5a53d06dc4abb1f07929bf482749344a3546085786cdb839c71e9b782b29fb",
+      "ok": true
     },
     {
       "symbol": "TWLOUSDT",
-      "file": "data/clock/rules/position-tier/TWLOUSDT.fa4e02fdc0171a14.json",
-      "hash": "fa4e02fdc0171a14d56786cbdc05e5dd418cc6442178756e4d147b67b4a186b7"
+      "file": "data/clock/rules/position-tier/TWLOUSDT.8b9d45aa2285d4bb.json",
+      "hash": "8b9d45aa2285d4bbfa2532f49b1ffe5660bdef0273dce6e944b2a02356d77ed6",
+      "ok": true
     },
     {
       "symbol": "DXYZUSDT",
-      "file": "data/clock/rules/position-tier/DXYZUSDT.3a3768520002e2c1.json",
-      "hash": "3a3768520002e2c1c7f286b293683b40d701b2106fdb9e66c3999e431c797417"
+      "file": "data/clock/rules/position-tier/DXYZUSDT.aa2f75e19bc6d634.json",
+      "hash": "aa2f75e19bc6d63477d46098f9851edce08227845d586e5fb94f90c8ab00fd3c",
+      "ok": true
     },
     {
       "symbol": "ADBEUSDT",
-      "file": "data/clock/rules/position-tier/ADBEUSDT.e627134403370796.json",
-      "hash": "e627134403370796a03bc19d0d750b7beae900a8fb2abe9630f524c43812d50b"
+      "file": "data/clock/rules/position-tier/ADBEUSDT.64b493fa2a4c83c2.json",
+      "hash": "64b493fa2a4c83c24066dec39243be985bd4fc5cfa5e0ca653bd3d9dc14afb19",
+      "ok": true
     },
     {
       "symbol": "IRENUSDT",
-      "file": "data/clock/rules/position-tier/IRENUSDT.6d43c23026bbf4fa.json",
-      "hash": "6d43c23026bbf4faf469dcda7f4d7192a67236c4a55e8f871c24b03ce76a1507"
+      "file": "data/clock/rules/position-tier/IRENUSDT.5848427dc109f3bd.json",
+      "hash": "5848427dc109f3bd6dbf97427d03eda8d8eafed06fc97c01de2b0b2ff8dfedce",
+      "ok": true
     },
     {
       "symbol": "BXUSDT",
-      "file": "data/clock/rules/position-tier/BXUSDT.1ed36d2d6e2ce7a9.json",
-      "hash": "1ed36d2d6e2ce7a95542992a1997ae19bb8eceac282410e2bc4d0a20a8a7cf8e"
+      "file": "data/clock/rules/position-tier/BXUSDT.4c0bb3f024138f53.json",
+      "hash": "4c0bb3f024138f53a5378f4600ad3a53a23dca6d01ce9bb6379899de4247d7e9",
+      "ok": true
     },
     {
       "symbol": "HPEUSDT",
-      "file": "data/clock/rules/position-tier/HPEUSDT.a2a018a33712222b.json",
-      "hash": "a2a018a33712222b8df00df99c1244ffa038bc54b100a846dadd399f4434b414"
+      "file": "data/clock/rules/position-tier/HPEUSDT.4da8dfa10d050658.json",
+      "hash": "4da8dfa10d050658804f2a339f50f42be61d58703b08c749e67e4388a5c868f3",
+      "ok": true
     },
     {
       "symbol": "CRWDUSDT",
-      "file": "data/clock/rules/position-tier/CRWDUSDT.d82807555b2021f0.json",
-      "hash": "d82807555b2021f0df3476b3b82ae5a3da411fbbf15f921c21919ed68fa6dc21"
+      "file": "data/clock/rules/position-tier/CRWDUSDT.68a7a68d7f9bf1f7.json",
+      "hash": "68a7a68d7f9bf1f7c993777b9473202b963662ca0cb04903c2a9b0c32d772fb4",
+      "ok": true
     },
     {
       "symbol": "IWMUSDT",
-      "file": "data/clock/rules/position-tier/IWMUSDT.aab0ddb10895f976.json",
-      "hash": "aab0ddb10895f976631587741b1c242ae2192e8d8d62196fffa7f866278f193a"
+      "file": "data/clock/rules/position-tier/IWMUSDT.272fd60bfcc7aa5a.json",
+      "hash": "272fd60bfcc7aa5a968b2be729d0eddb606d140b0877ed4dec4c770696283da6",
+      "ok": true
     },
     {
       "symbol": "SIMOUSDT",
-      "file": "data/clock/rules/position-tier/SIMOUSDT.f4bf5f69133a66d6.json",
-      "hash": "f4bf5f69133a66d6bea54068378bdf3c944b2219511e46c34ab437ef342d5854"
+      "file": "data/clock/rules/position-tier/SIMOUSDT.b678a49619d87c19.json",
+      "hash": "b678a49619d87c19d87b2ad44a48e812bd87a92dec0bc30f9adf12932bf87baa",
+      "ok": true
     },
     {
       "symbol": "GLWUSDT",
-      "file": "data/clock/rules/position-tier/GLWUSDT.2a3e75dc97907d84.json",
-      "hash": "2a3e75dc97907d844d8d00daa72c83e3a08e8937aaaad3f9c5fb92fb386326df"
+      "file": "data/clock/rules/position-tier/GLWUSDT.46f8bd1313403d96.json",
+      "hash": "46f8bd1313403d965aaac3cf9da507c31794657ef11af037bd4b678bd72e4959",
+      "ok": true
     },
     {
       "symbol": "TSEMUSDT",
-      "file": "data/clock/rules/position-tier/TSEMUSDT.d2aa82c2dcbefd2b.json",
-      "hash": "d2aa82c2dcbefd2b6ffc6bff4748196583810b3ecfc3f91d3c2637832a318cbb"
+      "file": "data/clock/rules/position-tier/TSEMUSDT.ffc70946bfcb1edd.json",
+      "hash": "ffc70946bfcb1edd2e27ba3b4830444598713e16cbe4cd97ee26362034622f5e",
+      "ok": true
     },
     {
       "symbol": "OSSUSDT",
-      "file": "data/clock/rules/position-tier/OSSUSDT.2c478242cd0d7c33.json",
-      "hash": "2c478242cd0d7c3379dcb756caa3b2e3a4b5b184b893427b76f32fa0c1ce5de3"
+      "file": "data/clock/rules/position-tier/OSSUSDT.1bc4b8a09f5cc36a.json",
+      "hash": "1bc4b8a09f5cc36a19018defedbbaf4d8da5df92f67e41faf585e93808ce73a4",
+      "ok": true
     },
     {
       "symbol": "AEHRUSDT",
-      "file": "data/clock/rules/position-tier/AEHRUSDT.f3e93e91f89f4f5d.json",
-      "hash": "f3e93e91f89f4f5d049adeb3ec75abccc0eda33d44be339e037a071d169cee02"
+      "file": "data/clock/rules/position-tier/AEHRUSDT.ef869b08298904ef.json",
+      "hash": "ef869b08298904effde66fd8bea076b1d2314716e8c2bada26c06a232d9c2cd3",
+      "ok": true
     },
     {
       "symbol": "VUSDT",
-      "file": "data/clock/rules/position-tier/VUSDT.4641332d5a5b4005.json",
-      "hash": "4641332d5a5b4005ba9821dae5416a1948677410b9e3a82ed32751cec5603bee"
+      "file": "data/clock/rules/position-tier/VUSDT.3dd169f925fd651b.json",
+      "hash": "3dd169f925fd651bdcf819acd4131d7eabb90fd13c93cae0f6ae1dc0cbf3e1de",
+      "ok": true
     },
     {
       "symbol": "ABNBUSDT",
-      "file": "data/clock/rules/position-tier/ABNBUSDT.44bc901ae0635d22.json",
-      "hash": "44bc901ae0635d223a8db6a269eb2aa37d76768f1a912a7a2a0369d543eb2cf2"
+      "file": "data/clock/rules/position-tier/ABNBUSDT.b0f0a5123e8b4b77.json",
+      "hash": "b0f0a5123e8b4b7750cebf489b03834d7054eb5b41dfc21252303975363c5714",
+      "ok": true
     },
     {
       "symbol": "CMCSAUSDT",
-      "file": "data/clock/rules/position-tier/CMCSAUSDT.11e13f19d9df5074.json",
-      "hash": "11e13f19d9df50748992d4d58b55e986c78344c7c1f899d1ed4ddf3b03a82497"
+      "file": "data/clock/rules/position-tier/CMCSAUSDT.07a26c85a18a9728.json",
+      "hash": "07a26c85a18a9728565509a734d77b358a7a1d78e2d2e1425a8757c423cc2785",
+      "ok": true
     },
     {
       "symbol": "KOUSDT",
-      "file": "data/clock/rules/position-tier/KOUSDT.7f4ba92054caf8c2.json",
-      "hash": "7f4ba92054caf8c2c9c14cac1b9ef8ce8bdf53c919ac2ee102b59c2c6b913995"
+      "file": "data/clock/rules/position-tier/KOUSDT.36ae31b5d44d17a4.json",
+      "hash": "36ae31b5d44d17a4ccd02a57b0fd472e8259d4c58d288813de63f72a46562b68",
+      "ok": true
     },
     {
       "symbol": "FOXAUSDT",
-      "file": "data/clock/rules/position-tier/FOXAUSDT.c88f27e87730973e.json",
-      "hash": "c88f27e87730973e69bbb04aa8af227f986efca139a6d7dbe2e42b08f617ba2b"
+      "file": "data/clock/rules/position-tier/FOXAUSDT.1b08665b7d07e8c2.json",
+      "hash": "1b08665b7d07e8c23f5d21b7d59a981baba19eca6197a498357dd61a2b2fef75",
+      "ok": true
     },
     {
       "symbol": "MARUSDT",
-      "file": "data/clock/rules/position-tier/MARUSDT.6c8dd166bc8aa1e0.json",
-      "hash": "6c8dd166bc8aa1e04ca88123843d151825381959c53aa6c3a285733a782b9182"
+      "file": "data/clock/rules/position-tier/MARUSDT.4096bdc8b07a1605.json",
+      "hash": "4096bdc8b07a1605526d14a6554490a872341d821b37e289e562c5895f365444",
+      "ok": true
     },
     {
       "symbol": "NKEUSDT",
-      "file": "data/clock/rules/position-tier/NKEUSDT.1379dd333e317d9a.json",
-      "hash": "1379dd333e317d9a7c29b567149de0a4d8a56fb15d0a1c8a3340054d0421af7b"
+      "file": "data/clock/rules/position-tier/NKEUSDT.c0a89025e847654a.json",
+      "hash": "c0a89025e847654a21a7a5a6c8b85635af1db22af46623ecd95e8ce225a0ee08",
+      "ok": true
     },
     {
       "symbol": "CCLUSDT",
-      "file": "data/clock/rules/position-tier/CCLUSDT.45d43b68b01fdb42.json",
-      "hash": "45d43b68b01fdb421df0a9820f83b57fd466e7115eaf69fee6aee5c42bffdf84"
+      "file": "data/clock/rules/position-tier/CCLUSDT.001943e4dab72140.json",
+      "hash": "001943e4dab7214092501ff40dedbebfbd9f2379f613d13fc62a0419075fb1e5",
+      "ok": true
     },
     {
       "symbol": "DKNGUSDT",
-      "file": "data/clock/rules/position-tier/DKNGUSDT.b3fd9e150101bed0.json",
-      "hash": "b3fd9e150101bed0af309b59698e6d67f2db1da9dc98b1ad3af057bb7445dd84"
+      "file": "data/clock/rules/position-tier/DKNGUSDT.9a3d1ee8b8ec6f4a.json",
+      "hash": "9a3d1ee8b8ec6f4a2f1443f2cf60429e01ec1fa8742439a6c82e58157f782ccd",
+      "ok": true
     },
     {
       "symbol": "UVXYUSDT",
-      "file": "data/clock/rules/position-tier/UVXYUSDT.f258fd6b8ec113f1.json",
-      "hash": "f258fd6b8ec113f1e5ce497ea81b620edf0ac81c69ad831f7252a14148da4162"
+      "file": "data/clock/rules/position-tier/UVXYUSDT.77171cdccac9f3c3.json",
+      "hash": "77171cdccac9f3c3e2176c669f998f2aff9d7d43856c0d8d9856f738d0f7d433",
+      "ok": true
     },
     {
       "symbol": "BMNRUSDT",
-      "file": "data/clock/rules/position-tier/BMNRUSDT.1c2c47a8275b8e41.json",
-      "hash": "1c2c47a8275b8e41d7c9f6210e1142d887c588fecf888f98f80791acbc16d327"
+      "file": "data/clock/rules/position-tier/BMNRUSDT.71108d476b98e425.json",
+      "hash": "71108d476b98e425600b9e5ab75d4bb283a223f7d23ea725cae75f3a7ab6212b",
+      "ok": true
     },
     {
       "symbol": "ISRGUSDT",
-      "file": "data/clock/rules/position-tier/ISRGUSDT.ab5cc87c2bc7b9fe.json",
-      "hash": "ab5cc87c2bc7b9fe9006b2af0eaacc3db22dd0ce7869422d10745936bb767798"
+      "file": "data/clock/rules/position-tier/ISRGUSDT.b84327e115ad7776.json",
+      "hash": "b84327e115ad777691d6b60b3abd5cbb0b89dfbeaa4764ccb1ab26e7b4798bd2",
+      "ok": true
     },
     {
       "symbol": "SGOVUSDT",
-      "file": "data/clock/rules/position-tier/SGOVUSDT.79922efcee7bb9c9.json",
-      "hash": "79922efcee7bb9c9823bb5940b7ec684edeb67d305f2811d93416bd6aad9e1d0"
+      "file": "data/clock/rules/position-tier/SGOVUSDT.7148d05f26a49580.json",
+      "hash": "7148d05f26a495808964e73dd9a0c2fe37caeacb4a0888b847e4ef4304e1c21b",
+      "ok": true
     },
     {
       "symbol": "XLUUSDT",
-      "file": "data/clock/rules/position-tier/XLUUSDT.eea516301a722dee.json",
-      "hash": "eea516301a722dee1aa0e542ad750b15a9c06cc1eba37ced90f52f8bed60748b"
+      "file": "data/clock/rules/position-tier/XLUUSDT.cb463eec99a322cc.json",
+      "hash": "cb463eec99a322cc23b088e452d8e5c5e50771fdb842d6b3deda056c66203db5",
+      "ok": true
     },
     {
       "symbol": "XLKUSDT",
-      "file": "data/clock/rules/position-tier/XLKUSDT.9b485687298c7d66.json",
-      "hash": "9b485687298c7d66503dbac57958f928779c563f801404e209454b891810dac7"
+      "file": "data/clock/rules/position-tier/XLKUSDT.de85943701c967e5.json",
+      "hash": "de85943701c967e53572396a4aa4b6f9db463c6803744ec133a94a77f725f1ac",
+      "ok": true
     },
     {
       "symbol": "ROKUSDT",
-      "file": "data/clock/rules/position-tier/ROKUSDT.177b173b15c71b22.json",
-      "hash": "177b173b15c71b2215e5dd2668d6290208b2eca6ada4a3f2fb18f5e05007edae"
+      "file": "data/clock/rules/position-tier/ROKUSDT.bf73a9a5feb25d5d.json",
+      "hash": "bf73a9a5feb25d5d7e436225b94d25d2c507408a9f06f0715fcbe21a11f22751",
+      "ok": true
     },
     {
       "symbol": "SMHUSDT",
-      "file": "data/clock/rules/position-tier/SMHUSDT.e788b2451a8442e1.json",
-      "hash": "e788b2451a8442e1c5dda74c27f7ae92c134caba2219c7a9299578d5cd7e6351"
+      "file": "data/clock/rules/position-tier/SMHUSDT.6b741f2607953665.json",
+      "hash": "6b741f260795366570e72dd5ee7ee762fcf1a5e887290c5f64f5c84fd2b90bdf",
+      "ok": true
     },
     {
       "symbol": "CGNXUSDT",
-      "file": "data/clock/rules/position-tier/CGNXUSDT.e8eed6a99efbfc1c.json",
-      "hash": "e8eed6a99efbfc1c17b9d451392cc86b41d2c342fc97f13d1f752516a6580000"
+      "file": "data/clock/rules/position-tier/CGNXUSDT.1a2cfd847598ba5a.json",
+      "hash": "1a2cfd847598ba5af326bdfdb29810f59fc0e4ee5e0e15a1c4b4d3e85de3fe4e",
+      "ok": true
     },
     {
       "symbol": "FLNCUSDT",
-      "file": "data/clock/rules/position-tier/FLNCUSDT.3d771035d8782c38.json",
-      "hash": "3d771035d8782c38ee2d8e37018c90a76114451368355711717478fd77341755"
+      "file": "data/clock/rules/position-tier/FLNCUSDT.d98bf0bd85ce6b6c.json",
+      "hash": "d98bf0bd85ce6b6c7ad689a25ae0d7ae2d9ad74fea64bdc5f0e84e1f9cd18387",
+      "ok": true
     },
     {
       "symbol": "LRCXUSDT",
-      "file": "data/clock/rules/position-tier/LRCXUSDT.6bab03a9aab4ba17.json",
-      "hash": "6bab03a9aab4ba17149c89c148b171a3213a81df38ca8d18f0d7cede3d5918c4"
+      "file": "data/clock/rules/position-tier/LRCXUSDT.250a0178a51c2df4.json",
+      "hash": "250a0178a51c2df42bf783cbef178419448d110a86d73f45a86d2f2854ab3975",
+      "ok": true
     },
     {
       "symbol": "ALABUSDT",
-      "file": "data/clock/rules/position-tier/ALABUSDT.2f9bf55678ab5554.json",
-      "hash": "2f9bf55678ab5554e0e59884d8a0ce8ae9eb274825ba4bff0ff3e134da1ad794"
+      "file": "data/clock/rules/position-tier/ALABUSDT.2b0c65432508aec1.json",
+      "hash": "2b0c65432508aec157e4b8c7c9b0dfc0a10c95b96d81221fba9e6db96f161c59",
+      "ok": true
     },
     {
       "symbol": "TERUSDT",
-      "file": "data/clock/rules/position-tier/TERUSDT.06318c061000fd89.json",
-      "hash": "06318c061000fd8934201c226bbd84b59f6ec672f7326298395500077166f63e"
+      "file": "data/clock/rules/position-tier/TERUSDT.940c41dea10b87bd.json",
+      "hash": "940c41dea10b87bd97b50c70d4c4d1aa4c6d995f62c356a3fd2ad0acc29b053f",
+      "ok": true
     },
     {
       "symbol": "APDUSDT",
-      "file": "data/clock/rules/position-tier/APDUSDT.47a4ecd6dbd6a199.json",
-      "hash": "47a4ecd6dbd6a1990bc8136f18bed7b6211400d209349cc12839b341abee56f4"
+      "file": "data/clock/rules/position-tier/APDUSDT.1e0ae6e37fdc06e1.json",
+      "hash": "1e0ae6e37fdc06e1dfc04327b930ffe19e38c2c0e9404178fae5ab4a9377d2c4",
+      "ok": true
     },
     {
       "symbol": "LINUSDT",
-      "file": "data/clock/rules/position-tier/LINUSDT.3954ea14120fa402.json",
-      "hash": "3954ea14120fa4027db323eeb55eff56a3895392aace29d1ce16201275c67541"
+      "file": "data/clock/rules/position-tier/LINUSDT.dd4b8735b23fe5d3.json",
+      "hash": "dd4b8735b23fe5d3cc395beda6b06bce63334866c32c77c26221052101ddb829",
+      "ok": true
     },
     {
       "symbol": "FLEXUSDT",
-      "file": "data/clock/rules/position-tier/FLEXUSDT.27f427084400845b.json",
-      "hash": "27f427084400845bea419e69b828d00ef1ac7c0dc5fab74f59f320c3020d2892"
+      "file": "data/clock/rules/position-tier/FLEXUSDT.3fc2e066a0b25304.json",
+      "hash": "3fc2e066a0b25304bc701dbb5270d31af6f8db1296b9a362429b527f0f42955a",
+      "ok": true
     },
     {
       "symbol": "ADIUSDT",
-      "file": "data/clock/rules/position-tier/ADIUSDT.5045ae32001ff24f.json",
-      "hash": "5045ae32001ff24fa2f0ddfc1f021f31fb1284b810553288b745bb678c167d13"
+      "file": "data/clock/rules/position-tier/ADIUSDT.f212e9214c3a0720.json",
+      "hash": "f212e9214c3a0720707bb9f6e72819890da4e79f6fdb8f2384f3ab134a658d62",
+      "ok": true
     },
     {
       "symbol": "GSUSDT",
-      "file": "data/clock/rules/position-tier/GSUSDT.07b2d38420610d91.json",
-      "hash": "07b2d38420610d91c85f01734c003dac82decfd749ee4b8302a64ec714bbaa3f"
+      "file": "data/clock/rules/position-tier/GSUSDT.0127efc0776d7e03.json",
+      "hash": "0127efc0776d7e03a56906ba3ac8b529cad00ce4447a3b0fd1a21751455f6743",
+      "ok": true
     },
     {
       "symbol": "JPMUSDT",
-      "file": "data/clock/rules/position-tier/JPMUSDT.05eede0417b6b399.json",
-      "hash": "05eede0417b6b399dafe5612fc3af65bf56c0d36f5f31ca48004f1abaee7394e"
+      "file": "data/clock/rules/position-tier/JPMUSDT.f52cdad5d082d93d.json",
+      "hash": "f52cdad5d082d93d960e43ec6d71a0e20de29637b3d7bc7afb4d4ef6f9cac2cb",
+      "ok": true
     },
     {
       "symbol": "GEVUSDT",
-      "file": "data/clock/rules/position-tier/GEVUSDT.c7c0b835f800e3f1.json",
-      "hash": "c7c0b835f800e3f1bc194d7de18ad14cfbf3455c8720699e52a2fff4e6847278"
+      "file": "data/clock/rules/position-tier/GEVUSDT.11894602f5c95929.json",
+      "hash": "11894602f5c959290e0f8ad72f9ae9ac7564abec1128278c259b8bba36f930fb",
+      "ok": true
     },
     {
       "symbol": "STRCUSDT",
-      "file": "data/clock/rules/position-tier/STRCUSDT.00ffbe948f50db14.json",
-      "hash": "00ffbe948f50db14c381ebd487cbc82325fa621ec4deb34d7ed8d89df4a60f37"
+      "file": "data/clock/rules/position-tier/STRCUSDT.383814e572ff6197.json",
+      "hash": "383814e572ff6197a4c31a409b923ab3082c4c5e7319306f370785508f373c85",
+      "ok": true
     },
     {
       "symbol": "MVLLUSDT",
-      "file": "data/clock/rules/position-tier/MVLLUSDT.075584fc3720a268.json",
-      "hash": "075584fc3720a268a0928cd0c2178d791998a94cf30e67f8d3271866f142a613"
+      "file": "data/clock/rules/position-tier/MVLLUSDT.0a00ba6909055e48.json",
+      "hash": "0a00ba6909055e48477d2206a44b2479ab29df0db780eeb27de9627efaa3eb12",
+      "ok": true
     },
     {
       "symbol": "SONYUSDT",
-      "file": "data/clock/rules/position-tier/SONYUSDT.5f00ea71ceda5df6.json",
-      "hash": "5f00ea71ceda5df650268778efb6e04ea29811c3e32f24d8c17bddac56e97a72"
+      "file": "data/clock/rules/position-tier/SONYUSDT.6ff7ae04bc08bb67.json",
+      "hash": "6ff7ae04bc08bb67b68a88886d48b0dac617a0d59947d7aa2fcefa610ffdc047",
+      "ok": true
     },
     {
       "symbol": "RAMUSDT",
-      "file": "data/clock/rules/position-tier/RAMUSDT.3174ceb5ffeb601e.json",
-      "hash": "3174ceb5ffeb601e377d0a231ea773ae0b7c014b58cf30be48c73daf7e6920b5"
+      "file": "data/clock/rules/position-tier/RAMUSDT.35887aa914aee1d8.json",
+      "hash": "35887aa914aee1d8fea111fefe4aeb7eb4777507055fecf5d17795ba285daff8",
+      "ok": true
     },
     {
       "symbol": "WENUSDT",
-      "file": "data/clock/rules/position-tier/WENUSDT.23b24d49ab566df2.json",
-      "hash": "23b24d49ab566df2b058f1f9084316d9c99889cc6560a0c602f87e8823f40250"
+      "file": "data/clock/rules/position-tier/WENUSDT.11908b2ef95cd0c5.json",
+      "hash": "11908b2ef95cd0c5612fd3c4bcdeb931d3b57fb5cfc1d4b8a9408225c9351223",
+      "ok": true
     },
     {
       "symbol": "AALUSDT",
-      "file": "data/clock/rules/position-tier/AALUSDT.69726cd731971022.json",
-      "hash": "69726cd731971022449963d052b8d39f20c0d62e4aae554126791339055a6a4b"
+      "file": "data/clock/rules/position-tier/AALUSDT.347398b29c845f58.json",
+      "hash": "347398b29c845f5888c991d818f0fcab75e61ec2e553086683c7cf6ced5b1dca",
+      "ok": true
     },
     {
       "symbol": "VOOUSDT",
-      "file": "data/clock/rules/position-tier/VOOUSDT.821d4e560c8a00c0.json",
-      "hash": "821d4e560c8a00c07e963eaf60a7d88ecdf537be7f68189e6275f33ee70378f1"
+      "file": "data/clock/rules/position-tier/VOOUSDT.4251293309447e09.json",
+      "hash": "4251293309447e093e3a593d79f83af45dee472a3b7e1366fa339992752ded16",
+      "ok": true
     },
     {
       "symbol": "SOXXUSDT",
-      "file": "data/clock/rules/position-tier/SOXXUSDT.5c8ebda7746b3357.json",
-      "hash": "5c8ebda7746b335703f0287f03744706c806e6a620f2685c0a15cf871b434e04"
+      "file": "data/clock/rules/position-tier/SOXXUSDT.09802660d5683b64.json",
+      "hash": "09802660d5683b645fb6c1d1bd8a1bc550384ddde95ec0eaafdf77d569f8aa27",
+      "ok": true
     },
     {
       "symbol": "TXNUSDT",
-      "file": "data/clock/rules/position-tier/TXNUSDT.0c6e794b9685f568.json",
-      "hash": "0c6e794b9685f568b2d390bf1f1a04a772620a136074731e008de7b030a727ce"
+      "file": "data/clock/rules/position-tier/TXNUSDT.471b09b182fa4d47.json",
+      "hash": "471b09b182fa4d47e56ae6e5a7df7efdc7da2027bcb228132c4c0d82cd4a82ba",
+      "ok": true
     },
     {
       "symbol": "BACUSDT",
-      "file": "data/clock/rules/position-tier/BACUSDT.2f74f41111e82de3.json",
-      "hash": "2f74f41111e82de3eb3da017f70f87f7211491191f855d91c2cdb36783faaad5"
+      "file": "data/clock/rules/position-tier/BACUSDT.7be8ea6dd7c029cc.json",
+      "hash": "7be8ea6dd7c029cc82ec09a4f932599c4869968d9688eeb58aedf8274a47b9bf",
+      "ok": true
     },
     {
       "symbol": "CRMUSDT",
-      "file": "data/clock/rules/position-tier/CRMUSDT.d98314a086470148.json",
-      "hash": "d98314a086470148c494d252d55aead5665e12b8681697acc1cd5a0ab5d924bc"
+      "file": "data/clock/rules/position-tier/CRMUSDT.b67ad09574fc51e3.json",
+      "hash": "b67ad09574fc51e3e123eb306e7688a357805915c8d7eeec30ffc97a17443be2",
+      "ok": true
     },
     {
       "symbol": "AMKRUSDT",
-      "file": "data/clock/rules/position-tier/AMKRUSDT.09a3da8c76c16de6.json",
-      "hash": "09a3da8c76c16de6aa6fc4f9bdde1b89e77dcca4b5aa06aa5d79ac2df8df1567"
+      "file": "data/clock/rules/position-tier/AMKRUSDT.db685544f9a87a70.json",
+      "hash": "db685544f9a87a703abff3253facac715b1180075f71862faeb933dee1ded400",
+      "ok": true
     },
     {
       "symbol": "PDDUSDT",
-      "file": "data/clock/rules/position-tier/PDDUSDT.ab5f4bbebabcaeb3.json",
-      "hash": "ab5f4bbebabcaeb30776d209c9decda95535c31699cc5a0705e7dfd5b2046214"
+      "file": "data/clock/rules/position-tier/PDDUSDT.c8b7b2c24b549795.json",
+      "hash": "c8b7b2c24b549795f7fa6bb6f31cf78ff216dbee2b6027fde73609e17c593903",
+      "ok": true
     },
     {
       "symbol": "ASXUSDT",
-      "file": "data/clock/rules/position-tier/ASXUSDT.12bdd96f20bbc49b.json",
-      "hash": "12bdd96f20bbc49b89289a5a854b88123e42df67db704bda505d8ba82934e1c1"
+      "file": "data/clock/rules/position-tier/ASXUSDT.8900f5e8c694c97f.json",
+      "hash": "8900f5e8c694c97f6175f34cd5bba0b4e318da7341cdfec2dce06fb981582cac",
+      "ok": true
     },
     {
       "symbol": "SKHYUSDT",
-      "file": "data/clock/rules/position-tier/SKHYUSDT.891ac8f3b92ec0c6.json",
-      "hash": "891ac8f3b92ec0c600d4d9153b2d71e7d4a34b7693d50e52a1e1d39072c46067"
+      "file": "data/clock/rules/position-tier/SKHYUSDT.28d9fbab4744331e.json",
+      "hash": "28d9fbab4744331e947285dc2b286e46bd3f6e00f7827aab5856f49850f6b6f9",
+      "ok": true
     },
     {
       "symbol": "TTWOUSDT",
-      "file": "data/clock/rules/position-tier/TTWOUSDT.feee9e5aee8168cf.json",
-      "hash": "feee9e5aee8168cff05c760a01938f3926cf159bd757fb82ca4cdf9b52b4d585"
+      "file": "data/clock/rules/position-tier/TTWOUSDT.e598c09bdec76fa6.json",
+      "hash": "e598c09bdec76fa6be0d58966e9279bfbf2124651777f50ce64e0ab99ab9e682",
+      "ok": true
     },
     {
       "symbol": "ECHOUSDT",
-      "file": "data/clock/rules/position-tier/ECHOUSDT.7d138cb2ac386f69.json",
-      "hash": "7d138cb2ac386f69f8b66f4671a8bd7b601f1f72ec9bad804ab543b71cd3423a"
+      "file": "data/clock/rules/position-tier/ECHOUSDT.f30109b1c87683c1.json",
+      "hash": "f30109b1c87683c102116953dcf165685dfbc5fa5f632647eba00c7913e95ddf",
+      "ok": true
     },
     {
       "symbol": "CONLUSDT",
-      "file": "data/clock/rules/position-tier/CONLUSDT.a0fc3db62327d510.json",
-      "hash": "a0fc3db62327d510ead0d0730627f33cb4c9bebd909b0460efd14ba98c9f808f"
+      "file": "data/clock/rules/position-tier/CONLUSDT.c05e2a4e95e18561.json",
+      "hash": "c05e2a4e95e185618913e03931bbde039b3ae9f7c471cb62926139ad02ddf814",
+      "ok": true
     },
     {
       "symbol": "KSTRUSDT",
-      "file": "data/clock/rules/position-tier/KSTRUSDT.dd3673b4468e7769.json",
-      "hash": "dd3673b4468e7769a2321b8a92828103589edfc0f47e9f292e27dd9e253acaf2"
+      "file": "data/clock/rules/position-tier/KSTRUSDT.28fe021b56d1b563.json",
+      "hash": "28fe021b56d1b563151239e29697bd3e884efd5e759757ade7c71073be23c252",
+      "ok": true
     },
     {
       "symbol": "BSPUSDT",
-      "file": "data/clock/rules/position-tier/BSPUSDT.0a83ef88e86b119f.json",
-      "hash": "0a83ef88e86b119fb73db1f9cf6b224cbabbfe206709e1e007ad62bc06b57ac0"
+      "file": "data/clock/rules/position-tier/BSPUSDT.a6bd52fa14f45fd9.json",
+      "hash": "a6bd52fa14f45fd9022b2c23f3f88c5a6c370c70aea1219d3b8ac9de148396a3",
+      "ok": true
     },
     {
       "symbol": "FWDIUSDT",
-      "file": "data/clock/rules/position-tier/FWDIUSDT.e5b4f81f5db8b122.json",
-      "hash": "e5b4f81f5db8b1228acb78af8a22cae16ca6094a839edc4a6c975c37fabc6e99"
+      "file": "data/clock/rules/position-tier/FWDIUSDT.23de2ec304009081.json",
+      "hash": "23de2ec3040090811edba6902c77b847b8584cd4bf886e88d0b27dc3e31a1287",
+      "ok": true
     },
     {
       "symbol": "MSTUUSDT",
-      "file": "data/clock/rules/position-tier/MSTUUSDT.4df9e45bcc45fa90.json",
-      "hash": "4df9e45bcc45fa90012a8e8f53131e3ef7b08ff50b4480cc6507c1118f041949"
+      "file": "data/clock/rules/position-tier/MSTUUSDT.357fffa37b6a1ab6.json",
+      "hash": "357fffa37b6a1ab69439bf9785dda9c80d4b609658c7aee570510b63970ceebb",
+      "ok": true
     },
     {
       "symbol": "SNXXUSDT",
-      "file": "data/clock/rules/position-tier/SNXXUSDT.ec669ed843fba128.json",
-      "hash": "ec669ed843fba12859e5bc14167ae3129c3895f580160d3972089c1bd95137c8"
+      "file": "data/clock/rules/position-tier/SNXXUSDT.18a0ade4b56df867.json",
+      "hash": "18a0ade4b56df867bcac94e605d18279916d28bad8443df867e6ebe99131a535",
+      "ok": true
     },
     {
       "symbol": "XBIUSDT",
-      "file": "data/clock/rules/position-tier/XBIUSDT.f888fef9db985405.json",
-      "hash": "f888fef9db98540595e530d4917ad5d3404908a568e54d6666945b6f82d95e01"
+      "file": "data/clock/rules/position-tier/XBIUSDT.a00c29cb5af53bb6.json",
+      "hash": "a00c29cb5af53bb6c8746c8ea4635a680557ce6ec87d102d02b05d60a11417ed",
+      "ok": true
     },
     {
       "symbol": "TMUSDT",
-      "file": "data/clock/rules/position-tier/TMUSDT.7cc62723e3b8acfc.json",
-      "hash": "7cc62723e3b8acfccca469236112d849b146b134b32f914e5b9a4bebebecc8ef"
+      "file": "data/clock/rules/position-tier/TMUSDT.2ee1e014de585420.json",
+      "hash": "2ee1e014de585420c1eafbd610abcd3dc62557171b578168a9f7dcf97b7d4808",
+      "ok": true
     },
     {
       "symbol": "CPNGUSDT",
-      "file": "data/clock/rules/position-tier/CPNGUSDT.bf709c5e636ebdaa.json",
-      "hash": "bf709c5e636ebdaa3b6bf8b9fcac71440dbaefc5008dae8c6aabc4af490527b1"
+      "file": "data/clock/rules/position-tier/CPNGUSDT.aa73bfdbf7de1127.json",
+      "hash": "aa73bfdbf7de1127a2edb93f34c24ccf1ba9bcd066d68b9d17646bf551819818",
+      "ok": true
     },
     {
       "symbol": "NVDLUSDT",
-      "file": "data/clock/rules/position-tier/NVDLUSDT.8b042bd1116e1703.json",
-      "hash": "8b042bd1116e1703f1f9bbc587e771b6fcc34808b0c0e5b846ebada3370251cd"
+      "file": "data/clock/rules/position-tier/NVDLUSDT.b4a2747ab382661b.json",
+      "hash": "b4a2747ab382661be84e24db7cccc912b644de27d2f284f8c79fff5475885493",
+      "ok": true
     },
     {
       "symbol": "TSLLUSDT",
-      "file": "data/clock/rules/position-tier/TSLLUSDT.ea5394943b1217d4.json",
-      "hash": "ea5394943b1217d4601f2141b36789398e0fa91b2fb2429bee7be8792261b618"
+      "file": "data/clock/rules/position-tier/TSLLUSDT.dbc32709d4c49b0a.json",
+      "hash": "dbc32709d4c49b0a7b8f864fa038df760641bc44d33af6b253d1faf5bee8381e",
+      "ok": true
     },
     {
       "symbol": "AMZUUSDT",
-      "file": "data/clock/rules/position-tier/AMZUUSDT.2167c0831d19de46.json",
-      "hash": "2167c0831d19de4689966fecc0257da14f370d80c071f7fcbb194a45ae621a27"
+      "file": "data/clock/rules/position-tier/AMZUUSDT.8eedc9be1cd56d6a.json",
+      "hash": "8eedc9be1cd56d6aa0691460499ceece33b039b6d068b56bcb15b22e1a5561b1",
+      "ok": true
     },
     {
       "symbol": "METUUSDT",
-      "file": "data/clock/rules/position-tier/METUUSDT.dab798390a80aedb.json",
-      "hash": "dab798390a80aedb21b444b585cbf8785863f4dcfd628b9940577c7f75411c67"
+      "file": "data/clock/rules/position-tier/METUUSDT.70a625d5e34d3c3e.json",
+      "hash": "70a625d5e34d3c3eccfe61e6e486e3a7f897d6eecc80783a431a465a8d86e6ae",
+      "ok": true
     },
     {
       "symbol": "AAPUUSDT",
-      "file": "data/clock/rules/position-tier/AAPUUSDT.bc6d8bdf497d8b82.json",
-      "hash": "bc6d8bdf497d8b821b5b3abdd572685aaa3c63413a50b4f76096eb981624c74f"
+      "file": "data/clock/rules/position-tier/AAPUUSDT.d4a3d1d194b9c8dd.json",
+      "hash": "d4a3d1d194b9c8dd84fb5c8203aed10dc2e25857cf49bde10537639f24d50e57",
+      "ok": true
     },
     {
       "symbol": "MSFUUSDT",
-      "file": "data/clock/rules/position-tier/MSFUUSDT.51f5807a10c1728b.json",
-      "hash": "51f5807a10c1728bcfb92c07fb86e758c5f44481f477d477b277009b765f5188"
+      "file": "data/clock/rules/position-tier/MSFUUSDT.9538cffe2fe5435f.json",
+      "hash": "9538cffe2fe5435ff835b12b749e14f93a7b776238e16695ee769e8d1b362ec3",
+      "ok": true
     },
     {
       "symbol": "TZAUSDT",
-      "file": "data/clock/rules/position-tier/TZAUSDT.0f2e551e3a986b5e.json",
-      "hash": "0f2e551e3a986b5e236dbd20a5c22ef1614c8a231df2bab483288794cd84725c"
+      "file": "data/clock/rules/position-tier/TZAUSDT.2faaa360ba986d93.json",
+      "hash": "2faaa360ba986d93c336cdd3bc5083e4e010b20ffaf830e7d5fee9b8766a5f6d",
+      "ok": true
     },
     {
       "symbol": "SHAZUSDT",
-      "file": "data/clock/rules/position-tier/SHAZUSDT.ad3c7390e4ed9f10.json",
-      "hash": "ad3c7390e4ed9f102caf552d28100359f053c12101d24a9e8785f8e519cf026e"
+      "file": "data/clock/rules/position-tier/SHAZUSDT.f434b42e5268007f.json",
+      "hash": "f434b42e5268007fae2bdcf636636fc77bbb9cca23996ed6291f9aee1f02add4",
+      "ok": true
     },
     {
       "symbol": "SOFIUSDT",
-      "file": "data/clock/rules/position-tier/SOFIUSDT.33df2099c7ef4413.json",
-      "hash": "33df2099c7ef441385d64abc9b3dcaaaac0142f81607345ff9d65f654474ad26"
+      "file": "data/clock/rules/position-tier/SOFIUSDT.f8f867b0f77f5434.json",
+      "hash": "f8f867b0f77f543442faa3d5935a8ca459b8ad59334b56f02c5926de70435433",
+      "ok": true
     },
     {
       "symbol": "PENGUSDT",
-      "file": "data/clock/rules/position-tier/PENGUSDT.e6d96834f5f2d37d.json",
-      "hash": "e6d96834f5f2d37dc8deb5ddb099c11214d3939fe26e02fe39a045e6213e297c"
+      "file": "data/clock/rules/position-tier/PENGUSDT.e6185374dff60a37.json",
+      "hash": "e6185374dff60a37519af493c8992dccdcb5982c87a904ee1d90f979a72c9967",
+      "ok": true
     },
     {
       "symbol": "TMFUSDT",
-      "file": "data/clock/rules/position-tier/TMFUSDT.e82e5845a6b22f3d.json",
-      "hash": "e82e5845a6b22f3d74f5c738453a4702c4ae934f6abc523350800ac6ea43c2a1"
+      "file": "data/clock/rules/position-tier/TMFUSDT.ff32bbabb4c7cf89.json",
+      "hash": "ff32bbabb4c7cf8942c31661f15679934e6e70104763a9853dc37768b0597a27",
+      "ok": true
     },
     {
       "symbol": "BITOUSDT",
-      "file": "data/clock/rules/position-tier/BITOUSDT.c6680e31e00c0bf5.json",
-      "hash": "c6680e31e00c0bf5d70d43483af643a0f68bee0475244dafc045fab5c4a91c97"
+      "file": "data/clock/rules/position-tier/BITOUSDT.5c5ac9f374416e09.json",
+      "hash": "5c5ac9f374416e09ffdc0738645699379c4715d6ba61123a3cf22184bb9e8dba",
+      "ok": true
     },
     {
       "symbol": "XLVUSDT",
-      "file": "data/clock/rules/position-tier/XLVUSDT.a822b2b9436c4220.json",
-      "hash": "a822b2b9436c42207197c8d055f752cd28dad62b1dcc74866c2dfdbeacb013f6"
+      "file": "data/clock/rules/position-tier/XLVUSDT.1eb11db983e36659.json",
+      "hash": "1eb11db983e3665985463897fdcd5aa8a3cc596076911809ec310b8c54054a3b",
+      "ok": true
     },
     {
       "symbol": "IBBUSDT",
-      "file": "data/clock/rules/position-tier/IBBUSDT.eb793ebab7c771f1.json",
-      "hash": "eb793ebab7c771f1c7571874eaca30f827b2303d042d33d7df7009005f2277ca"
+      "file": "data/clock/rules/position-tier/IBBUSDT.b5184b4977cb139b.json",
+      "hash": "b5184b4977cb139b7e2530d6e190489492778c7cd82af1208891600ffea3894b",
+      "ok": true
     },
     {
       "symbol": "GILDUSDT",
-      "file": "data/clock/rules/position-tier/GILDUSDT.45f82300331f3c77.json",
-      "hash": "45f82300331f3c771ab9931717c019c570f4a8aa8626485b2b5db65414d25c13"
+      "file": "data/clock/rules/position-tier/GILDUSDT.e97f304ecfa4d31c.json",
+      "hash": "e97f304ecfa4d31c70e01ee3df5cc8031e070909aa39dbf89fa1584c98097df5",
+      "ok": true
     },
     {
       "symbol": "BOTZUSDT",
-      "file": "data/clock/rules/position-tier/BOTZUSDT.e7230c6fbfae4b16.json",
-      "hash": "e7230c6fbfae4b167762363793adbefa345c3d4bf50789f85f68dc87bf6724da"
+      "file": "data/clock/rules/position-tier/BOTZUSDT.0185c0cffac18516.json",
+      "hash": "0185c0cffac1851670e7cf054bc81b2fb23f9b9ad32fe249d75592f0a27bf7f5",
+      "ok": true
     },
     {
       "symbol": "JMKEUSDT",
-      "file": "data/clock/rules/position-tier/JMKEUSDT.a308423c41172b52.json",
-      "hash": "a308423c41172b528a2e4546728c2e2455e02bd94595ac387a8496dbd4936edc"
+      "file": "data/clock/rules/position-tier/JMKEUSDT.34484c3d2c9191c1.json",
+      "hash": "34484c3d2c9191c1ccdbd9b07e6acaff75a804edf938044796a204ff8dac0d6c",
+      "ok": true
     },
     {
       "symbol": "GFSUSDT",
-      "file": "data/clock/rules/position-tier/GFSUSDT.b78b34292c6d9585.json",
-      "hash": "b78b34292c6d9585dc7320618ea28130192626b151210a5648db0e62679e16fb"
+      "file": "data/clock/rules/position-tier/GFSUSDT.67d68ceee965bab3.json",
+      "hash": "67d68ceee965bab3b2088702c8b81487cc2a178e84875d2fc1b2fca77a98b9e2",
+      "ok": true
     },
     {
       "symbol": "SSPCUSDT",
-      "file": "data/clock/rules/position-tier/SSPCUSDT.2b814ba396b6384d.json",
-      "hash": "2b814ba396b6384dfb059f799e6e01e1c40a849a5049719e5037ae42302aa79a"
+      "file": "data/clock/rules/position-tier/SSPCUSDT.692195579e1a86a3.json",
+      "hash": "692195579e1a86a36fd504b45b858910586ffa4b5feec8a7b25dfd472d3378d3",
+      "ok": true
     },
     {
       "symbol": "BKNGUSDT",
-      "file": "data/clock/rules/position-tier/BKNGUSDT.bed50d22766590f9.json",
-      "hash": "bed50d22766590f97f219fb0e328e0015b2bb9418b6dd597f54d5d3bd4e47d26"
+      "file": "data/clock/rules/position-tier/BKNGUSDT.d4abcefe74e265ac.json",
+      "hash": "d4abcefe74e265ac4d4fd644f09782f921bd33448ad8c500738fb864c8c9d135",
+      "ok": true
     },
     {
       "symbol": "ZMUSDT",
-      "file": "data/clock/rules/position-tier/ZMUSDT.4611b183d225872e.json",
-      "hash": "4611b183d225872e6c188463c6166546a33a84693153cc377dcd6a4014bace47"
+      "file": "data/clock/rules/position-tier/ZMUSDT.a9637448f73efc6f.json",
+      "hash": "a9637448f73efc6f14dd0f182dc4ac4e82c1907ab1ca86297eb3a95ddb3418b7",
+      "ok": true
     },
     {
       "symbol": "AMGNUSDT",
-      "file": "data/clock/rules/position-tier/AMGNUSDT.f9a19de854e5fbed.json",
-      "hash": "f9a19de854e5fbed495aaae9901cea221b49c20ecc720777bdd5c0266b06e1dd"
+      "file": "data/clock/rules/position-tier/AMGNUSDT.7b1d64cfb79fe3e8.json",
+      "hash": "7b1d64cfb79fe3e8e7ff7cfbc3c1be969db6df1d52f20226214b48e940506068",
+      "ok": true
     },
     {
       "symbol": "PYPLUSDT",
-      "file": "data/clock/rules/position-tier/PYPLUSDT.84f5df07c2dc7c0f.json",
-      "hash": "84f5df07c2dc7c0f912efe52fae51391993cd4369084384a728bf5d562e0b4ee"
+      "file": "data/clock/rules/position-tier/PYPLUSDT.1a8a7d30f3ca1170.json",
+      "hash": "1a8a7d30f3ca1170e94c883dcc6f0892eed6069143fb9bdf1829aa5655260d1a",
+      "ok": true
     },
     {
       "symbol": "SHOPUSDT",
-      "file": "data/clock/rules/position-tier/SHOPUSDT.70f74f017e6265ce.json",
-      "hash": "70f74f017e6265ce359dc34ddddf84bfe009e6a6701f4222143064de757f74c1"
+      "file": "data/clock/rules/position-tier/SHOPUSDT.06924db3eddb73c3.json",
+      "hash": "06924db3eddb73c3f8257b11c39a9d4d19d83aeca150ea0cb03c46ccaebce0c7",
+      "ok": true
     },
     {
       "symbol": "EWZUSDT",
-      "file": "data/clock/rules/position-tier/EWZUSDT.4fa345fdf118a43f.json",
-      "hash": "4fa345fdf118a43f16845eb7baf759e8e00028a6af1bdcc15c32c4fa71949bb0"
+      "file": "data/clock/rules/position-tier/EWZUSDT.bbfd5ded7d31ee7e.json",
+      "hash": "bbfd5ded7d31ee7edb507c5823fcf7cc8bbd7c128ef25017bb926ef851d4411b",
+      "ok": true
     },
     {
       "symbol": "VSTUSDT",
-      "file": "data/clock/rules/position-tier/VSTUSDT.6a0a3645a19c3511.json",
-      "hash": "6a0a3645a19c35114708f6a642d73c0182219fcace3eb6894695df69b6b62859"
+      "file": "data/clock/rules/position-tier/VSTUSDT.f00b24973eb446b0.json",
+      "hash": "f00b24973eb446b0af7226f673b0715dcbb735ce3208e68965ff10506c40bf88",
+      "ok": true
     },
     {
       "symbol": "XLEUSDT",
-      "file": "data/clock/rules/position-tier/XLEUSDT.5d3c891101c61594.json",
-      "hash": "5d3c891101c615941b54057a70ae57a0afde5b02493e1870ff0498ffc234a526"
+      "file": "data/clock/rules/position-tier/XLEUSDT.f2bd7e476e849741.json",
+      "hash": "f2bd7e476e849741567b650ec33c9e19f4dc4cddec21f30b995d49e55a5ddd28",
+      "ok": true
     },
     {
       "symbol": "DDOGUSDT",
-      "file": "data/clock/rules/position-tier/DDOGUSDT.bec630ce70636324.json",
-      "hash": "bec630ce70636324809c50352cd7d17a92fd5fe5a8a61066f597d16dedc60b67"
+      "file": "data/clock/rules/position-tier/DDOGUSDT.ed5b96718f909d20.json",
+      "hash": "ed5b96718f909d20aabc627467aa17c95e2886cadd51683e75d512a2c7abe193",
+      "ok": true
     },
     {
       "symbol": "UBERUSDT",
-      "file": "data/clock/rules/position-tier/UBERUSDT.b29188b1171621c2.json",
-      "hash": "b29188b1171621c2a4d42e6bcab73a720e475f4f287bca8d9293a420e655be9f"
+      "file": "data/clock/rules/position-tier/UBERUSDT.18cbed2b7f6d9614.json",
+      "hash": "18cbed2b7f6d96140eb2ca67e851fac15ff888acad9978f623d21ec9c73aa404",
+      "ok": true
     },
     {
       "symbol": "MELIUSDT",
-      "file": "data/clock/rules/position-tier/MELIUSDT.28337442c8932078.json",
-      "hash": "28337442c893207825616cab89e8b721311ccad3e72be43beac10378873813bf"
+      "file": "data/clock/rules/position-tier/MELIUSDT.553ab61f34acaf0d.json",
+      "hash": "553ab61f34acaf0dedbc385e07403188fa19bb499fc9d070cd4007cd6b9966c3",
+      "ok": true
     },
     {
       "symbol": "ANETUSDT",
-      "file": "data/clock/rules/position-tier/ANETUSDT.76ced2bcfa8e408f.json",
-      "hash": "76ced2bcfa8e408f27645f3a3235f9cafc1c846f1d6095005d3999e680412c9e"
+      "file": "data/clock/rules/position-tier/ANETUSDT.9e7e72a131315e6f.json",
+      "hash": "9e7e72a131315e6f50ac5627ff326457b6cfe8f0b67ffec76bd8bfa773b45086",
+      "ok": true
     },
     {
       "symbol": "GDXUSDT",
-      "file": "data/clock/rules/position-tier/GDXUSDT.21830278cd8d56d8.json",
-      "hash": "21830278cd8d56d8638bbecc38cc4fe98afe339a6042e97ffa10f60059e22f80"
+      "file": "data/clock/rules/position-tier/GDXUSDT.5a9f09ed8fb0a034.json",
+      "hash": "5a9f09ed8fb0a034fcf3fc29c6f11ec09af54de3e72a032e4f415e2925e21101",
+      "ok": true
     },
     {
       "symbol": "LYTEUSDT",
-      "file": "data/clock/rules/position-tier/LYTEUSDT.536c3ff9cfa986a1.json",
-      "hash": "536c3ff9cfa986a1154519d08b8d54c22a0ea7721ca0b8b8021798837bd3a472"
+      "file": "data/clock/rules/position-tier/LYTEUSDT.892997684e50f866.json",
+      "hash": "892997684e50f8668970a20ac03891bf6be0990bf84fbf8582f65bafa67bc56b",
+      "ok": true
     },
     {
       "symbol": "NETUSDT",
-      "file": "data/clock/rules/position-tier/NETUSDT.0af9dcc41ccb63ba.json",
-      "hash": "0af9dcc41ccb63ba794a793da16ef3d3476858de6e018106941aab90f4dfba13"
+      "file": "data/clock/rules/position-tier/NETUSDT.893b5f503594305c.json",
+      "hash": "893b5f503594305c121d2dcab555944a451d519a5ccb7018379e4d2c87c47a32",
+      "ok": true
     },
     {
       "symbol": "MRNAUSDT",
-      "file": "data/clock/rules/position-tier/MRNAUSDT.c04cd781540d9d82.json",
-      "hash": "c04cd781540d9d825f152925842926658ea912e4409d7717a2f4dfec0b9f3608"
+      "file": "data/clock/rules/position-tier/MRNAUSDT.301748f817b93be1.json",
+      "hash": "301748f817b93be1e2e6e1c57f6f2ff6cf9d810508f9ee23dfbdb4b4696ee243",
+      "ok": true
     },
     {
       "symbol": "TEMUSDT",
-      "file": "data/clock/rules/position-tier/TEMUSDT.509b9dc729bf457d.json",
-      "hash": "509b9dc729bf457db22b13149bdbcf42b993e06a58b58fdb1400c543087b6643"
+      "file": "data/clock/rules/position-tier/TEMUSDT.20c0882a2d364a5f.json",
+      "hash": "20c0882a2d364a5f1d8025b239c9f67330abe35bb4daf3723fcb777782001646",
+      "ok": true
     },
     {
       "symbol": "MRKUSDT",
-      "file": "data/clock/rules/position-tier/MRKUSDT.b49be71c30e4bc58.json",
-      "hash": "b49be71c30e4bc58e9f40c523c97ebeccdaa3143117c4afffd33fb862eeacdb5"
+      "file": "data/clock/rules/position-tier/MRKUSDT.2d9736853a94d1b8.json",
+      "hash": "2d9736853a94d1b87c8db0ee4f0603a961951a0b885a84cc5a01f9fbe51ca7e1",
+      "ok": true
     },
     {
       "symbol": "DEUSDT",
-      "file": "data/clock/rules/position-tier/DEUSDT.36fe46d74d73350f.json",
-      "hash": "36fe46d74d73350f084c61f7bcf863315c45414544e5f595758c21d5bdc9d069"
+      "file": "data/clock/rules/position-tier/DEUSDT.7d2da729b362f4e5.json",
+      "hash": "7d2da729b362f4e515764a6b7b5c32eab70ea24f4adef2e909db567fb203c257",
+      "ok": true
     },
     {
       "symbol": "DJTUSDT",
-      "file": "data/clock/rules/position-tier/DJTUSDT.85afec499222e6f5.json",
-      "hash": "85afec499222e6f536675361656b84dafd52db24aee14959ce0491443ffc3757"
+      "file": "data/clock/rules/position-tier/DJTUSDT.bc36523587e8d20b.json",
+      "hash": "bc36523587e8d20ba092baf886b11ef4974e22f8a3568c88da55c487d130959f",
+      "ok": true
     },
     {
       "symbol": "MARAUSDT",
-      "file": "data/clock/rules/position-tier/MARAUSDT.22a8c2d0096325db.json",
-      "hash": "22a8c2d0096325dbaa7ad18702a7284be62da1a036075db700bd112c34f071d7"
+      "file": "data/clock/rules/position-tier/MARAUSDT.1bfc7c4ef6daa023.json",
+      "hash": "1bfc7c4ef6daa023044c4a4e2ea06370c9f6824d19d0da00648fb1e8781c30f7",
+      "ok": true
     },
     {
       "symbol": "PURRUSDT",
-      "file": "data/clock/rules/position-tier/PURRUSDT.ac299d2398ffaa89.json",
-      "hash": "ac299d2398ffaa8960d5af4fac26be9f7747415b2704e4c236dc935453d6b0c9"
+      "file": "data/clock/rules/position-tier/PURRUSDT.481133f7c231655c.json",
+      "hash": "481133f7c231655c7f52289e3dae77e1a386d7f24f6c4068706c806424e7e4ec",
+      "ok": true
     },
     {
       "symbol": "OKTAUSDT",
-      "file": "data/clock/rules/position-tier/OKTAUSDT.49b02941cba36cf4.json",
-      "hash": "49b02941cba36cf43a4183b20a42e65c9ea51595140d1a6ec6578bb3e508c39e"
+      "file": "data/clock/rules/position-tier/OKTAUSDT.e0c083fd24191238.json",
+      "hash": "e0c083fd24191238c48cbc51d62acbd58f346b0dd94d41b86155ed3ad2c219fc",
+      "ok": true
     },
     {
       "symbol": "VEEVUSDT",
-      "file": "data/clock/rules/position-tier/VEEVUSDT.7ff73b437209acad.json",
-      "hash": "7ff73b437209acad7faa2ca55f6b591fbb82377038ff8c8935154b64e0d13c6e"
+      "file": "data/clock/rules/position-tier/VEEVUSDT.2935496de1d3924c.json",
+      "hash": "2935496de1d3924c8f2c538cbd41f70f7198b632f4d9d91bf158ad3a2f2bc487",
+      "ok": true
     },
     {
       "symbol": "NVSUSDT",
-      "file": "data/clock/rules/position-tier/NVSUSDT.3d6dc07ec2db0284.json",
-      "hash": "3d6dc07ec2db028496ad1ff0b44cb9191bda0fc51e5538cc1d2fe02cef1e52e0"
+      "file": "data/clock/rules/position-tier/NVSUSDT.16c528e1fcbabf93.json",
+      "hash": "16c528e1fcbabf93e1b63ed4fba9c89ee2ce2f5d8cc1c32c6eed32affdff62b2",
+      "ok": true
     },
     {
       "symbol": "GTLBUSDT",
-      "file": "data/clock/rules/position-tier/GTLBUSDT.1f5b4528efc48744.json",
-      "hash": "1f5b4528efc487449386c9756dcca45164491894917e015e0b511f4fb3a12812"
+      "file": "data/clock/rules/position-tier/GTLBUSDT.cec8619321ac9dfc.json",
+      "hash": "cec8619321ac9dfc183d094e6def8f32032ffe4c238b1bccd5c2ecc740a847c2",
+      "ok": true
     },
     {
       "symbol": "ZSUSDT",
-      "file": "data/clock/rules/position-tier/ZSUSDT.5ab2b1d6df894f5d.json",
-      "hash": "5ab2b1d6df894f5d22811253d2429e64827ab723c3b32a7f9f45ad7d1787437d"
+      "file": "data/clock/rules/position-tier/ZSUSDT.52371f19cc8adc7d.json",
+      "hash": "52371f19cc8adc7d15dea30d84156f95ab9d98721eef9e99045bc1c867756d24",
+      "ok": true
     },
     {
       "symbol": "TEAMUSDT",
-      "file": "data/clock/rules/position-tier/TEAMUSDT.4f7fc7b6dd5d6f9d.json",
-      "hash": "4f7fc7b6dd5d6f9d0b29b45b0559f7e0f3eac5990be22460779be508310f12a4"
+      "file": "data/clock/rules/position-tier/TEAMUSDT.6a3ea12a1fa7b1d1.json",
+      "hash": "6a3ea12a1fa7b1d1cfcb853fed4cf15d01137b9db79c6564cafefce6f36a4045",
+      "ok": true
     },
     {
       "symbol": "GPROUSDT",
-      "file": "data/clock/rules/position-tier/GPROUSDT.375c9d1b79b164a5.json",
-      "hash": "375c9d1b79b164a572e75a6320952f1673f13231f474cc82845dee525af83155"
+      "file": "data/clock/rules/position-tier/GPROUSDT.14514cf51693aa32.json",
+      "hash": "14514cf51693aa326338b57fa56e8fb1683814f07492bfbf72430eec505d31dc",
+      "ok": true
     },
     {
       "symbol": "BYDUSDT",
-      "file": "data/clock/rules/position-tier/BYDUSDT.31761da8bab6dfc6.json",
-      "hash": "31761da8bab6dfc61c708aefbc72fd2b7e1345e7e336492083a5572821084a2d"
+      "file": "data/clock/rules/position-tier/BYDUSDT.da1bdcffa1d86752.json",
+      "hash": "da1bdcffa1d867527f7f19e60315fb1936dfa3b917a3096c96fcc32e792d1267",
+      "ok": true
     },
     {
       "symbol": "QLDUSDT",
-      "file": "data/clock/rules/position-tier/QLDUSDT.ac5cc483e71b8a95.json",
-      "hash": "ac5cc483e71b8a957a6b5f60a816362c2c3cfcab559a274e1100776dc2afcffc"
+      "file": "data/clock/rules/position-tier/QLDUSDT.5a13aa56d85c98d4.json",
+      "hash": "5a13aa56d85c98d454e829a101ac91728953ee9d8fc5e95643c493a293d774b8",
+      "ok": true
     },
     {
       "symbol": "IBITUSDT",
-      "file": "data/clock/rules/position-tier/IBITUSDT.b507470512621ddf.json",
-      "hash": "b507470512621ddf780fed4c3ebb5ab7643198b4c2e79ad00ca43e41d511ed01"
+      "file": "data/clock/rules/position-tier/IBITUSDT.5545de9f743c2d72.json",
+      "hash": "5545de9f743c2d72231a7c2a069941337c1154670727a419fbe665b163926d2c",
+      "ok": true
     },
     {
       "symbol": "CLSKUSDT",
-      "file": "data/clock/rules/position-tier/CLSKUSDT.94711ba32a47ffaf.json",
-      "hash": "94711ba32a47ffaf81389f4d637eb649496cd2baf1618873e7f495eafdb1b56b"
+      "file": "data/clock/rules/position-tier/CLSKUSDT.ef9caa1f0e4c171e.json",
+      "hash": "ef9caa1f0e4c171e81e90407aef453feeba04d36bec251b969a5a9b5b8b994d6",
+      "ok": true
     },
     {
       "symbol": "SDGRUSDT",
-      "file": "data/clock/rules/position-tier/SDGRUSDT.a400dc68f22d8c75.json",
-      "hash": "a400dc68f22d8c757b130fa389210bc0ac7081b1f2163aa04a3023a8a43dfd4f"
+      "file": "data/clock/rules/position-tier/SDGRUSDT.6dadc2e092d5f8ee.json",
+      "hash": "6dadc2e092d5f8ee6542a03267764133d982e23260c49068cfd1aa3ee3ff7805",
+      "ok": true
     },
     {
       "symbol": "GNRCUSDT",
-      "file": "data/clock/rules/position-tier/GNRCUSDT.2ff7cd0bd8da4fb5.json",
-      "hash": "2ff7cd0bd8da4fb50839b973e6303628f32edf509eccd73b2d32108c51144796"
+      "file": "data/clock/rules/position-tier/GNRCUSDT.a02bd17fdde0550e.json",
+      "hash": "a02bd17fdde0550ee8e3d450ae4472a610762548fb10b73dda4b1c279ca1310b",
+      "ok": true
     },
     {
       "symbol": "PATHUSDT",
-      "file": "data/clock/rules/position-tier/PATHUSDT.2984a81d349011c4.json",
-      "hash": "2984a81d349011c4a5407ffedead83df4dc6aeba1107ef5ecb9b862f1bc558e5"
+      "file": "data/clock/rules/position-tier/PATHUSDT.f9f60ac4ff4e46d0.json",
+      "hash": "f9f60ac4ff4e46d0f00f8c90342f538dee0207c57786a65b917c62ff41f5f728",
+      "ok": true
     },
     {
       "symbol": "HUTUSDT",
-      "file": "data/clock/rules/position-tier/HUTUSDT.278495fc4a699995.json",
-      "hash": "278495fc4a69999519fa17e738eda95ebcf0ae3ae69fb2290b60c698409565fc"
+      "file": "data/clock/rules/position-tier/HUTUSDT.7d9d1d51b3286e00.json",
+      "hash": "7d9d1d51b3286e00b47d2bb26b1e1b83200f849ce7645379d558e0a4b1f42360",
+      "ok": true
     },
     {
       "symbol": "TLTUSDT",
-      "file": "data/clock/rules/position-tier/TLTUSDT.96a7f6b471288885.json",
-      "hash": "96a7f6b471288885e87e99d7dcb29dc41c367171bb6f0e7412a637afcbbc4297"
+      "file": "data/clock/rules/position-tier/TLTUSDT.16f725705a23161b.json",
+      "hash": "16f725705a23161b85386d95277bfba91299aa29ebe6708f43d2f2c8b2055560",
+      "ok": true
     },
     {
       "symbol": "JEPQUSDT",
-      "file": "data/clock/rules/position-tier/JEPQUSDT.b0cc60a02b29480b.json",
-      "hash": "b0cc60a02b29480b63072a318b7f68702b79ac02bf921a4f2cb5386272e8fa25"
+      "file": "data/clock/rules/position-tier/JEPQUSDT.b492263aa34a2991.json",
+      "hash": "b492263aa34a2991ace148eeeae775105c589e2e82f12d0c5b263ad771582018",
+      "ok": true
     },
     {
       "symbol": "CORZUSDT",
-      "file": "data/clock/rules/position-tier/CORZUSDT.4c0e07e82f9c8d25.json",
-      "hash": "4c0e07e82f9c8d25e51e7fc8ebd56608820571768964ef6597c028876da155f0"
+      "file": "data/clock/rules/position-tier/CORZUSDT.8b28c2e29a137a41.json",
+      "hash": "8b28c2e29a137a417425eabc9df6b0db20d8f0faf0386ff5039951bd31549088",
+      "ok": true
     },
     {
       "symbol": "BLSHUSDT",
-      "file": "data/clock/rules/position-tier/BLSHUSDT.89b186c1a6b5f9b2.json",
-      "hash": "89b186c1a6b5f9b2c08e33ef2f67123bb548b808de79b0a8d36a470461af4bc5"
+      "file": "data/clock/rules/position-tier/BLSHUSDT.ffabf67666e7649e.json",
+      "hash": "ffabf67666e7649e6f0f4ecd8bb3c26fbd42d59b99e2abd50c39bb68d5c7520b",
+      "ok": true
     },
     {
       "symbol": "SECZUSDT",
-      "file": "data/clock/rules/position-tier/SECZUSDT.57764767806bbce0.json",
-      "hash": "57764767806bbce03a12e14d082a733fd55791484c4efc00f80e1d089a788828"
-    },
-    {
-      "symbol": "WBDUSDT",
-      "file": "data/clock/rules/position-tier/WBDUSDT.1297956d00e3b969.json",
-      "hash": "1297956d00e3b9691f48a1ef32f903765925dac6805bca15bf31d59df8c9723d"
+      "file": "data/clock/rules/position-tier/SECZUSDT.97643d85a652b057.json",
+      "hash": "97643d85a652b057f59284ccf75e3d919fae615fc474f751044d5bc9726db3c1",
+      "ok": true
     },
     {
       "symbol": "URNMUSDT",
-      "file": "data/clock/rules/position-tier/URNMUSDT.b6ede66c587f18e0.json",
-      "hash": "b6ede66c587f18e0df15e87d4bd22d606fb8f2d5635bf395e23efe8c687ab2b4"
+      "file": "data/clock/rules/position-tier/URNMUSDT.313fabdb3d0e56a2.json",
+      "hash": "313fabdb3d0e56a283034e695f950eeba8b54ef32d40b4ff9510556fc1063d74",
+      "ok": true
     },
     {
       "symbol": "TWSTUSDT",
-      "file": "data/clock/rules/position-tier/TWSTUSDT.c13150c04d185542.json",
-      "hash": "c13150c04d185542292325eeca40dc1cf471447477487f7b9f8d61bbf23d50c9"
+      "file": "data/clock/rules/position-tier/TWSTUSDT.22119e8ea59a6533.json",
+      "hash": "22119e8ea59a653375bee30170aada3310005bd28b4781c9b7e5d83f65cda8e7",
+      "ok": true
     },
     {
       "symbol": "CVNAUSDT",
-      "file": "data/clock/rules/position-tier/CVNAUSDT.a6ea612db5383f58.json",
-      "hash": "a6ea612db5383f58133d2f8e74429bcd13f3781c4e10160222ca7057a949ea9e"
+      "file": "data/clock/rules/position-tier/CVNAUSDT.45436238cc949158.json",
+      "hash": "45436238cc949158f8d0f60511eb5e75b4e48c157224623472533238007444ea",
+      "ok": true
     },
     {
       "symbol": "KODUSDT",
-      "file": "data/clock/rules/position-tier/KODUSDT.f6d1a33012e58db0.json",
-      "hash": "f6d1a33012e58db0bb455a0c3f1dd92c99b34a61846c14cc321d602bbaa6fdc5"
+      "file": "data/clock/rules/position-tier/KODUSDT.14ab2c799692dc1f.json",
+      "hash": "14ab2c799692dc1f25459804cc9c421b4be238b5c0280ebffb428ac8cd3edced",
+      "ok": true
     },
     {
       "symbol": "RUMUSDT",
-      "file": "data/clock/rules/position-tier/RUMUSDT.6c059e794533a2aa.json",
-      "hash": "6c059e794533a2aaef5373ba750acb41a0867975983e72ce34bd510b8ce23988"
+      "file": "data/clock/rules/position-tier/RUMUSDT.42f94cac77b54176.json",
+      "hash": "42f94cac77b54176b5b3b66c32a684c699a5faa2ddefe7e9ddf82486c40cf35b",
+      "ok": true
     },
     {
       "symbol": "AKAMUSDT",
-      "file": "data/clock/rules/position-tier/AKAMUSDT.ef6eaf4d28313081.json",
-      "hash": "ef6eaf4d2831308188b4899820062eb79b8b07cb3b91cc4dfa7f76699633d332"
+      "file": "data/clock/rules/position-tier/AKAMUSDT.476313b0827488eb.json",
+      "hash": "476313b0827488eb586a633bfed12c75b7748e3ed56a4a6adf245c61b583b572",
+      "ok": true
     },
     {
       "symbol": "BTCUSDT",
-      "file": "data/clock/rules/position-tier/BTCUSDT.71e761e3cadfda93.json",
-      "hash": "71e761e3cadfda9395a79e002817601cb4e586b12b0c55b269af2281ee91fbdc"
+      "file": "data/clock/rules/position-tier/BTCUSDT.047cdcb6d13b84c9.json",
+      "hash": "047cdcb6d13b84c98678119efbdaeb346fb7722861a4b4bccb8257bcc7fd9176",
+      "ok": true
     },
     {
       "symbol": "ETHUSDT",
-      "file": "data/clock/rules/position-tier/ETHUSDT.754110c8ce5b4988.json",
-      "hash": "754110c8ce5b498838021c86cc22f54bf86bb1cf7cb16e2b8db473dd381524da"
+      "file": "data/clock/rules/position-tier/ETHUSDT.93ae5a4fbf2c452c.json",
+      "hash": "93ae5a4fbf2c452c5524eaaf5efea729aa32a84a1415756d139303b9c3b5f5e6",
+      "ok": true
     },
     {
       "symbol": "SOLUSDT",
-      "file": "data/clock/rules/position-tier/SOLUSDT.40c6f1799be33226.json",
-      "hash": "40c6f1799be332264284953dd9563472be03f3b6b5a994262d9f9bae351edd21"
+      "file": "data/clock/rules/position-tier/SOLUSDT.f8e8a658d04c74a4.json",
+      "hash": "f8e8a658d04c74a47112d8b272705ea0c2df874e9bdffec505872fcdb8f67829",
+      "ok": true
     }
   ]
 }

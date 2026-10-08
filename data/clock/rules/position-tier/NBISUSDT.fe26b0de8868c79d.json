@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-08T05:42:57.476Z",
+  "key": "NBISUSDT",
+  "hash": "fe26b0de8868c79d6e0e9146393ad2622257f2e8e89292696e493c13113d2215",
+  "body": {
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1791438177389,
+    "data": [
+      {
+        "tier": "1",
+        "minTierValue": "0",
+        "maxTierValue": "5000",
+        "leverage": "20",
+        "mmr": "0.025"
+      },
+      {
+        "tier": "2",
+        "minTierValue": "5000",
+        "maxTierValue": "25000",
+        "leverage": "15",
+        "mmr": "0.04"
+      },
+      {
+        "tier": "3",
+        "minTierValue": "25000",
+        "maxTierValue": "50000",
+        "leverage": "10",
+        "mmr": "0.05"
+      },
+      {
+        "tier": "4",
+        "minTierValue": "50000",
+        "maxTierValue": "5000000",
+        "leverage": "5",
+        "mmr": "0.1"
+      },
+      {
+        "tier": "5",
+        "minTierValue": "5000000",
+        "maxTierValue": "10000000",
+        "leverage": "4",
+        "mmr": "0.125"
+      },
+      {
+        "tier": "6",
+        "minTierValue": "10000000",
+        "maxTierValue": "50000000",
+        "leverage": "2",
+        "mmr": "0.3"
+      },
+      {
+        "tier": "7",
+        "minTierValue": "50000000",
+        "maxTierValue": "100000000",
+        "leverage": "1",
+        "mmr": "0.6"
+      }
+    ]
+  }
+}

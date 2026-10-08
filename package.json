@@ -29,6 +29,7 @@
     "verify:offline": "tsx scripts/verify-offline.ts",
     "discovery:e4:replay": "tsx scripts/discovery/e4-replay.ts",
     "bench": "tsx scripts/bench.ts",
+    "replay:build": "tsx scripts/build/build-replay.ts",
     "screenshots": "tsx scripts/capture-screenshots.ts"
   },
   "devDependencies": {
