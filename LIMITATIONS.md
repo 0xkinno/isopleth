@@ -1,73 +1,44 @@
 # LIMITATIONS.md
 
-Stated first, not buried — per the project's own standard for what beats the
-strongest competing sample (FINAL_INSTRUCTION.md §16: "it states its limits
-first"). Updated 2026-10-05, as of Phase A in progress.
+Stated first, not buried. Updated 2026-10-08.
 
-## The headline measurement is not confirmed yet
+## The headline measurement is only partly confirmed
 
-The entire architectural bet of this build (§0) is that the reference-price
-axis is measured, not assumed. As of this writing, it is **not yet measured**
-— the Collateral Clock recorder has been running since 2026-10-04 evening and
-has not passed through a full weekend/holiday close. Zero confirmed
-freeze+thaw transitions exist. See `CLAIMS.json` C4 and `DISCOVERY.md`. This
-is the single biggest open limitation in the project and is not minimized
-here.
+The architectural bet is that the reference-price axis is measured, not assumed. What is confirmed: the recording is real and verifiable (44,000+ hash-chained records over 241 pairs), the public reference index is unchanged from the previous tick 17.5% of the time, and two thin-liquidity pairs show a clean freeze and thaw. What is **not** confirmed: the documented session-wide freeze and thaw in a *liquid* name. The recording has not yet passed through a weekend close. The first clean test is the 2026-10-09 to 12 weekend. If the index moves continuously through it, the central bet is wrong and this document will say so. See `CLAIMS.json` C4 (`PARTIAL`).
 
-## Tier boundary semantics are an assumption, not a verified fact
+## The reference-lag replay covers a quiet week
 
-The kernel's planned convention — a collateral/position tier covers `(lo,
-hi]`, lower exclusive, upper inclusive — comes from FINAL_INSTRUCTION.md's
-own kernel pseudocode, not from an independently re-fetched Bitget document
-or a live authenticated probe at the exact boundary. U5 (marginal vs.
-aggregated tier application) and U8 (inclusive/exclusive) are both open. Any
-claim the eventual kernel makes about exact-boundary behavior (relevant to
-break test B3) inherits this assumption until it's closed.
+The Clock replay is real data, but it spans a few days with no weekend close. The margin shift it shows is small (a little over one percentage point at the extreme). That is the honest size of the effect in this window, not the size to expect over a closure. The replay also shows both collateral valuations rather than assuming which one Bitget's private engine uses (C5, unknown).
 
-## Some documented sources were not independently re-fetched this session
+## Tier semantics are assumptions
 
-FINAL_INSTRUCTION.md §3 calls for re-fetching F1-F14 into `docs/sources/`
-with a capture date. This build's tooling could reach `api.bitget.com`
-(confirmed working) but had intermittent trouble reaching `bitget.com`
-support-article pages directly within the same session — see `PROGRESS.md`
-for the full diagnostic trail. F1-F14 are currently taken on the authority of
-FINAL_INSTRUCTION.md's own text rather than freshly re-captured. This should
-be closed before final submission, not left as a silent gap.
+The kernel takes a tier to cover `(lo, hi]` and applies the selected band's rate to the whole notional. Both are conventions, not verified facts (C6). The 243 captured ladders prove the bands are contiguous but cannot say how a shared boundary value is treated or whether bands apply marginally. Break attack B3 inherits this. Closing it needs the exact Bitget wording or an authenticated probe at a boundary value.
 
-## The rToken-to-perp matching convention has known, deliberate gaps
+## An earlier capture was wrong, and was fixed
 
-E2's instrument scan matches a stock perp to an rToken spot symbol via the
-documented `r` + ticker convention. 84 of 325 discovered stock-labelled
-futures symbols did not match and were excluded rather than guessed — these
-are index futures (SP500, NDX100, HSI, JP225, KR200), non-US-listed names
-(Samsung, Tencent, Xiaomi, and similar), and non-equity names (OPENAI,
-ANTHROPIC, POLYMARKET) that have no rToken collateral counterpart. This is a
-correct exclusion, not a bug, but it means the product's rToken universe is
-narrower than "every stock-labelled perp on Bitget" — it is specifically
-"every stock-labelled perp with a matching 1:1-backed rToken."
+The first position-tier capture sent the wrong request parameter (`productType`, a v2 convention, instead of `category`). Bitget answered `400172` for every symbol, and the script wrote those error envelopes to disk as if they were data, because it never checked the response code. All 244 files were errors. This was found while investigating why U5/U8 had no data, fixed to require `code === "00000"` before writing, and re-run: 243 real ladders now exist. A related flaw surfaced in the break campaign (B10): one tick had been chain-recorded with null prices after a malformed response; the tick builder now refuses such a record loudly.
 
-## Sample sizes are small, and are stated as such everywhere they appear
+## The LLM path is Gemini on a free tier, not Qwen
 
-- The current clock data (4,000+ ticks) spans a few hours of one weekday.
-  Any pattern observed in it (e.g. the 31/241 pairs showing an early
-  frozen-like signature) is explicitly labelled sub-threshold, not a result.
-- The historical window set (31 windows since 2026-06-04) is a calendar
-  derivation, not 31 observed outcomes — only windows that occur *while the
-  recorder is running* will have real data behind them.
-- The shadow-predictor control (E4) has zero `G_w` values to evaluate against
-  as of this writing.
+The Qwen driver exists but has never made a live call (no key). The live provider is Gemini on a free-tier quota. When it is unavailable or over quota, the app serves a verified deterministic template and records the driver error in the response. The Ask bar does not use a model at all. The product is complete without either.
 
-## E5 (private verification) has not run
+## The Ask bar is a rule router
 
-No Demo Trading or read-only UTA key has been supplied. This is by design —
-E5 is optional and never a prerequisite — but it means U3/U4/U9 remain fully
-open, and the kernel's reproduction accuracy against Bitget's own
-`effEquity`/`mmr`/`mgnRatio` has not been checked against anything real.
+It understands a fixed set of intents (where the book breaks, what-if with a percentage, the smallest safe move, the state of the clock). That is deliberate: it is always available, never invents a number, and shows every call. It does not parse arbitrary free text.
 
-## Phase B onward does not exist yet
+## Sample sizes are small and labelled
 
-There is no margin kernel, no surface, no contour, no optimizer, no product
-UI, no Qwen integration, and no break campaign run against real code. Every
-claim this document and `PROOF.md` make is scoped to Phase A discovery
-artifacts only. Nothing here should be read as a claim about the finished
-product, because the finished product does not exist yet.
+- The window set (31 windows) is a calendar derivation. No window has fully elapsed since recording began, so the pre-registered null-control test (break attack B13, claim C7) has N = 0.
+- The benchmark is a synthetic account grid (36 accounts, 12 breached). It measures the optimizer against controls, not trading performance.
+
+## Not built
+
+- No authenticated key path (E5). U3/U4/U9 stay open and the kernel has not been checked against Bitget's own `effEquity` and `mmr` fields.
+- Holiday and half-day handling beyond the NYSE calendar file is not modelled in the replay.
+- The rToken universe is every stock perp with a matching 1:1 rToken (241). 84 stock-labelled perps (index futures, non-US names, non-equities) are excluded on purpose, not guessed.
+- CSV book input is a single-tier simplification; JSON carries exact ladders.
+- Some Bitget support-article sources (F1-F14) were not independently re-fetched; they rest on the build instruction's text. Nothing in the evidence ledger depends on them being exact.
+
+## What this product does not claim
+
+It has no trading track record, makes no alpha claim, never places an order, and is not financial advice.

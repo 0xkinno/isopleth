@@ -1,11 +1,11 @@
 # Isopleth
 
-[![CI: typecheck+test](https://img.shields.io/badge/CI-typecheck%2Btest-2F7B92)]()
+[![CI](https://github.com/0xkinno/isopleth/actions/workflows/ci.yml/badge.svg)](https://github.com/0xkinno/isopleth/actions/workflows/ci.yml)
 [![Verify: offline reproducible](https://img.shields.io/badge/verify-offline%20reproducible-3F8F6B)]()
-[![Tests: 21/21 passing](https://img.shields.io/badge/tests-21%2F21%20passing-3F8F6B)]()
-[![Break campaign: 8/13, 0 failed](https://img.shields.io/badge/break-8%2F13%20verified%2C%200%20failed-3F8F6B)]()
+[![Tests: 27/27 passing](https://img.shields.io/badge/tests-27%2F27%20passing-3F8F6B)]()
+[![Break campaign: 12/13, 0 failed](https://img.shields.io/badge/break-12%2F13%20verified%2C%200%20failed-3F8F6B)]()
 [![Lighthouse a11y: 100](https://img.shields.io/badge/lighthouse%20a11y-100-3F8F6B)]()
-[![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Bitget Hackathon S2: AI Trading Desk](https://img.shields.io/badge/Bitget%20Hackathon%20S2-AI%20Trading%20Desk-D9A441)]()
 [![Sub-theme: Decision Stress Testing](https://img.shields.io/badge/sub--theme-Decision%20Stress%20Testing-D9A441)]()
 
@@ -27,9 +27,11 @@ Every number on this site traces to a reproducible command. Nothing is typed by 
 |---|---|
 | **Live app** | [isopleth-blue.vercel.app](https://isopleth-blue.vercel.app) — deployed and verified, all 6 routes, zero console errors |
 | **Proof page** | [isopleth-blue.vercel.app/proof](https://isopleth-blue.vercel.app/proof) — the claims ledger, walkable Decision → Result → Scenario → Engine inputs → Source evidence |
+| **MCP server** | `https://isopleth-blue.vercel.app/mcp` - read-only, 6 tools, add it next to Bitget's own server (see below) |
+| **Clock replay** | [isopleth-blue.vercel.app/scenarios](https://isopleth-blue.vercel.app/scenarios) - the measured reference lag, replayed through the kernel |
 | **Repository** | [github.com/0xkinno/isopleth](https://github.com/0xkinno/isopleth) |
-| **Demo video** | Not yet recorded — see [`SUBMISSION.md`](SUBMISSION.md) for the fixed script and shot list, marked `DO NOT SUBMIT` until filmed |
-| **X post** | Draft fixed in [`SUBMISSION.md`](SUBMISSION.md) (`#BitgetHackathon @Bitget_AI`) — not yet posted |
+| **Demo video** | [Watch on X](https://x.com/0xkiddok/status/2107968222020657562)|
+| **X post** | [See on X](https://x.com/0xkiddok/status/2107968222020657562)  |
 | **Docs index** | [full index below](#docs-index) — 13 cross-referenced documents, every one pulling from the same JSON files the app reads |
 
 ---
@@ -48,9 +50,10 @@ pnpm run sync:web && pnpm --filter @isopleth/web dev
 No API key required for any of the above — everything through Phase A/B/C runs on public Bitget data. Then, to see every other guarantee for yourself:
 
 ```bash
-pnpm typecheck && pnpm test          # 21/21 unit + property tests, zero network
+pnpm typecheck && pnpm test          # 27/27 unit + property tests, zero network
 pnpm verify:offline                   # recomputes every published result from stored inputs - no network, no model
-pnpm break                            # the 13-attack break campaign against the real kernel
+pnpm break                            # the 13-attack break campaign against the real kernel (12 verified)
+pnpm replay:build                     # rebuild the measured reference-lag replay from the real hash chain
 pnpm bench                            # synthetic account-grid benchmark vs. random/proportional top-up controls
 ```
 
@@ -146,9 +149,11 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the fully annotated version (what's `
 |---|---|
 | `/api/v3/market/instruments` (public) | Discovers the rToken-eligible universe live — 241 pairs, no hardcoded list |
 | `/api/v3/market/tickers` (public) | Sampled every 60s since 2026-10-04 to build the Collateral Clock — 43,883 ticks and counting, recorder confirmed running on a live 10-minute GitHub Actions cron |
-| `/api/v3/market/discount-rate`, `/api/v3/market/position-tier` (public) | Collateral and maintenance-margin tier ladders, content-hashed for change detection |
+| `/api/v3/market/discount-rate`, `/api/v3/market/position-tier` (public) | 520 collateral discount-rate entries and **243 real maintenance-margin ladders (1,778 bands)**, content-hashed; each ladder is verified contiguous with non-decreasing maintenance rate by `pnpm verify:offline` |
 | `/api/v3/market/candles` (public) | Confirmed the F8 silent-fallback trap live; guarded against in code (`packages/data/src/guards.ts`) so no future code path can be fooled by it |
 | bitget-signal MCP (public, no key) | 19 tools across 5 skills (macro, market-intel, sentiment, technical, news), live-confirmed, disk-cached for offline replay |
+| The recorded chain itself (`data/clock/raw/e1.jsonl`) | 44,603 ticks replayed through the kernel to measure **reference lag** - see the Clock replay section |
+| Isopleth as a tool for other agents (MCP) | Six read-only tools over the kernel and the measurements; any MCP client can call them, none can place an order |
 | Gemini / Qwen (one env var) | Narrates kernel results through a real multi-step tool-calling loop, never computes one — the product runs fully with `LLM_PROVIDER=none` |
 
 ## Research quality
@@ -161,15 +166,41 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the fully annotated version (what's `
 
 ## The technical discovery
 
-See [DISCOVERY.md](DISCOVERY.md) for the full writeup, including the name-collision check and the honest N=2-so-far state of the headline measurement. In short: `C1` (instrument discovery), `C2` (the F8 silent-fallback trap), and `C3` (tier ladder capture) are `PROVEN` with live evidence; `C4` (the Collateral Clock itself) is `PARTIAL`; `C5`–`C7` are stated `UNKNOWN` rather than inflated. See [Proof](#proof) for the live-rendered version of this ledger.
+See [DISCOVERY.md](DISCOVERY.md) for the full writeup, including the name-collision check and the honest N=2-so-far state of the headline measurement. In short: `C1` (instrument discovery), `C2` (the F8 silent-fallback trap), `C3` (tier ladder capture, now with 243 real maintenance ladders), `C8` (reference lag, measured), `C9` (verifiable receipts) and `C10` (read-only MCP surface) are `PROVEN` with live evidence; `C4` (the Collateral Clock itself) and `C11` (break campaign) are `PARTIAL`; `C5`–`C7` are stated `UNKNOWN` rather than inflated. See [Proof](#proof) for the live-rendered version of this ledger.
 
 ## Counterfactual margin surface
 
 The `/workbench` route runs a real demo book through `@isopleth/core`'s kernel, locates the contour by bisection, and renders it as SVG with a one-time orchestrated draw-in animation (skipped under `prefers-reduced-motion`) — gaps where the kernel refused are drawn as gaps, never bridged. The same route now also accepts **your own book** — pasted JSON, or uploaded `.json`/`.csv` — recomputed server-side through the identical code path, with a "What are you protecting?" personalized thesis field that flows into both the AI narration and an exportable risk plan.
 
+## Clock replay: reference lag, measured
+
+The distinctive part of this build. Bitget values rToken collateral off a reference price that is not the market price, and the public reference index can sit unchanged while spot keeps moving. Isopleth does not assume how much that matters; it measures it from its own hash-chained recording and replays it through the kernel.
+
+For every recorded tick the replay compares the reference index to market spot, then evaluates a fixed leveraged book twice: collateral valued at the reference, and collateral valued at spot. The difference is the margin exposure created by reference lag. Prices are real (`REPLAYED`); the book is `SYNTHETIC`.
+
+Measured over **44,603 ticks on 240 rToken pairs**: the reference index was unchanged from the previous tick **17.5%** of the time; the median gap between spot and reference was **0.114%** (95th percentile 0.559%); the longest single freeze was **447 minutes** (JMKEUSDT). One pair (BYDUSDT) shows a 612% gap and is separated out as a unit-mapping anomaly rather than ranked as lag. In this quiet week the margin shift is small (a little over 1 percentage point at the extreme), and the page says so. Whether Bitget's private engine values collateral at the public reference is claim C5 and is still open, so both valuations are shown instead of one being assumed. Live at [`/scenarios`](https://isopleth-blue.vercel.app/scenarios); rebuild with `pnpm replay:build`.
+
+## Ask the desk, and Isopleth as an MCP server
+
+**Ask bar** (`/workbench`): preset chips ("Where does my book break first?", "What if rAAPL reopens down 7%?", "What is the smallest move that keeps me safe?", "How frozen is the reference clock?"), a free question box, and the thesis line ("What are you protecting?") shown above every answer. Intent is routed by explicit rules to the same read-only tools exposed over MCP, and the answer text is assembled by code from the tools' outputs, so it is labelled `NARRATION: TEMPLATE` and no model can invent a number in it. Every tool call is shown beneath the answer and expands to its raw input and output.
+
+**MCP server** (`POST /mcp`, Streamable HTTP): `isopleth_evaluate_book`, `isopleth_minimum_intervention`, `isopleth_locate_contour`, `isopleth_clock_status`, `isopleth_reference_lag`, `isopleth_verify_receipt`. Read-only by construction: there is no order, transfer or write tool, and unknown tools are refused. Use it beside Bitget's own server:
+
+```bash
+claude mcp add isopleth --transport http https://isopleth-blue.vercel.app/mcp
+```
+
+## Verifiable receipts
+
+Every kernel answer carries a receipt: SHA-256 over the engine version, the canonical input and the result. `isopleth_verify_receipt` (or the "verify" link under any Ask-bar answer) recomputes it from the original input without trusting the server, and a one-dollar edit to the result breaks it. `pnpm verify:offline` checks this round trip on every push.
+
+## Where this sits among other builds
+
+Other entries in this sub-theme stress-test a *trade idea* against the return history of one perpetual. Isopleth stress-tests the *account*: the cross-asset margin that decides whether any trade idea survives. It does this with a deterministic kernel rather than a debate, measures a mechanism (the reference clock) that Bitget does not publish, refuses rather than guesses on missing inputs, and ships an offline verifier and a break campaign. It is not a signal generator and has no track record to show; it does not claim one.
+
 ## LUI fluency
 
-Provider-agnostic LLM layer (`packages/llm`): Gemini today, Qwen via one env var once credits arrive, `none` (deterministic template) as the zero-network fallback. Narration runs through a **real multi-step tool-calling loop** (`packages/llm/src/toolLoop.ts`) — the model is given no numbers upfront and must call `get_current_margin`, `get_stressed_margin`, `get_intervention_plan`, or `get_user_thesis` to fetch exactly what it needs before answering, bounded at 4 steps so a misbehaving driver can never loop forever (tested with a scripted fake driver, zero network, `tests/unit/tool-loop.test.ts`). A number-binding guard then rejects any narrated number not already in the kernel's output and falls back to a deterministic template — proven driver-independent by a test that runs the same book through two different drivers and asserts byte-identical kernel output (`tests/unit/number-binding.test.ts`). Wired live into the product at `/api/narrate`, called from the Workbench's "Explain with AI" button.
+Provider-agnostic LLM layer (`packages/llm`): Gemini today, Qwen via one env var once credits arrive, `none` (deterministic template) as the zero-network fallback. Narration runs through a **real multi-step tool-calling loop** (`packages/llm/src/toolLoop.ts`) — the model is given no numbers upfront and must call `get_current_margin`, `get_stressed_margin`, `get_intervention_plan`, or `get_user_thesis` to fetch exactly what it needs before answering, bounded at 7 steps (four tools plus a final answer, with earlier tool results carried forward each turn) so a misbehaving driver can never loop forever (tested with a scripted fake driver, zero network, `tests/unit/tool-loop.test.ts`). A number-binding guard then rejects any narrated number not already in the kernel's output and falls back to a deterministic template — proven driver-independent by a test that runs the same book through two different drivers and asserts byte-identical kernel output (`tests/unit/number-binding.test.ts`). Wired live into the product at `/api/narrate`, called from the Workbench's "Explain with AI" button.
 
 ## Personalized thesis
 
@@ -177,7 +208,7 @@ The Workbench's "Your book" panel asks **"What are you protecting?"** — a free
 
 ## Bitget integration
 
-Public UTA v3 market data (instruments, tickers, discount-rate, position-tier, candles), the bitget-signal MCP (19 tools, live-confirmed), and optionally a read-only/Demo key (E5, never a prerequisite — not supplied in this build).
+Public UTA v3 market data (instruments, tickers, discount-rate, position-tier, candles); the bitget-signal MCP (19 tools, live-confirmed, disk-cached); and Isopleth's own read-only MCP server so Bitget's agent tooling can call the kernel directly. Optionally a read-only key (E5, never a prerequisite; any key carrying trade, withdraw or unrecognised permissions is refused at boot, break attack B11).
 
 ## What is measured vs. modelled
 
@@ -194,28 +225,31 @@ Accounts are labelled `SYNTHETIC`, market data `REPLAYED`/`none`, per the projec
 
 ## Break campaign
 
-`pnpm break` — **8 of 13** attacks verified against the real kernel today (0 failed, 5 honestly marked not-yet, each naming exactly what's missing). Full results: [`data/break/results.json`](data/break/results.json).
+`pnpm break` - **12 of 13** attacks verified against the real kernel (0 failed). The thirteenth is blocked by time, not by build. Full results: [`data/break/results.json`](data/break/results.json).
 
 | ID | Attack | Result |
 |---|---|---|
-| B1 | Reference state UNKNOWN | PASS — refused |
-| B2 | Missing tier data | PASS — refused |
-| B3 | Notional exactly on a tier boundary | PASS — deterministic |
+| B1 | Reference state UNKNOWN | PASS - refused |
+| B2 | Missing tier data | PASS - refused |
+| B3 | Notional exactly on a tier boundary | PASS - deterministic |
+| B4 | Collateral ladder changes mid-window | PASS - both rulesets replay byte-identically, the v1 plan is invalidated with a stated reason under v2 |
 | B5 | Position crosses a maintenance tier | PASS |
-| B7 | LLM narration contains an invented number | PASS — rejected |
-| B8 | One byte edited in a stored clock snapshot | PASS — the real 43k+ record hash chain verifies clean, then a tampered copy of the last record is caught by the same recompute |
-| B9 | Duplicate hash in the real tick log | PASS — zero duplicates across 43,883 records |
-| B12 | rToken candle `type=index` misuse | PASS — guard throws |
-| B4, B6, B10, B11 | — | Honestly marked `NOT_YET`, each naming the specific missing infrastructure |
-| B13 | Null/permuted control | `NOT_YET` — the permutation-test harness itself is real and tested (not a stub), but needs N≥2 elapsed windows, which don't exist yet (see Validation above) |
+| B6 | Prompt injection, worst case (the model obeys it) | PASS - kernel output byte-identical, invented number rejected, evidence label unchanged |
+| B7 | LLM narration contains an invented number | PASS - rejected |
+| B8 | One byte edited in a stored clock snapshot | PASS - the real 44k+ record hash chain verifies clean, a tampered copy is caught |
+| B9 | Duplicate hash in the real tick log | PASS - zero duplicates |
+| B10 | Public API schema drift (simulated) | PASS - five drifted shapes all refused loudly; this attack found a real flaw (a record with null prices had been chained silently), now fixed |
+| B11 | Key with trade permission at boot | PASS - refused; unknown permissions fail closed |
+| B12 | rToken candle `type=index` misuse | PASS - guard throws |
+| B13 | Null/permuted control | `NOT_YET` - the permutation harness is real and tested, but needs 2 fully elapsed closed-market windows, and the next one is the 2026-10-09 to 12 weekend |
 
 ## Evidence manifest
 
-[EVIDENCE_MANIFEST.md](EVIDENCE_MANIFEST.md) indexes every artifact. `pnpm manifest` writes `data/manifests/run_manifest.json` (git commit, file hashes, lockfile hash, engine version). `pnpm verify:offline` then recomputes the margin kernel against golden fixtures, re-verifies the clock hash chain, and confirms every manifested file still hashes the same — **5/5 checks passing, zero network, zero model calls**.
+[EVIDENCE_MANIFEST.md](EVIDENCE_MANIFEST.md) indexes every artifact. `pnpm manifest` writes `data/manifests/run_manifest.json` (git commit, file hashes, lockfile hash, engine version). `pnpm verify:offline` then recomputes the margin kernel against golden fixtures, re-verifies the clock hash chain, confirms every manifested file still hashes the same, re-checks all 243 captured maintenance ladders, and round-trips a result receipt - **7/7 checks passing, zero network, zero model calls**. CI (`.github/workflows/ci.yml`) runs typecheck, tests, the secret scan, the offline verifier and the break campaign on every push.
 
 ## Honest limitations
 
-Stated first, not buried: [LIMITATIONS.md](LIMITATIONS.md). Leads with "the headline measurement isn't confirmed yet." Also true as of this writing: the E4 window-set replay has N=0 (calendar-blocked, not build-blocked — see Validation above); CSV book input is a documented single-tier simplification (JSON carries exact tier ladders); the Qwen wire is built but untested live pending `QWEN_API_KEY`.
+Stated first, not buried: [LIMITATIONS.md](LIMITATIONS.md). Leads with "the headline measurement isn't confirmed yet": only 2 thin-liquidity pairs show a confirmed freeze and thaw, and the documented session-wide freeze has not yet been confirmed in a liquid name. Also true as of this writing: the E4 window-set replay has N=0 (calendar-blocked); tier boundary inclusivity and marginal-vs-aggregate application (C6) remain unknown because a ladder cannot say how its own bands are applied; the Qwen wire is built but untested live pending `QWEN_API_KEY`, and the live narration provider is Gemini on a free-tier quota, with a verified deterministic template served when the model is unavailable; CSV book input is a single-tier simplification; the reference-lag replay covers a quiet week and its margin effect is small.
 
 ## Target user and revenue
 
@@ -223,7 +257,7 @@ Semi-professional cross-asset traders and small desks holding rTokens as UTA Adv
 
 ## Roadmap
 
-Immediate next: confirm a liquid-name freeze+thaw over the 2026-10-09–12 weekend (the GitHub Actions recorder is confirmed live on a 10-minute cron as of this writing); re-run `pnpm bench` and `pnpm discovery:e4:replay` once that window elapses; wire Qwen once credits arrive; capture the demo video.
+Immediate next: confirm a liquid-name freeze and thaw over the 2026-10-09 to 12 weekend (the recorder runs on a 10-minute GitHub Actions cron); re-run `pnpm bench`, `pnpm discovery:e4:replay` and the B13 null control once that window has elapsed; wire Qwen once credits arrive; resolve C5 and C6 with an optional read-only key probe.
 
 ## Local setup
 
@@ -234,6 +268,7 @@ pnpm test
 pnpm verify:offline
 pnpm break
 pnpm bench
+pnpm replay:build
 pnpm secrets:scan
 pnpm run sync:web && pnpm --filter @isopleth/web dev
 ```

@@ -354,3 +354,14 @@ it stalls again, a manual `workflow_dispatch` is the fix, not a code change.
 - **Demo video, final claims audit.** Not started — video needs a real
   deployed URL first; claims audit is meant to happen right before actual
   submission, not before.
+
+## 2026-10-08 - deepening the build before submission
+
+- **Position-tier capture really works now.** Re-ran `pnpm discovery:e2:rules` from a networked machine: `category=` succeeded, 243 real ladders (1,778 bands) captured, 520 discount-rate entries re-captured. `pnpm verify:offline` now re-checks every ladder (contiguous, non-decreasing maintenance rate). Claim C3 note, METHOD, LIMITATIONS, DISCOVERY and the `/method` page updated; the "known issue" section was removed from the app.
+- **Break campaign 8/13 -> 12/13.** Built harnesses for B4 (versioned rulesets, plan invalidation), B6 (prompt injection against a worst-case obedient model), B10 (schema drift) and B11 (read-only key probe). B10 found a real flaw: a tick had been chain-recorded with null prices after a malformed response; `buildTickRecord` now throws `SchemaDriftError`. B13 remains time-blocked.
+- **New: Clock replay** (`/scenarios`, `scripts/build/build-replay.ts`): reference lag measured from the real chain and replayed through the kernel under both collateral valuations. Claim C8.
+- **New: read-only MCP server** (`/mcp`, six tools) and **Ask bar** with a visible tool trace on `/workbench`. Claim C10.
+- **New: verifiable receipts** on every kernel answer, with a tamper-detecting round trip in the offline verifier and a "verify" link in the UI. Claim C9.
+- **CI** (`.github/workflows/ci.yml`) added. Tests 21 -> 27. Offline verifier 5 -> 7 checks.
+- **LLM:** set `LLM_PROVIDER=gemini` on Vercel (it was missing); updated the retired default Gemini model; added retry for transient 429/503; fixed the tool loop (it capped at 4 steps for 4 tools and showed the model only the latest tool result). The live key is quota-limited, so the verified template is served when it is exhausted.
+- Docs brought up to date: README, ARCHITECTURE (complete rewrite), METHOD, LIMITATIONS, PROOF, MILESTONE, EVIDENCE_MANIFEST, SUBMISSION. The demo video and X post are live.

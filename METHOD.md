@@ -1,60 +1,42 @@
 # METHOD.md
 
-What is measured vs. modelled vs. not-yet-built, stated plainly. This is the
-source the eventual `/method` route (Phase D) will render; until then it's
-the honest internal reference. Updated 2026-10-05.
+What is measured, what is modelled, what is replayed, and what is unknown. This is the source the `/method` page renders. Updated 2026-10-08.
 
-## MEASURED (live data, captured and evidenced in this repo today)
+## MEASURED (observed from Bitget's public API, evidenced in this repo)
 
-- The rToken-eligible stock-perp universe (241 pairs) — `data/clock/pairs.json`.
-- The collateral discount-rate tier ladder, per rToken — `data/clock/rules/discount-rate/`.
-- The maintenance-margin position-tier ladder, per stock perp + core crypto — `data/clock/rules/position-tier/`.
-- The F8 silent-fallback behavior of rToken candle endpoints — `data/clock/e3-fallback-trap.json`.
-- `indexPrice` / `markPrice` / rToken spot, sampled every 60s since 2026-10-04 — `data/clock/raw/e1.jsonl` (accumulating).
-- The NYSE 2026 trading calendar — `data/calendar/nyse-2026.json`.
+- The rToken-eligible stock-perp universe, 241 pairs, discovered live from `instruments` with no hardcoded list: `data/clock/pairs.json`.
+- Collateral discount-rate ladders, 520 entries, content-hashed: `data/clock/rules/discount-rate/`.
+- **Maintenance-margin ladders for every stock perp plus BTC, ETH and SOL: 243 real ladders, 1,778 bands**, content-hashed: `data/clock/rules/position-tier/`. Each is a genuine success envelope, contiguous (every band starts where the previous one ends), with a non-decreasing maintenance rate. `pnpm verify:offline` re-checks all of it. One symbol (WBDUSDT) was delisted at capture time (code 40309) and is correctly not stored.
+- The F8 silent-fallback behaviour of rToken candle endpoints (`type=index/mark/premium` silently return `type=market`): `data/clock/e3-fallback-trap.json`.
+- `indexPrice`, `markPrice` and rToken spot for every pair, hash-chained since 2026-10-04: `data/clock/raw/e1.jsonl` (44,000+ records).
+- **Reference lag**, from that chain: over 44,603 ticks on 240 pairs the public reference index was unchanged from the previous tick 17.5% of the time; median distance to spot 0.114%, 95th percentile 0.559%; longest single freeze 447 minutes. One pair (BYDUSDT, 612% gap) is reported as a unit-mapping anomaly, not as lag. Rebuild with `pnpm replay:build`.
+- Two confirmed freeze-and-thaw events in thin-liquidity pairs (AEHRUSDT, LYTEUSDT): `data/clock/clock-map.json`.
+- The NYSE 2026 trading calendar: `data/calendar/nyse-2026.json`.
 
-## MEASURING RIGHT NOW (not yet conclusive)
+## MODELLED (deterministic code over whatever state is fed in)
 
-- Whether the reference clock actually freezes and thaws, and when. The
-  recorder is running; no weekend/holiday close has elapsed inside the
-  recording window yet. See `DISCOVERY.md` and `CLAIMS.json` C4.
-- Whether `markPrice` clamps to the frozen index or floats (U6) — weak early
-  signal only, not a result.
+The margin kernel, the counterfactual surface, the contour, the minimum-intervention optimizer: `packages/core`. Every result carries an `evidence` field. The demo book is `SYNTHETIC`; a replay over real recorded prices is `REPLAYED`. The kernel's formulas are the documented ones; two of its conventions are assumptions (see UNKNOWN).
 
-## MODELLED (will be computed by a deterministic kernel, not yet built)
+## REPLAYED (real recorded prices, invented book)
 
-Everything in FINAL_INSTRUCTION.md §6 — the margin kernel, the counterfactual
-surface, the contour, the minimum-intervention optimizer — is **Phase B**,
-not started. When it exists, every number it produces will carry an
-`evidence` field of `SYNTHETIC` or `REPLAYED` per the kernel's own type
-(`MarginResult.evidence`), and this document will say so per-field rather
-than implying the whole app is "measured."
+The Clock replay on `/scenarios`. It evaluates one fixed leveraged book at every recorded tick with collateral valued at the reference index and at market spot, and shows both. It does **not** assert how Bitget's private engine values collateral.
 
-## SYNTHETIC (calendar/structural derivations, not live market observations)
+## SYNTHETIC
 
-- The 31-window closed-market calendar (`data/windows/window-set.json`) is
-  pure date arithmetic over the NYSE calendar — it states *when* windows
-  occur, not what actually happened in any of them. The `G_w` values that
-  would make a window's data MEASURED/REPLAYED don't exist yet.
+- The demo book and every account in the benchmark grid.
+- The 31-window closed-market calendar: date arithmetic over the NYSE calendar. It says when windows occur, not what happened in them.
 
-## UNKNOWN (explicitly, not silently assumed)
+## UNKNOWN (stated, tracked in `CLAIMS.json`)
 
-- U5 — whether collateral tiers apply marginally per coin or on aggregated value.
-- U6 — whether markPrice is clamped to the frozen index or floats.
-- U8 — tier boundary inclusivity/exclusivity.
-- U3/U4 — whether private per-coin valuation tracks the public index (needs E5, optional, not started).
-- U10/U11 — Qwen wire format and MCP tool schemas (needs E6, blocked on `QWEN_API_KEY`).
+- **C4, partial.** The documented session-wide freeze has not been confirmed in a liquid name. Next clean test: the 2026-10-09 to 12 weekend close.
+- **C5 (U6).** Whether `markPrice` clamps to the frozen index or floats. Indications only.
+- **C6 (U5/U8).** Whether tiers apply marginally or on the aggregate, and whether a band includes or excludes its boundary value. The captured ladders settle the *structure* (contiguous bands) but cannot say how adjacent bands treat the shared value, so the kernel's `(lo, hi]` convention remains labelled an assumption.
+- **C7.** Whether the reopening gap is predictable beyond a null and a permutation control. The rule is pre-registered; no window has fully elapsed since recording began.
+- **U3/U4.** Whether Bitget's private per-coin valuation tracks the public index. Needs an optional read-only key probe (E5), never a prerequisite.
+- **Qwen wire format (E6).** The Qwen driver is built; no key has been available. Gemini is the live provider.
 
-Every UNKNOWN above is tracked with its resolution path in `DISCOVERY.md §3.2`
-(carried from FINAL_INSTRUCTION.md) and will be updated here the moment it
-resolves either way — including if it resolves to "the thesis assumption was
-wrong," which gets published exactly as prominently as a confirming result
-would.
+Every UNKNOWN is published as prominently when it resolves against the thesis as when it resolves in its favour.
 
 ## Why this document exists
 
-The whole architectural bet of this project (FINAL_INSTRUCTION.md §0) is
-that restating a documented formula is not the same as measuring something.
-This file is the mechanism for keeping that distinction honest release over
-release, rather than letting "modelled" quietly become "measured" in the
-README as the deadline approaches.
+Restating a documented formula is not the same as measuring something. This file is how that distinction stays honest release over release, instead of "modelled" quietly becoming "measured" as a deadline approaches.

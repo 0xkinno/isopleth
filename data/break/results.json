@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T05:34:21.805Z",
+  "generatedAt": "2026-10-08T05:57:02.027Z",
   "total": 13,
   "verified": 12,
   "notYet": 1,
@@ -58,14 +58,14 @@
       "id": "B8",
       "attack": "One byte edited in a stored clock snapshot",
       "expected": "Hash mismatch, diverging recompute, fail closed",
-      "systemResponse": "chain clean over 44365 records; a one-field tamper on the last record changes its recomputed hash (detected=true)",
+      "systemResponse": "chain clean over 44847 records; a one-field tamper on the last record changes its recomputed hash (detected=true)",
       "verified": true
     },
     {
       "id": "B9",
       "attack": "Duplicate or out-of-order record in the real tick log",
       "expected": "Zero duplicate hashes in the hash chain",
-      "systemResponse": "44365 records, 0 duplicate hash(es)",
+      "systemResponse": "44847 records, 0 duplicate hash(es)",
       "verified": true
     },
     {

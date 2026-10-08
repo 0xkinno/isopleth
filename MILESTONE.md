@@ -1,24 +1,22 @@
 # MILESTONE.md
 
-High-level milestones only — see [`TASK.md`](TASK.md) for the granular checklist
-and [`PROGRESS.md`](PROGRESS.md) for the session-by-session log. Deadline:
-**2026-10-08** (Bitget AI Base Camp Hackathon S2, extended from Sep 27).
+High-level milestones. See [`PROGRESS.md`](PROGRESS.md) for the session log. Deadline: **2026-10-08** (Bitget AI Base Camp Hackathon S2). Updated 2026-10-08.
 
-| # | Milestone | Status | Date | Why it matters |
-|---|---|---|---|---|
-| M1 | Repo scaffolded; public-data pipeline live (E1 recording, E2 instruments + rules captured, E3 trap confirmed) | **DONE** | 2026-10-05 | Without this nothing downstream has real data to run on. This is also the one thing that is time-sensitive in a way code isn't — every missed E1 tick is unrecoverable, so it had to go first, ahead of all other setup. |
-| M2 | Gate A closed (confirmed freeze+thaw, break/proof plan written, DISCOVERY.md complete) | IN PROGRESS | target before Phase B starts | The architectural bet of this whole project (§0) is that the reference-price axis is *measured*, not assumed. Until a freeze+thaw is actually confirmed, that bet is unproven, not just unfinished. |
-| M3 | Qwen + MCP wired (E6) | BLOCKED on `QWEN_API_KEY` | pending | Needed before any Qwen-dependent code in Phase E; not needed for Phase B/C, so not a hard blocker on overall progress. |
-| M4 | Mechanism built (Phase B: kernel, surface, contour, optimizer, invariants) | NOT STARTED | pending | This is the deterministic core every other claim depends on. Nothing in Phase C-D should be built against a kernel that doesn't exist yet. |
-| M5 | Proof pipeline run (Phase C: bench, break campaign B1-B13, manifest, offline verifier) | NOT STARTED | pending | This is what separates a demo from an entry that survives a judge trying to break it. |
-| M6 | Product shipped with real data (Phase D: 6 routes) | NOT STARTED | pending | UI imagery already staged (`public/img/`, received 2026-10-05) — ready to use once this milestone starts. |
-| M7 | AI layer live (Phase E: route handlers, number-binding guard, template fallback) | NOT STARTED | pending | Depends on M3 and M4. |
-| M8 | UI polish (Phase F: fonts, motion, imagery pipeline) | NOT STARTED | pending | |
-| M9 | Attack + QA passed (Phase G: full B1-B13, Playwright/axe/Lighthouse) | NOT STARTED | pending | |
-| M10 | Shipped (Phase H: README, video, submission, X post) | NOT STARTED | pending | Hard deadline 2026-10-08. |
+| # | Milestone | Status | Notes |
+|---|---|---|---|
+| M1 | Public-data pipeline live (E1 recording, E2 instruments and rules, E3 trap) | **DONE** | 241 pairs, 44,000+ hash-chained records, 520 discount-rate entries, 243 real maintenance ladders |
+| M2 | Gate A: headline measurement | **PARTIAL** | confirmed freeze and thaw in 2 thin pairs; liquid-name confirmation needs the 2026-10-09 to 12 weekend (after the deadline). Stated as `PARTIAL` everywhere. |
+| M3 | LLM layer | **DONE (Gemini live, Qwen built)** | provider-agnostic; Qwen untested for lack of a key; template fallback always available |
+| M4 | Mechanism: kernel, surface, contour, optimizer, invariants | **DONE** | deterministic, fail-closed, property-tested |
+| M5 | Proof pipeline: bench, break campaign, manifest, offline verifier, CI | **DONE** | 12/13 break attacks, 7/7 offline checks, 27 tests, CI on every push; B13 is time-blocked |
+| M6 | Product: six routes, real data | **DONE** | deployed at isopleth-blue.vercel.app |
+| M7 | AI layer: guarded narration, Ask bar with tool trace, MCP server | **DONE** | number-binding guard; rule-routed Ask bar; six read-only MCP tools |
+| M8 | Measured reference-lag replay | **DONE** | `/scenarios`, `pnpm replay:build` |
+| M9 | Verifiable receipts | **DONE** | API, Ask bar, MCP, offline verifier |
+| M10 | QA and polish | **DONE** | Playwright and axe layout checks, Lighthouse, screenshots |
+| M11 | Submission: README, video, X post | **DONE** | video and post live (links in README); `SUBMISSION.md` final |
 
-## Risk register
+## Open after submission
 
-- **Freeze/thaw not yet observed (M2).** The next real weekend close is 2026-10-09 to 2026-10-12. If the recorder has any gap over that window, the headline measurement slips to the following weekend — with a 2026-10-08 deadline, that would mean submitting on the honest "not yet confirmed" result rather than a confirmed one. Keep the recorder running without interruption; this is the single highest-leverage thing to protect between now and the deadline.
-- **QWEN_API_KEY timing (M3).** Qwen is only load-bearing for Phase E; Phases B/C/D don't need it. Not urgent yet, but E6 (the wire/tool-calling probe) should run as soon as the key lands so Phase E doesn't start blind.
-- **Tier boundary semantics (U5/U8) still unknown.** Affects B3 (break test for exact-boundary notional) and I3 (tier correctness). Needs either a re-fetched support article or E5 (optional, needs credentials) to close before Phase C's break campaign can claim B3 is handled by verified rule rather than assumption.
+- Confirm a liquid-name freeze and thaw over 2026-10-09 to 12; re-run `pnpm bench`, `pnpm discovery:e4:replay` and break attack B13.
+- Wire Qwen when a key is available; resolve C5 and C6 with an optional read-only key probe.
