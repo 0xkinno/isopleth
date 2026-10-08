@@ -33,3 +33,20 @@ export function guardRTokenCandleType(requestedType: string): "market" {
   }
   return "market";
 }
+
+/**
+ * I7: Isopleth only ever needs read access. Any API key whose permission list
+ * contains anything other than a read-only grant (trade, withdraw, transfer, or
+ * any permission string it does not recognise) is refused at boot. Fails
+ * closed: an unknown permission is treated as dangerous.
+ */
+const READ_ONLY_GRANTS = new Set(["read", "readonly", "read-only", "read_only", "reads"]);
+export function assertReadOnlyKey(permissions: readonly string[]): void {
+  if (permissions.length === 0) {
+    throw new Error("[guard] key permission list is empty or unreadable - refusing (fail closed, I7).");
+  }
+  const offending = permissions.filter((p) => !READ_ONLY_GRANTS.has(p.trim().toLowerCase()));
+  if (offending.length > 0) {
+    throw new Error(`[guard] refusing a key with non-read-only permission(s): ${offending.join(", ")} (I7). Isopleth never trades; create a read-only key.`);
+  }
+}

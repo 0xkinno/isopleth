@@ -84,35 +84,65 @@ export interface TickRecord {
   hash: string;
 }
 
-async function fetchPairRecord(pair: Pair, tUtc: number, tsEt: string): Promise<TickRecord> {
-  const [perpEnv, spotEnv] = await Promise.all([
-    bitgetPublicGet<Record<string, unknown>[]>("/api/v3/market/tickers", {
-      category: "USDT-FUTURES",
-      symbol: pair.perp,
-    }),
-    bitgetPublicGet<Record<string, unknown>[]>("/api/v3/market/tickers", {
-      category: "SPOT",
-      symbol: pair.spot,
-    }),
-  ]);
+export class SchemaDriftError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "SchemaDriftError";
+  }
+}
 
-  const p = Array.isArray(perpEnv.data) ? perpEnv.data[0] : undefined;
-  const s = Array.isArray(spotEnv.data) ? spotEnv.data[0] : undefined;
+/**
+ * Pure builder for one tick record from the two ticker envelopes. Fails loudly
+ * (SchemaDriftError) when the response shape has drifted: a missing row, a
+ * renamed field, or a non-numeric price. It never records a null/NaN price and
+ * never substitutes a plausible one (B10).
+ */
+export function buildTickRecord(
+  perpEnv: { data?: unknown },
+  spotEnv: { data?: unknown },
+  pair: Pair,
+  tUtc: number,
+  tsEt: string,
+): TickRecord {
+  const p = Array.isArray(perpEnv.data) ? (perpEnv.data[0] as Record<string, unknown> | undefined) : undefined;
+  const s = Array.isArray(spotEnv.data) ? (spotEnv.data[0] as Record<string, unknown> | undefined) : undefined;
+  if (!p || typeof p !== "object") throw new SchemaDriftError(`perp ticker for ${pair.perp}: data is not a non-empty array of objects`);
+  if (!s || typeof s !== "object") throw new SchemaDriftError(`spot ticker for ${pair.spot}: data is not a non-empty array of objects`);
+
+  const indexPrice = num(p, "indexPrice");
+  const markPrice = num(p, "markPrice");
+  const spotLast = num(s, "lastPr", "lastPrice");
+  const missing = [
+    ["perp.indexPrice", indexPrice],
+    ["perp.markPrice", markPrice],
+    ["spot.lastPr|lastPrice", spotLast],
+  ].filter(([, v]) => !Number.isFinite(v as number));
+  if (missing.length > 0) {
+    throw new SchemaDriftError(`${pair.perp}/${pair.spot}: required field(s) missing or non-numeric: ${missing.map(([k]) => k).join(", ")}`);
+  }
 
   return {
     tsUtc: tUtc,
     tsEt,
     perp: pair.perp,
     spot: pair.spot,
-    indexPrice: num(p, "indexPrice"),
-    markPrice: num(p, "markPrice"),
-    spotLast: num(s, "lastPr", "lastPrice"),
+    indexPrice,
+    markPrice,
+    spotLast,
     spotBid: num(s, "bidPr", "bid1Price"),
     spotAsk: num(s, "askPr", "ask1Price"),
-    raw: { perp: p ?? perpEnv, spot: s ?? spotEnv },
+    raw: { perp: p, spot: s },
     prevHash: "", // filled in by runTick once the chained hash is known
     hash: "",
   };
+}
+
+async function fetchPairRecord(pair: Pair, tUtc: number, tsEt: string): Promise<TickRecord> {
+  const [perpEnv, spotEnv] = await Promise.all([
+    bitgetPublicGet<Record<string, unknown>[]>("/api/v3/market/tickers", { category: "USDT-FUTURES", symbol: pair.perp }),
+    bitgetPublicGet<Record<string, unknown>[]>("/api/v3/market/tickers", { category: "SPOT", symbol: pair.spot }),
+  ]);
+  return buildTickRecord(perpEnv, spotEnv, pair, tUtc, tsEt);
 }
 
 /** Run exactly one tick over all configured pairs, hash-chaining each record onto OUT_FILE. Returns the new chain head. */
