@@ -125,7 +125,7 @@ API: `/api/evaluate` (kernel with receipt), `/api/narrate` (guarded LLM), `/api/
 
 | Mechanism | What it proves | Command |
 |---|---|---|
-| Unit and property tests | Kernel behaviour, monotonicity, contour, number binding, tool loop, MCP tools, Ask router (27 tests) | `pnpm test` |
+| Unit and property tests | Kernel behaviour, monotonicity, contour, number binding, tool loop, MCP tools, Ask router, LLM provider selection and Qwen driver wire rules (36 tests) | `pnpm test` |
 | Offline verifier | Golden kernel recompute; clock chain intact; manifested files unchanged; guard behaviour; **243 ladders contiguous and monotone**; **receipt round trip and tamper detection** (7 checks, no network, no model) | `pnpm verify:offline` |
 | Break campaign | 12 of 13 attacks (B1-B12) verified; B13 needs elapsed windows | `pnpm break` |
 | Benchmark | Synthetic account grid vs random and proportional controls | `pnpm bench` |
@@ -156,7 +156,7 @@ Vercel project `isopleth`; Root Directory `apps/web` (a dashboard-only setting),
 * **Whether markPrice clamps to the frozen index (C5).** Indications only.
 * **How tiers apply at boundaries and across bands (C6).** The ladders are captured; the application rule is not published in them.
 * **The pre-registered reopening-gap predictor (C7) and the B13 null control.** The permutation harness is built and tested; it needs two fully elapsed closed-market windows.
-* **A live Qwen call.** The wire is built; no key has been available. Gemini is the live provider, on a free-tier quota, and the verified template is served when it is exhausted.
+* **Qwen in production.** Qwen is confirmed live (2026-10-12: plain text, JSON mode, a full guarded narration in about 14 s), but the deployed site uses it only once `QWEN_API_KEY` is set in Vercel; until then Gemini (free-tier quota) answers and the verified template is the floor.
 * **How Bitget's private engine values collateral.** Needs an optional read-only key probe (E5); the replay therefore shows both valuations.
 
 ## 9. Decisions worth knowing about

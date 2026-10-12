@@ -6,7 +6,7 @@ The narrative companion to [`CLAIMS.json`](CLAIMS.json) (the structured ledger, 
 
 > Margin safety is a surface over state, not a number. The AI explains the surface. Deterministic code computes it. The trader decides.
 
-The surface half is built and checked: the kernel, contour and optimizer exist, are deterministic and fail closed, and are exercised by 27 tests, a 13-attack break campaign (12 verified) and a 7-check offline verifier. The state half is partly measured: one axis (the reference price) is recorded from the exchange and shows a real, measurable lag against spot; its headline freeze-and-thaw is confirmed only in thin pairs so far.
+The surface half is built and checked: the kernel, contour and optimizer exist, are deterministic and fail closed, and are exercised by 36 tests, a 13-attack break campaign (12 verified) and a 7-check offline verifier. The state half is partly measured: one axis (the reference price) is recorded from the exchange and shows a real, measurable lag against spot; its headline freeze-and-thaw is confirmed only in thin pairs so far.
 
 ## Claim by claim
 
@@ -41,7 +41,7 @@ pnpm install
 pnpm discovery:e2 && pnpm discovery:e2:rules && pnpm discovery:e3 && pnpm discovery:e4:windows
 pnpm discovery:e1            # long-running recorder, leave it going
 pnpm discovery:clockmap
-pnpm test                    # 27 tests
+pnpm test                    # 36 tests
 pnpm verify:offline          # 7 checks, no network, no model
 pnpm break                   # 12/13 verified
 pnpm replay:build            # the reference-lag replay

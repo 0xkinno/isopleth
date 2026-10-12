@@ -46,7 +46,8 @@ export function getLlmDriver(env: NodeJS.ProcessEnv = process.env): LlmDriver {
         apiKey: env.QWEN_API_KEY,
         baseUrl: env.QWEN_BASE_URL ?? "https://hackathon.bitgetops.com/v1",
         model: env.QWEN_MODEL ?? "qwen3.8-max",
-        enableThinking: env.QWEN_ENABLE_THINKING === undefined ? undefined : env.QWEN_ENABLE_THINKING.toLowerCase() === "true",
+        // default off: a narration loop makes several short calls, and measured latency is about 2 s vs 5 s per call with thinking on
+        enableThinking: env.QWEN_ENABLE_THINKING === undefined ? false : env.QWEN_ENABLE_THINKING.toLowerCase() === "true",
       })
     : null;
   const gemini = env.GEMINI_API_KEY

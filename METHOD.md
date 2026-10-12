@@ -33,7 +33,7 @@ The Clock replay on `/scenarios`. It evaluates one fixed leveraged book at every
 - **C6 (U5/U8).** Whether tiers apply marginally or on the aggregate, and whether a band includes or excludes its boundary value. The captured ladders settle the *structure* (contiguous bands) but cannot say how adjacent bands treat the shared value, so the kernel's `(lo, hi]` convention remains labelled an assumption.
 - **C7.** Whether the reopening gap is predictable beyond a null and a permutation control. The rule is pre-registered; no window has fully elapsed since recording began.
 - **U3/U4.** Whether Bitget's private per-coin valuation tracks the public index. Needs an optional read-only key probe (E5), never a prerequisite.
-- **Qwen wire format (E6).** The Qwen driver is built; no key has been available. Gemini is the live provider.
+- **Qwen wire format (E6): resolved on 2026-10-12.** The hackathon gateway speaks OpenAI-compatible chat completions; JSON mode works but requires the word "json" in the messages (the driver ensures it); native tool calling is not used (the tool loop speaks strict JSON). Thinking can be switched off for roughly 2 s calls.
 
 Every UNKNOWN is published as prominently when it resolves against the thesis as when it resolves in its favour.
 

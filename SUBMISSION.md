@@ -46,7 +46,7 @@ Every figure is labelled **observed** (measured or computed from stored data and
 | Confirmed freeze+thaw events | 2 (thin-liquidity pairs) | observed | `pnpm discovery:clockmap` |
 | F8 silent-fallback trap | confirmed live (3 of 3 candle types identical to `market`) | observed | `pnpm discovery:e3` |
 | Break campaign | 12 of 13 verified, 0 failed (B13 time-blocked) | observed | `pnpm break` |
-| Tests | 27 passing (unit and property) | observed | `pnpm test` |
+| Tests | 36 passing (unit and property) | observed | `pnpm test` |
 | Offline verifier | 7 of 7 checks pass, no network, no model | observed | `pnpm verify:offline` |
 | Optimizer benchmark (synthetic grid, 36 accounts, 12 breached) | restoring plan found 100% of the time at an average cost of $6,375; random top-up at equal cost restores 58.3%; proportional top-up ties at 100% (stated plainly) | observed, synthetic accounts | `pnpm bench` |
 | Pre-registered null-control test of the reopening-gap predictor | N = 0 windows elapsed | targeted (after the 2026-10-09 to 12 weekend) | `pnpm discovery:e4:replay` |
@@ -57,7 +57,7 @@ What would make these claims false is written down in `PROOF.md` and `data/bench
 
 Built and deployed: the deterministic margin kernel, scenario operators, counterfactual surface, bisected contour, minimum-intervention optimizer; the Collateral Clock recorder (GitHub Actions, every ten minutes); six web routes; the Ask bar with a visible tool trace; a read-only MCP server; verifiable receipts on every kernel answer; the measured reference-lag replay; guarded LLM narration; CI; the offline verifier, break campaign, benchmark and manifest. Documentation: `README.md`, `ARCHITECTURE.md`, `METHOD.md`, `LIMITATIONS.md`, `PROOF.md`, `DISCOVERY.md`, `EVIDENCE_MANIFEST.md`, `CLAIMS.json`.
 
-Honest gaps (full list in `LIMITATIONS.md`): liquid-name freeze unconfirmed; tier boundary and application rules are assumptions (C6); B13 and C7 need elapsed windows; Qwen driver built but never called live (no key); no authenticated key probe (E5).
+Honest gaps (full list in `LIMITATIONS.md`): liquid-name freeze unconfirmed; tier boundary and application rules are assumptions (C6); B13 and C7 need elapsed windows; the production deployment still needs `QWEN_API_KEY` set in Vercel to use Qwen (it runs on Gemini until then); no authenticated key probe (E5).
 
 ### 5. Deliverables
 
@@ -75,7 +75,7 @@ An AI that sits in the decision path of a leveraged account needs to be checkabl
 
 ## Role of the LLM
 
-> The LLM layer is provider-agnostic (Gemini, Qwen or none, one environment variable). It routes to read-only tools and narrates kernel results. It never computes a number. A number-binding guard rejects any narration containing a number the kernel did not produce and serves a deterministic template instead. The product runs fully with the model removed, and the Ask bar and MCP server involve no model at all.
+> The LLM layer is provider-agnostic (Qwen, Gemini or none; `auto` prefers Qwen and falls back). It routes to read-only tools and narrates kernel results. It never computes a number. A number-binding guard rejects any narration containing a number the kernel did not produce and serves a deterministic template instead. The product runs fully with the model removed, and the Ask bar and MCP server involve no model at all.
 
 Where credits were used: the live narration provider is **Gemini** on a free-tier key. The **Qwen** driver (`qwen3.8-max`, OpenAI-compatible gateway) is built and covered by the same guard and tests, but no Qwen key was available during this build, so it has not made a live call. We state that rather than imply otherwise.
 

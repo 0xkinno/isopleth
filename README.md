@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/0xkinno/isopleth/actions/workflows/ci.yml/badge.svg)](https://github.com/0xkinno/isopleth/actions/workflows/ci.yml)
 [![Verify: offline reproducible](https://img.shields.io/badge/verify-offline%20reproducible-3F8F6B)]()
-[![Tests: 27/27 passing](https://img.shields.io/badge/tests-27%2F27%20passing-3F8F6B)]()
+[![Tests: 36/36 passing](https://img.shields.io/badge/tests-36%2F36%20passing-3F8F6B)]()
 [![Break campaign: 12/13, 0 failed](https://img.shields.io/badge/break-12%2F13%20verified%2C%200%20failed-3F8F6B)]()
 [![Lighthouse a11y: 100](https://img.shields.io/badge/lighthouse%20a11y-100-3F8F6B)]()
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
@@ -50,7 +50,7 @@ pnpm run sync:web && pnpm --filter @isopleth/web dev
 No API key required for any of the above — everything through Phase A/B/C runs on public Bitget data. Then, to see every other guarantee for yourself:
 
 ```bash
-pnpm typecheck && pnpm test          # 27/27 unit + property tests, zero network
+pnpm typecheck && pnpm test          # 36/36 unit + property tests, zero network
 pnpm verify:offline                   # recomputes every published result from stored inputs - no network, no model
 pnpm break                            # the 13-attack break campaign against the real kernel (12 verified)
 pnpm replay:build                     # rebuild the measured reference-lag replay from the real hash chain
@@ -154,7 +154,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the fully annotated version (what's `
 | bitget-signal MCP (public, no key) | 19 tools across 5 skills (macro, market-intel, sentiment, technical, news), live-confirmed, disk-cached for offline replay |
 | The recorded chain itself (`data/clock/raw/e1.jsonl`) | 44,603 ticks replayed through the kernel to measure **reference lag** - see the Clock replay section |
 | Isopleth as a tool for other agents (MCP) | Six read-only tools over the kernel and the measurements; any MCP client can call them, none can place an order |
-| Gemini / Qwen (one env var) | Narrates kernel results through a real multi-step tool-calling loop, never computes one — the product runs fully with `LLM_PROVIDER=none` |
+| Qwen `qwen3.8-max` (hackathon gateway) / Gemini | Narrates kernel results through a real multi-step tool-calling loop, never computes one. `LLM_PROVIDER=auto` prefers Qwen, falls back to Gemini, then to a verified template; the product runs fully with `LLM_PROVIDER=none` |
 
 ## Research quality
 
@@ -200,7 +200,7 @@ Other entries in this sub-theme stress-test a *trade idea* against the return hi
 
 ## LUI fluency
 
-Provider-agnostic LLM layer (`packages/llm`): Gemini today, Qwen via one env var once credits arrive, `none` (deterministic template) as the zero-network fallback. Narration runs through a **real multi-step tool-calling loop** (`packages/llm/src/toolLoop.ts`) — the model is given no numbers upfront and must call `get_current_margin`, `get_stressed_margin`, `get_intervention_plan`, or `get_user_thesis` to fetch exactly what it needs before answering, bounded at 7 steps (four tools plus a final answer, with earlier tool results carried forward each turn) so a misbehaving driver can never loop forever (tested with a scripted fake driver, zero network, `tests/unit/tool-loop.test.ts`). A number-binding guard then rejects any narrated number not already in the kernel's output and falls back to a deterministic template — proven driver-independent by a test that runs the same book through two different drivers and asserts byte-identical kernel output (`tests/unit/number-binding.test.ts`). Wired live into the product at `/api/narrate`, called from the Workbench's "Explain with AI" button.
+Provider-agnostic LLM layer (`packages/llm`): Qwen `qwen3.8-max` through the hackathon gateway (confirmed live on 2026-10-12), Gemini as the fallback, `none` (deterministic template) as the zero-network floor, chosen by `LLM_PROVIDER=auto` with a fallback chain. Narration runs through a **real multi-step tool-calling loop** (`packages/llm/src/toolLoop.ts`) — the model is given no numbers upfront and must call `get_current_margin`, `get_stressed_margin`, `get_intervention_plan`, or `get_user_thesis` to fetch exactly what it needs before answering, bounded at 7 steps (four tools plus a final answer, with earlier tool results carried forward each turn) so a misbehaving driver can never loop forever (tested with a scripted fake driver, zero network, `tests/unit/tool-loop.test.ts`). A number-binding guard then rejects any narrated number not already in the kernel's output and falls back to a deterministic template — proven driver-independent by a test that runs the same book through two different drivers and asserts byte-identical kernel output (`tests/unit/number-binding.test.ts`). Wired live into the product at `/api/narrate`, called from the Workbench's "Explain with AI" button.
 
 ## Personalized thesis
 

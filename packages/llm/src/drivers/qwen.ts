@@ -10,9 +10,15 @@ export function makeQwenDriver(opts: { apiKey: string; baseUrl: string; model: s
   return {
     name: "qwen",
     async complete(req: LlmRequest): Promise<LlmResult> {
+      // The gateway rejects response_format=json_object (HTTP 400) unless the word "json"
+      // appears somewhere in the messages, so make sure it does whenever JSON is requested.
+      const needsJsonWord = req.json === true && !/json/i.test(`${req.system ?? ""}
+${req.prompt}`);
       const messages = [
         ...(req.system ? [{ role: "system", content: req.system }] : []),
-        { role: "user", content: req.prompt },
+        { role: "user", content: needsJsonWord ? `${req.prompt}
+
+Respond with valid JSON only.` : req.prompt },
       ];
       const body = JSON.stringify({
         model: opts.model,

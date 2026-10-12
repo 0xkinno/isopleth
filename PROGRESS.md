@@ -365,3 +365,11 @@ it stalls again, a manual `workflow_dispatch` is the fix, not a code change.
 - **CI** (`.github/workflows/ci.yml`) added. Tests 21 -> 27. Offline verifier 5 -> 7 checks.
 - **LLM:** set `LLM_PROVIDER=gemini` on Vercel (it was missing); updated the retired default Gemini model; added retry for transient 429/503; fixed the tool loop (it capped at 4 steps for 4 tools and showed the model only the latest tool result). The live key is quota-limited, so the verified template is served when it is exhausted.
 - Docs brought up to date: README, ARCHITECTURE (complete rewrite), METHOD, LIMITATIONS, PROOF, MILESTONE, EVIDENCE_MANIFEST, SUBMISSION. The demo video and X post are live.
+
+## 2026-10-12 - Qwen wired and confirmed live
+
+- `LLM_PROVIDER=auto` (default): Qwen when `QWEN_API_KEY` is set, else Gemini, else none; a fallback chain tries the next provider before the verified template; the response names the provider that actually answered, and a template is labelled `provider: none`.
+- Live probe (`pnpm discovery:e6`): plain text and JSON mode both work against `https://hackathon.bitgetops.com/v1`, model `qwen3.8-max`.
+- Found by running the real loop: the gateway returns HTTP 400 for `response_format=json_object` unless the word "json" appears in the messages, which silently pushed every call to the fallback. The driver now ensures it (regression test added).
+- With the fix, the full guarded narration (4 tool calls) runs in about 14 s answered by Qwen, every number bound. Thinking is off by default (about 2 s per call instead of 5 s).
+- Tests 27 -> 36. Production still needs `QWEN_API_KEY` added to Vercel and `LLM_PROVIDER` set to `auto`.
