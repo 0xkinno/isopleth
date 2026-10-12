@@ -373,3 +373,6 @@ it stalls again, a manual `workflow_dispatch` is the fix, not a code change.
 - Found by running the real loop: the gateway returns HTTP 400 for `response_format=json_object` unless the word "json" appears in the messages, which silently pushed every call to the fallback. The driver now ensures it (regression test added).
 - With the fix, the full guarded narration (4 tool calls) runs in about 14 s answered by Qwen, every number bound. Thinking is off by default (about 2 s per call instead of 5 s).
 - Tests 27 -> 36. Production still needs `QWEN_API_KEY` added to Vercel and `LLM_PROVIDER` set to `auto`.
+
+- **Production is on Qwen.** `QWEN_API_KEY` and `LLM_PROVIDER=auto` set in Vercel and redeployed: the live `/api/narrate` returns `provider: qwen`, `verified: true`, 4 tool calls; through the workbench UI the explanation takes about 10 s and passes the number-binding guard.
+- The stress refusal reason now reaches the narration tool and the template, so the model (and the fallback) say "the kernel refuses under stress" instead of "no stress was computed".

@@ -6,7 +6,7 @@ High-level milestones. See [`PROGRESS.md`](PROGRESS.md) for the session log. Dea
 |---|---|---|---|
 | M1 | Public-data pipeline live (E1 recording, E2 instruments and rules, E3 trap) | **DONE** | 241 pairs, 44,000+ hash-chained records, 520 discount-rate entries, 243 real maintenance ladders |
 | M2 | Gate A: headline measurement | **PARTIAL** | confirmed freeze and thaw in 2 thin pairs; liquid-name confirmation needs the 2026-10-09 to 12 weekend (after the deadline). Stated as `PARTIAL` everywhere. |
-| M3 | LLM layer | **DONE (Qwen confirmed live 2026-10-12, Gemini fallback)** | provider-agnostic `auto` selection with a fallback chain; production uses Qwen once `QWEN_API_KEY` is set in Vercel; template fallback always available |
+| M3 | LLM layer | **DONE (Qwen live in production, Gemini fallback)** | provider-agnostic `auto` selection with a fallback chain; confirmed `provider: qwen` on the deployed site 2026-10-12; template fallback always available |
 | M4 | Mechanism: kernel, surface, contour, optimizer, invariants | **DONE** | deterministic, fail-closed, property-tested |
 | M5 | Proof pipeline: bench, break campaign, manifest, offline verifier, CI | **DONE** | 12/13 break attacks, 7/7 offline checks, 36 tests, CI on every push; B13 is time-blocked |
 | M6 | Product: six routes, real data | **DONE** | deployed at isopleth-blue.vercel.app |
@@ -19,4 +19,4 @@ High-level milestones. See [`PROGRESS.md`](PROGRESS.md) for the session log. Dea
 ## Open after submission
 
 - Confirm a liquid-name freeze and thaw over 2026-10-09 to 12; re-run `pnpm bench`, `pnpm discovery:e4:replay` and break attack B13.
-- Set `QWEN_API_KEY` in the Vercel environment so the deployed app uses Qwen; resolve C5 and C6 with an optional read-only key probe.
+- Resolve C5 and C6 with an optional read-only key probe.

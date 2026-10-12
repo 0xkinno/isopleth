@@ -156,7 +156,7 @@ Vercel project `isopleth`; Root Directory `apps/web` (a dashboard-only setting),
 * **Whether markPrice clamps to the frozen index (C5).** Indications only.
 * **How tiers apply at boundaries and across bands (C6).** The ladders are captured; the application rule is not published in them.
 * **The pre-registered reopening-gap predictor (C7) and the B13 null control.** The permutation harness is built and tested; it needs two fully elapsed closed-market windows.
-* **Qwen in production.** Qwen is confirmed live (2026-10-12: plain text, JSON mode, a full guarded narration in about 14 s), but the deployed site uses it only once `QWEN_API_KEY` is set in Vercel; until then Gemini (free-tier quota) answers and the verified template is the floor.
+* **Nothing in the LLM layer is open.** Qwen is live in production (2026-10-12: `provider: qwen`, `verified: true`, four tool calls); Gemini is the fallback and the verified template is the floor.
 * **How Bitget's private engine values collateral.** Needs an optional read-only key probe (E5); the replay therefore shows both valuations.
 
 ## 9. Decisions worth knowing about

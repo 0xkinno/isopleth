@@ -249,7 +249,7 @@ Accounts are labelled `SYNTHETIC`, market data `REPLAYED`/`none`, per the projec
 
 ## Honest limitations
 
-Stated first, not buried: [LIMITATIONS.md](LIMITATIONS.md). Leads with "the headline measurement isn't confirmed yet": only 2 thin-liquidity pairs show a confirmed freeze and thaw, and the documented session-wide freeze has not yet been confirmed in a liquid name. Also true as of this writing: the E4 window-set replay has N=0 (calendar-blocked); tier boundary inclusivity and marginal-vs-aggregate application (C6) remain unknown because a ladder cannot say how its own bands are applied; the Qwen wire is built but untested live pending `QWEN_API_KEY`, and the live narration provider is Gemini on a free-tier quota, with a verified deterministic template served when the model is unavailable; CSV book input is a single-tier simplification; the reference-lag replay covers a quiet week and its margin effect is small.
+Stated first, not buried: [LIMITATIONS.md](LIMITATIONS.md). Leads with "the headline measurement isn't confirmed yet": only 2 thin-liquidity pairs show a confirmed freeze and thaw, and the documented session-wide freeze has not yet been confirmed in a liquid name. Also true as of this writing: the E4 window-set replay has N=0 (calendar-blocked); tier boundary inclusivity and marginal-vs-aggregate application (C6) remain unknown because a ladder cannot say how its own bands are applied; Qwen is the live narration provider with Gemini (free-tier quota) as the fallback, and a verified deterministic template is served when no model answers; CSV book input is a single-tier simplification; the reference-lag replay covers a quiet week and its margin effect is small.
 
 ## Target user and revenue
 
@@ -257,7 +257,7 @@ Semi-professional cross-asset traders and small desks holding rTokens as UTA Adv
 
 ## Roadmap
 
-Immediate next: confirm a liquid-name freeze and thaw over the 2026-10-09 to 12 weekend (the recorder runs on a 10-minute GitHub Actions cron); re-run `pnpm bench`, `pnpm discovery:e4:replay` and the B13 null control once that window has elapsed; wire Qwen once credits arrive; resolve C5 and C6 with an optional read-only key probe.
+Immediate next: confirm a liquid-name freeze and thaw over the 2026-10-09 to 12 weekend (the recorder runs on a 10-minute GitHub Actions cron); re-run `pnpm bench`, `pnpm discovery:e4:replay` and the B13 null control once that window has elapsed; resolve C5 and C6 with an optional read-only key probe.
 
 ## Local setup
 

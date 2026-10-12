@@ -61,6 +61,7 @@ export function YourBookPanel() {
         body: JSON.stringify({
           result: response.result.value,
           shockedResult: response.shockedResult.ok ? response.shockedResult.value : null,
+          shockedRefusal: response.shockedResult.ok ? null : response.shockedResult.reason,
           plan: response.plan.ok ? response.plan.value : null,
           thesis,
         }),

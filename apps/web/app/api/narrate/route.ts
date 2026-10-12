@@ -19,11 +19,13 @@ function collectFacts(result: MarginResult, shockedResult: MarginResult | null, 
   return facts;
 }
 
-function template(result: MarginResult, shockedResult: MarginResult | null, thesis: string): string {
+function template(result: MarginResult, shockedResult: MarginResult | null, thesis: string, shockedRefusal: string | null = null): string {
   const pct = (result.crossMarginRate * 100).toFixed(2);
   const lines = [`Cross margin rate is ${pct}%, backed by $${result.adjEquityUsd.toLocaleString(undefined, { maximumFractionDigits: 0 })} of adjusted equity against $${result.maintenanceMarginUsd.toLocaleString(undefined, { maximumFractionDigits: 0 })} of maintenance margin.`];
   if (shockedResult) {
     lines.push(`Under the stress scenario, the rate moves to ${(shockedResult.crossMarginRate * 100).toFixed(2)}%.`);
+  } else if (shockedRefusal) {
+    lines.push(`Under the stress scenario the kernel refuses to produce a number (${shockedRefusal}); it does not guess.`);
   }
   if (thesis.trim().length > 0) lines.push(`You said you are protecting: "${thesis.trim()}" — the plan below is the smallest move that keeps the book inside the threshold.`);
   return lines.join(" ");
@@ -37,12 +39,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "request body must be valid JSON" }, { status: 400 });
   }
 
-  const { result, shockedResult, plan, thesis } = (body ?? {}) as {
+  const { result, shockedResult, plan, thesis, shockedRefusal } = (body ?? {}) as {
     result?: MarginResult;
     shockedResult?: MarginResult;
     plan?: unknown;
     thesis?: string;
+    shockedRefusal?: string | null;
   };
+  const refusal = typeof shockedRefusal === "string" ? shockedRefusal.slice(0, 120) : null;
   if (!result || typeof result.crossMarginRate !== "number") {
     return NextResponse.json({ ok: false, error: "result (a MarginResult) is required" }, { status: 400 });
   }
@@ -51,7 +55,7 @@ export async function POST(req: Request) {
   const safeThesis = typeof thesis === "string" ? thesis.slice(0, 280) : "";
 
   const driver = getLlmDriver();
-  const fallback = template(result, shockedResult ?? null, safeThesis);
+  const fallback = template(result, shockedResult ?? null, safeThesis, refusal);
 
   if (driver.name === "none") {
     return NextResponse.json({ ok: true, text: fallback, provider: "none", verified: true, orphans: [] });
@@ -65,7 +69,7 @@ export async function POST(req: Request) {
   // compute anything.
   const tools: ToolSpec[] = [
     { name: "get_current_margin", description: "the book's current cross margin rate, adjusted equity, and maintenance margin", run: () => result },
-    { name: "get_stressed_margin", description: "the same, after the standard stress scenario", run: () => shockedResult ?? { note: "no stress scenario was computed" } },
+    { name: "get_stressed_margin", description: "the same, after the standard stress scenario", run: () => shockedResult ?? (refusal ? { refused: true, reason: refusal, meaning: "under the standard stress the kernel refuses to produce a number" } : { note: "no stress scenario was computed" }) },
     { name: "get_intervention_plan", description: "the minimum-cost plan(s) that restore the margin threshold", run: () => plan ?? { note: "no plan was computed" } },
     { name: "get_user_thesis", description: "what the user said they are protecting, if anything", run: () => ({ thesis: safeThesis || null }) },
   ];

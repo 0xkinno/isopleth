@@ -18,9 +18,9 @@ The kernel takes a tier to cover `(lo, hi]` and applies the selected band's rate
 
 The first position-tier capture sent the wrong request parameter (`productType`, a v2 convention, instead of `category`). Bitget answered `400172` for every symbol, and the script wrote those error envelopes to disk as if they were data, because it never checked the response code. All 244 files were errors. This was found while investigating why U5/U8 had no data, fixed to require `code === "00000"` before writing, and re-run: 243 real ladders now exist. A related flaw surfaced in the break campaign (B10): one tick had been chain-recorded with null prices after a malformed response; the tick builder now refuses such a record loudly.
 
-## The deployed LLM path depends on which key is configured
+## The LLM path and its fallbacks
 
-Qwen (`qwen3.8-max`) was confirmed live against the hackathon gateway on 2026-10-12: plain text and JSON mode work, and a full guarded narration (four tool calls, every number bound to a kernel fact) completes in about 14 seconds and is answered by Qwen itself. The deployed site only uses Qwen once `QWEN_API_KEY` is set in its environment; until then it uses Gemini (free-tier quota) and, when no provider answers, serves a verified deterministic template, labelled `provider: none` with the attempted provider and error. The Ask bar does not use a model at all. The product is complete without either.
+Qwen (`qwen3.8-max`) is the preferred provider on the deployed site and is confirmed live there (2026-10-12: `provider: qwen`, `verified: true`, four tool calls, about 10 s through the UI). If it errors or is over quota, Gemini (free-tier key) is tried next, and when no provider answers the app serves a verified deterministic template labelled `provider: none` with the attempted provider and the error. The Ask bar does not use a model at all. The product is complete without any of them.
 
 ## The Ask bar is a rule router
 

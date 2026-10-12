@@ -57,7 +57,7 @@ What would make these claims false is written down in `PROOF.md` and `data/bench
 
 Built and deployed: the deterministic margin kernel, scenario operators, counterfactual surface, bisected contour, minimum-intervention optimizer; the Collateral Clock recorder (GitHub Actions, every ten minutes); six web routes; the Ask bar with a visible tool trace; a read-only MCP server; verifiable receipts on every kernel answer; the measured reference-lag replay; guarded LLM narration; CI; the offline verifier, break campaign, benchmark and manifest. Documentation: `README.md`, `ARCHITECTURE.md`, `METHOD.md`, `LIMITATIONS.md`, `PROOF.md`, `DISCOVERY.md`, `EVIDENCE_MANIFEST.md`, `CLAIMS.json`.
 
-Honest gaps (full list in `LIMITATIONS.md`): liquid-name freeze unconfirmed; tier boundary and application rules are assumptions (C6); B13 and C7 need elapsed windows; the production deployment still needs `QWEN_API_KEY` set in Vercel to use Qwen (it runs on Gemini until then); no authenticated key probe (E5).
+Honest gaps (full list in `LIMITATIONS.md`): liquid-name freeze unconfirmed; tier boundary and application rules are assumptions (C6); B13 and C7 need elapsed windows; no authenticated key probe (E5), so how Bitget's private engine values collateral (C5) is open.
 
 ### 5. Deliverables
 
@@ -77,7 +77,7 @@ An AI that sits in the decision path of a leveraged account needs to be checkabl
 
 > The LLM layer is provider-agnostic (Qwen, Gemini or none; `auto` prefers Qwen and falls back). It routes to read-only tools and narrates kernel results. It never computes a number. A number-binding guard rejects any narration containing a number the kernel did not produce and serves a deterministic template instead. The product runs fully with the model removed, and the Ask bar and MCP server involve no model at all.
 
-Where credits were used: the live narration provider is **Gemini** on a free-tier key. The **Qwen** driver (`qwen3.8-max`, OpenAI-compatible gateway) is built and covered by the same guard and tests, but no Qwen key was available during this build, so it has not made a live call. We state that rather than imply otherwise.
+Where credits were used: **Qwen** (`qwen3.8-max`, OpenAI-compatible hackathon gateway) is the preferred provider (`LLM_PROVIDER=auto`) and is confirmed live on the deployed site: a production request on 2026-10-12 returned `provider: qwen`, `verified: true`, with four tool calls, and the same through the workbench UI in about 10 seconds. Gemini (free-tier key) is the fallback, and a verified deterministic template is served, labelled as such, when no provider answers. The Ask bar and MCP server involve no model.
 
 ## Track
 
