@@ -99,10 +99,10 @@ Builds `clock-replay.json` from the real chain at build time. For each of 240 pa
 
 ### 4.6 The LLM layer (`packages/llm`)
 
-* Three interchangeable drivers behind one interface: `gemini`, `qwen`, `none`, selected by `LLM_PROVIDER`. `none` is the deterministic path and the product is fully functional with it.
+* Three interchangeable drivers behind one interface: `gemini`, `qwen`, `none`. `LLM_PROVIDER=auto` (default) prefers Qwen when `QWEN_API_KEY` is set, else Gemini when `GEMINI_API_KEY` is set, else `none`; an explicit value is honoured and falls through to whichever provider has a key. A fallback chain tries the next provider when one errors (quota, outage), and the response reports the provider that actually answered. `none` is the deterministic path and the product is fully functional with it.
 * `toolLoop.ts`: the model is given no numbers up front and must call read-only tools one at a time (`get_current_margin`, `get_stressed_margin`, `get_intervention_plan`, `get_user_thesis`), bounded at seven steps, with earlier results carried forward each turn.
 * `bind.ts`: extracts every number from the narration and rejects the whole narration if any is not within tolerance of a kernel fact (also as a percentage). On rejection, a deterministic template is served and the response says so.
-* The Gemini driver retries transient 429/503 responses; on any driver error the route serves the verified template and records the error in the response.
+* The Gemini driver retries transient 429/503 responses; when every configured provider fails, the route serves the verified template, labels it `provider: none` with the attempted provider and the error, and never presents the template as model output.
 
 ### 4.7 The tool surface (`apps/web/lib/mcpTools.ts`, `app/mcp/route.ts`, `lib/ask.ts`)
 

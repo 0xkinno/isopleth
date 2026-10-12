@@ -16,5 +16,7 @@ export interface LlmResult {
 
 export interface LlmDriver {
   readonly name: LlmProviderName;
+  /** Set by a fallback chain: which provider actually answered the last call. */
+  lastProvider?: LlmProviderName | undefined;
   complete(req: LlmRequest): Promise<LlmResult>;
 }

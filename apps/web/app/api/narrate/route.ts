@@ -70,17 +70,20 @@ export async function POST(req: Request) {
     { name: "get_user_thesis", description: "what the user said they are protecting, if anything", run: () => ({ thesis: safeThesis || null }) },
   ];
 
+  const answered = () => driver.lastProvider ?? driver.name;
   try {
     const loop = await runToolLoop(driver, tools, "Narrate this trader's current risk position in 2-4 sentences, calling tools to gather what you need first.");
     if (loop.stoppedReason === "max-steps" || loop.finalText.trim().length === 0) {
-      return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: true, orphans: [], note: `tool loop stopped: ${loop.stoppedReason}`, steps: loop.steps.length });
+      // the model ran but never produced a usable narration: the template is served, and labelled as such
+      return NextResponse.json({ ok: true, text: fallback, provider: "none", attemptedProvider: answered(), verified: true, orphans: [], note: `tool loop stopped: ${loop.stoppedReason}`, steps: loop.steps.length });
     }
     const bound = bindNumbers(loop.finalText, facts);
     if (!bound.ok) {
-      return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: false, orphans: bound.orphans, rejectedText: loop.finalText, steps: loop.steps.length });
+      return NextResponse.json({ ok: true, text: fallback, provider: answered(), verified: false, orphans: bound.orphans, rejectedText: loop.finalText, steps: loop.steps.length });
     }
-    return NextResponse.json({ ok: true, text: loop.finalText, provider: driver.name, verified: true, orphans: [], steps: loop.steps.length });
+    return NextResponse.json({ ok: true, text: loop.finalText, provider: answered(), verified: true, orphans: [], steps: loop.steps.length });
   } catch (err) {
-    return NextResponse.json({ ok: true, text: fallback, provider: driver.name, verified: true, orphans: [], driverError: String(err) });
+    // every configured provider failed (quota, outage): the verified template is served and says so
+    return NextResponse.json({ ok: true, text: fallback, provider: "none", attemptedProvider: driver.name, verified: true, orphans: [], driverError: String(err) });
   }
 }
